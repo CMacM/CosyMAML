@@ -37,4 +37,4 @@ class CosMAML():
         y_pred = self.model(X_test)
         return y_pred.detach().cpu().numpy()
     
-    def maml_train():
+    # def maml_train():
