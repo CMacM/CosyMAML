@@ -62,8 +62,8 @@ class MAML():
             n_tasks = len(tasks)
             rand_inds = self.rng.choice(n_samples, size=n_shots+1, replace=False)
 
-            print('Training samples:', rand_inds[:-1])
-            print('Test samples:', rand_inds[-1])
+            # print('Training samples:', rand_inds[:-1])
+            # print('Test samples:', rand_inds[-1])
 
             scaler_x_plot = StandardScaler()
             scaler_y_plot = StandardScaler()
@@ -167,18 +167,18 @@ class MAML():
                 self.model.load_state_dict(weights_before)
                 print('Loss:',loss)
 
-        y_pred_final = y_pred_final.reshape(1, -1)
-        y_pred_final = scaler_y_plot.inverse_transform(y_pred_final)
-        y_test = y_test.reshape(1, -1)
-        y_test = scaler_y_plot.inverse_transform(y_test)
+                y_pred_final = y_pred_final.reshape(1, -1)
+                y_pred_final = scaler_y_plot.inverse_transform(y_pred_final)
+                y_test = y_test.reshape(1, -1)
+                y_test = scaler_y_plot.inverse_transform(y_test)
 
-        plt.figure()
-        plt.title('Epoch: %d, Shots: %d' % (i+1, n_shots))
-        plt.plot(y_pred_final[0], label='Predicted')
-        plt.plot(y_test[0], ls='--', label='Truth')
-        plt.yscale('log')
-        plt.legend()
-        plt.savefig('maml_output_final.pdf', bbox_inches='tight')
+                plt.figure()
+                plt.title('Epoch: %d, Shots: %d' % (i+1, n_shots))
+                plt.plot(y_pred_final[0], label='Predicted')
+                plt.plot(y_test[0], ls='--', label='Truth')
+                #plt.yscale('log')
+                plt.legend()
+                plt.savefig('maml_output_final.pdf', bbox_inches='tight')
 
         if rec_loss:
             return loss_rec
@@ -223,7 +223,6 @@ class PCA_MAML():
             param.data -= step * param.grad.data
 
     # obtain predictions from model
-    # Includes built in scaling 
     def predict(self, x):
         x = self.to_torch(x)
         return self.model(x).detach().cpu().numpy()
@@ -262,13 +261,13 @@ class PCA_MAML():
             scaler_y_plot = StandardScaler()
 
             y_shot = y_train[task_plot, rand_inds[:-1]]
-            y_shot = pca_plot.fit_transform(y_shot)
             y_shot = scaler_y_plot.fit_transform(y_shot)
+            y_shot = pca_plot.fit_transform(y_shot)
 
             y_test = y_train[task_plot, rand_inds[-1]]
-            y_test = pca_plot.transform(y_test)
             y_test = scaler_y_plot.transform(y_test)
-
+            y_test = pca_plot.transform(y_test)
+           
         # repeat tasks so total meta train epochs is satisfied
         if n_tasks < (outer_epochs*n_tasks):
             tasks = np.tile(tasks, int(np.ceil(outer_epochs*n_tasks/n_tasks))) 
@@ -299,13 +298,13 @@ class PCA_MAML():
 
             pca_task = PCA(n_components=self.pca_components)
             scaler_y = StandardScaler()
-
-            y_spt = pca_task.fit_transform(y_spt)
+            
             y_spt = scaler_y.fit_transform(y_spt)
-
-            y_qry = pca_task.transform(y_qry)
+            y_spt = pca_task.fit_transform(y_spt)
+            
             y_qry = scaler_y.transform(y_qry)
-
+            y_qry = pca_task.transform(y_qry)
+            
             # Inner loop: Train on support data
             for j in range(inner_epochs):
                 innerstep = inner_lr * (1 - j * inner_decay)
@@ -331,7 +330,6 @@ class PCA_MAML():
             # the model can adapt to a new task
             if plot_prog and (i+1) % int(len(tasks)/10) == 0:
                 plt.cla()
-                plt.ylim([0.8,1.2])
                 plt.title('Epoch: %d, Shots: %d' % (i+1, n_shots))
                 weights_before = copy.deepcopy(self.model.state_dict())
                 y_pred = self.predict(x_test)
@@ -353,25 +351,25 @@ class PCA_MAML():
                 plt.legend()
                 plt.xlabel('Output index')
                 plt.ylabel('Predicted/Truth')
-                #plt.ylim([0.8, 1.2])
+                plt.ylim([0.8, 1.2])
                 plt.savefig('maml_ratio_final.pdf', bbox_inches='tight')
                 plt.pause(0.01)
                 self.model.load_state_dict(weights_before)
                 print('Loss:',loss)
 
         y_pred_final = y_pred_final.reshape(1, -1)
-        y_pred_final = scaler_y_plot.inverse_transform(y_pred_final)
         y_pred_final = pca_plot.inverse_transform(y_pred_final)
+        y_pred_final = scaler_y_plot.inverse_transform(y_pred_final)
 
         y_test = y_test.reshape(1, -1)
-        y_test = scaler_y_plot.inverse_transform(y_test)
         y_test = pca_plot.inverse_transform(y_test)
+        y_test = scaler_y_plot.inverse_transform(y_test)
 
         plt.figure()
         plt.title('Epoch: %d, Shots: %d' % (i+1, n_shots))
         plt.plot(y_pred_final[0], label='Predicted')
         plt.plot(y_test[0], ls='--', label='Truth')
-        plt.yscale('log')
+        #plt.yscale('log')
         plt.legend()
         plt.savefig('maml_output_final.pdf', bbox_inches='tight')
 

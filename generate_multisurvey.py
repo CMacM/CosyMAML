@@ -9,10 +9,13 @@ from scipy.interpolate import interp1d
 
 from tqdm import trange, tqdm
 from time import time
+from multiprocessing import Pool, cpu_count
+from parallelbar import progress_starmap
 
 import src.datamaker as datamaker
 
 import argparse
+import os
 
 def main(n_tasks, n_samples, seed):
     
@@ -21,13 +24,10 @@ def main(n_tasks, n_samples, seed):
     print("Initializing...")
     print("Producing data for {} tasks, {} samples".format(n_tasks, n_samples))
 
-    if args.binning == "log":
-        ell_bins = np.geomspace(2, 2509, 128)
-    elif args.binning == "linear":
-        ell_bins = np.arange(2, 2509)
-    else:
-        raise ValueError("Invalid binning scheme, choose 'linear' or 'log'")
-
+    # ell bins for C_ell
+    # Define the range and the number of points
+    ell_bao = np.arange(2, 200)
+    ell_bins = np.concatenate((ell_bao, np.geomspace(200, 4000, 220)))
 
     np.random.seed(seed)
     gridsize = 50
@@ -87,8 +87,8 @@ def main(n_tasks, n_samples, seed):
             else:
                 X_train[i, :, j] = shifts[i, :]
 
-
     print("Computing C_ell samples, this may take a while...")
+
     progbar = tqdm(total=n_tasks*n_samples)
 
     Y_train = np.empty((n_tasks, n_samples, len(ell_bins)))
@@ -114,7 +114,6 @@ def main(n_tasks, n_samples, seed):
             Y_train[i, j] = datamaker.gen_Cgg_autocorr(cosmo, ell_bins, z_up, pz_up)
 
             progbar.update(1)
-
     progbar.close()
 
     print("Collecting results and saving...")
@@ -136,7 +135,6 @@ if __name__ == "__main__":
     parser.add_argument("--n_tasks", type=int, default=10, help="Number of tasks")
     parser.add_argument("--n_samples", type=int, default=2**5, help="Number of samples per task")
     parser.add_argument("--seed", type=int, default=14, help="Random seed for reproducibility")
-    parser.add_argument("--binning", type=str, default="linear", help="Binning scheme for ell bins")
 
     args = parser.parse_args()
     
