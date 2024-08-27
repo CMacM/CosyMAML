@@ -414,8 +414,6 @@ class Adam_MAML():
     
     # send individual data batch to model for training step
     def train_on_batch(self, x, y, step, loss_fn, beta1=0.9, beta2=0.999, epsilon=1e-8):
-        x = self.to_torch(x)
-        y = self.to_torch(y)
         self.model.zero_grad()
         y_pred = self.model(x)
         loss = loss_fn(y_pred, y)
@@ -443,15 +441,21 @@ class Adam_MAML():
     # obtain predictions from model
     # Includes built-in scaling 
     def predict(self, x):
-        x = self.to_torch(x)
-        return self.model(x).detach().cpu().numpy()
+        return self.model(x)
     
     # meta train the model
     def meta_train(self, x_train, y_train, 
                    inner_lr, outer_lr, loss_fn, 
                    spt_frac, outer_epochs, inner_epochs,
                    inner_decay=1e-4, outer_decay=1e-3, n_shots=5,
-                   rec_loss=True, plot_prog=False, scale=True):
+                   rec_loss=True, plot_prog=False, ell_bins=None):
+        
+        if ell_bins is None:
+            ell_bins = np.arange(y_train.shape[2])
+        
+        # move data to torch tensors
+        x_train = self.to_torch(x_train)
+        y_train = self.to_torch(y_train)
         
         # ascertaining the number of tasks and samples
         n_tasks = y_train.shape[0]
@@ -465,8 +469,8 @@ class Adam_MAML():
         n_tasks = len(tasks)
         rand_inds = self.rng.choice(n_samples, size=n_shots+1, replace=False)
 
-        scaler_x_plot = StandardScaler()
-        scaler_y_plot = StandardScaler()
+        scaler_x_plot = TorchStandardScaler()
+        scaler_y_plot = TorchStandardScaler()
 
         x_shot = x_train[task_plot, rand_inds[:-1]]
         y_shot = y_train[task_plot, rand_inds[:-1]]
@@ -479,6 +483,12 @@ class Adam_MAML():
         y_shot = scaler_y_plot.fit_transform(y_shot)
         y_test = y_train[task_plot, rand_inds[-1]]
         y_test = scaler_y_plot.transform(y_test)
+
+        x_all = x_train[task_plot]
+        x_all = scaler_x_plot.transform(x_all)
+        
+        y_all = y_train[task_plot]
+        y_all = scaler_y_plot.transform(y_all)
 
         # repeat tasks so total meta train epochs is satisfied
         if n_tasks < (outer_epochs*n_tasks):
@@ -503,16 +513,14 @@ class Adam_MAML():
             y_qry_raw = y_train[task][qry_inds, :]
 
             # Scaling should be fit only on support set
-            if scale:
-                scaler_x = StandardScaler()
-                scaler_y = StandardScaler()
-                x_spt = scaler_x.fit_transform(x_spt_raw)
-                y_spt = scaler_y.fit_transform(y_spt_raw)
-                x_qry = scaler_x.transform(x_qry_raw)
-                y_qry = scaler_y.transform(y_qry_raw)
-            else:
-                x_spt, y_spt = x_spt_raw, y_spt_raw
-                x_qry, y_qry = x_qry_raw, y_qry_raw
+            scaler_x = TorchStandardScaler()
+            scaler_y = TorchStandardScaler()
+            x_spt = scaler_x.fit_transform(x_spt_raw)
+            y_spt = y_spt_raw
+            y_spt = scaler_y.fit_transform(y_spt_raw)
+            x_qry = scaler_x.transform(x_qry_raw)
+            y_qry = y_qry_raw
+            y_qry = scaler_y.transform(y_qry_raw)
 
             # Inner loop: Train on support data
             for j in range(inner_epochs):
@@ -522,8 +530,8 @@ class Adam_MAML():
             # Outer loop: Evaluate and update using query data
             outerstep = outer_lr * (1 - i * outer_decay)
             self.model.zero_grad()
-            y_pred = self.model(self.to_torch(x_qry))
-            loss = loss_fn(y_pred, self.to_torch(y_qry))
+            y_pred = self.model(x_qry)
+            loss = loss_fn(y_pred, y_qry)
             loss.backward()
             loss_rec.append(loss.item())
 
@@ -555,57 +563,89 @@ class Adam_MAML():
             # the model can adapt to a new task
             if (i+1) % int(len(tasks)/10) == 0:
                 weights_before = copy.deepcopy(self.model.state_dict())
+
                 y_pred = self.predict(x_test)
-                y_test_compare = y_test.reshape(1, -1)
-                y_test_compare = scaler_y_plot.inverse_transform(y_test)
+                y_pred = scaler_y_plot.inverse_transform(y_pred)
+                y_pred = y_pred.detach().cpu().numpy()
+                y_pred = np.exp(y_pred)
+
+                y_test_comp = scaler_y_plot.inverse_transform(y_test)
+                y_test_comp = y_test_comp.detach().cpu().numpy()
+                y_test_comp = np.exp(y_test_comp)
+
                 if plot_prog:
                     plt.cla()
                     plt.title('Epoch: %d, Shots: %d' % (i+1, n_shots))
-                    plt.plot(y_pred[0]/y_test[0], label='MAML iter 0', ls='-')
+                    plt.plot(ell_bins, y_pred[0]/y_test_comp[0], label='MAML iter 0', ls='-')
                 for inneriter in range(32):
                     innerstep = inner_lr * (1 - inneriter * inner_decay)
                     self.train_on_batch(x_shot, y_shot, innerstep, loss_fn)
                     if (inneriter+1) % 8 == 0:
                         y_pred = self.predict(x_test)
-                        y_pred = y_pred.reshape(1, -1)
                         y_pred = scaler_y_plot.inverse_transform(y_pred)
+                        y_pred = y_pred.detach().cpu().numpy()
+                        y_pred = np.exp(y_pred)
                         if plot_prog:
-                            plt.plot(y_pred[0]/y_test_compare[0],
+                            plt.plot(ell_bins, y_pred[0]/y_test_comp[0],
                                      label='MAML iter %d' % (inneriter+1),
                                      ls='-'
                                      )
                 y_pred_final = self.predict(x_test)
-                loss = loss_fn(self.to_torch(y_pred_final),
-                               self.to_torch(y_test)
+                loss = loss_fn(y_pred_final,
+                               y_test
                                ).item()
+                y_pred_final = scaler_y_plot.inverse_transform(y_pred_final)
+                y_pred_final = y_pred_final.detach().cpu().numpy()
+                y_pred_final = np.exp(y_pred_final)
+
                 if plot_prog:
-                    plt.plot(y_test[0]/y_test[0], label='Truth', ls='--')
+                    plt.plot(ell_bins, y_test_comp[0]/y_test_comp[0], label='Truth', ls='--')
                     plt.legend()
                     plt.xlabel('Output index')
                     plt.ylabel('Predicted/Truth')
-                    plt.ylim([0.8, 1.2])
                     plt.savefig('maml_ratio_final.pdf', bbox_inches='tight')
                     plt.pause(0.01)
                     print('Loss:',loss)
 
+                y_pred_all = self.predict(x_all)
+                y_pred_all = scaler_y_plot.inverse_transform(y_pred_all)
+                y_pred_all = y_pred_all.detach().cpu().numpy()
+                y_pred_all = np.exp(y_pred_all)
+                
+                y_all_comp = scaler_y_plot.inverse_transform(y_all)
+                y_all_comp = y_all_comp.detach().cpu().numpy()
+                y_all_comp = np.exp(y_all_comp)
+
                 self.model.load_state_dict(weights_before)
 
-        y_pred_final = y_pred_final.reshape(1, -1)
-        y_pred_final = scaler_y_plot.inverse_transform(y_pred_final)
-
-        fig, axs = plt.subplots(1, 3, figsize=(20, 5))
-        axs[0].plot(y_pred_final[0], label='Prediction')
-        axs[0].plot(y_test_compare[0], ls='--', label='Truth')
+        fig, axs = plt.subplots(1, 4, figsize=(20, 5))
+        axs[0].plot(ell_bins, y_pred_final[0], label='Prediction')
+        axs[0].plot(ell_bins, y_test_comp[0], ls='--', label='Truth')
         axs[0].legend()
-        axs[0].set_title('Epoch: %d, Shots: %d' % (i+1, n_shots))
+        axs[0].set_title('Sample %d, Shots: %d' % (rand_inds[-1], n_shots))
+        axs[0].set_yscale('log')
+        axs[0].set_xscale('log')
 
-        axs[1].plot(y_pred_final[0]/y_test_compare[0], label='Prediction/Truth')
+        axs[1].plot(ell_bins, y_pred_final[0]/y_test_comp[0], label='Prediction/Truth')
         axs[1].set_ylim([0.8, 1.2])
+        axs[1].set_xscale('log')
         axs[1].legend()
-
+        axs[1].set_title('Sample %d, Shots: %d' % (rand_inds[-1], n_shots))
+        
         axs[2].plot(loss_rec, label='Loss')
         axs[2].set_yscale('log')
         axs[2].legend()
+        axs[2].set_title('Outer loop loss, Epochs: %d' % (outer_epochs*n_tasks))
+
+        err = np.empty((len(y_pred_all[0]), len(ell_bins)))
+        for k in range(len(y_pred_all[0])):
+            err[k] = abs(y_pred_all[0][k,:] - y_all_comp[0][k,:])/y_all_comp[0][k,:] * 100
+            axs[3].plot(ell_bins, err[k],ls='--',alpha=0.2)
+        err_avg = np.mean(err, axis=0)
+        axs[3].plot(ell_bins, err_avg, ls='-', c='k', label='Average')
+        axs[3].legend()
+        axs[3].set_xscale('log')
+        axs[3].set_title('Absolute percentage error')
 
         plt.savefig('maml_output_final.pdf', bbox_inches='tight')
 
@@ -620,3 +660,23 @@ class Adam_MAML():
         y_pred = self.predict(x_test)
         self.model.load_state_dict(weights_before)
         return y_pred
+    
+class TorchStandardScaler():
+
+    def __init__(self):
+        self.mean = None
+        self.std = None
+        
+    def fit(self, X):
+        self.mean = X.mean(0, keepdim=True)
+        self.std = X.std(0, unbiased=False, keepdim=True)
+        return self
+    
+    def transform(self, X):
+        return (X - self.mean) / self.std
+    
+    def inverse_transform(self, X):
+        return X * self.std + self.mean
+    
+    def fit_transform(self, X):
+        return self.fit(X).transform(X)
