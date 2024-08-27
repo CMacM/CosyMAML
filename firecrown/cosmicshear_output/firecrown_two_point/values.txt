@@ -1,2 +1,0 @@
-trc0_delta_z = 0.0
-trc1_delta_z = 0.0
