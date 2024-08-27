@@ -26,11 +26,13 @@ def main(n_tasks, n_samples, seed):
 
     # ell bins for C_ell
     # Define the range and the number of points
-    ell_bao = np.arange(2, 200)
-    ell_bins = np.concatenate((ell_bao, np.geomspace(200, 4000, 220)))
+    # ell_bao = np.arange(2, 200)
+    # ell_bins = np.concatenate((ell_bao, np.geomspace(200, 4000, 220)))
+    ell_bins = np.unique(np.geomspace(2, 4000, 30))
 
     np.random.seed(seed)
     gridsize = 50
+    z = np.linspace(0.01, 3.0, gridsize)
 
     task_means = np.random.uniform(0.8, 1.6, n_tasks)
     task_vars = np.random.uniform(0.2, 0.6, n_tasks)
@@ -41,10 +43,10 @@ def main(n_tasks, n_samples, seed):
     print("Generating P(z) for each task...")
 
     for i in range(n_tasks):    
-        survey_pz[i], survey_midpoints[i] = datamaker.gen_Pz_base(
+        survey_pz[i], survey_midpoints = datamaker.gen_Pz_base(
             task_means[i],
             task_vars[i],
-            gridsize
+            grid=z
         )
 
     print("Generating P(z) realizations...")
@@ -55,13 +57,13 @@ def main(n_tasks, n_samples, seed):
     for i in trange(n_tasks):
         qrd_pz[i], true_means[i] = datamaker.gen_Pz_samples(
                                             survey_pz[i],
-                                            survey_midpoints[i],
+                                            survey_midpoints,
                                             seed=14,
                                             shift=0.01,
                                             qrd_samples=n_samples
                                             )
         for j in range(n_samples):
-            mean = np.trapz(qrd_pz[i, j]*survey_midpoints[i], survey_midpoints[i])
+            mean = np.trapz(qrd_pz[i, j]*survey_midpoints, survey_midpoints)
             shifts[i, j] = mean - true_means[i]
 
     # Priors from DES Y3 Cosmic shear fits
@@ -104,7 +106,7 @@ def main(n_tasks, n_samples, seed):
 
             # Get the pz for this task and sample
             pz = qrd_pz[i, j]
-            z = survey_midpoints[i]
+            z = survey_midpoints
 
             # Upsample the pz to ensure accurate calculation of Cgg
             z_up = np.linspace(z[0], z[-1], 300)
