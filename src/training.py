@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import copy
 
+from tqdm import tqdm
+
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
@@ -86,6 +88,7 @@ class MAML():
         
         loss_rec = []
         # Outer loop
+        progress = tqdm(range(outer_epochs*n_tasks*inner_epochs*n_samples))
         for i, task in enumerate(tasks):
             # Create a deepcopy of the model to reset after both inner and outer loops
             weights_before = copy.deepcopy(self.model.state_dict())
@@ -118,6 +121,7 @@ class MAML():
             for j in range(inner_epochs):
                 innerstep = inner_lr * (1 - j * inner_decay)
                 self.train_on_batch(x_spt, y_spt, innerstep, loss_fn)
+                progress.update(1)
 
             # Outer loop: Evaluate and update using query data
             outerstep = outer_lr * (1 - i * outer_decay)
@@ -414,6 +418,10 @@ class Adam_MAML():
     
     # send individual data batch to model for training step
     def train_on_batch(self, x, y, step, loss_fn, beta1=0.9, beta2=0.999, epsilon=1e-8):
+
+        if hasattr(self.model, 'dropout'):
+            self.model.train()
+
         self.model.zero_grad()
         y_pred = self.model(x)
         loss = loss_fn(y_pred, y)
@@ -495,6 +503,7 @@ class Adam_MAML():
             tasks = np.tile(tasks, int(np.ceil(outer_epochs*n_tasks/n_tasks))) 
         
         loss_rec = []
+        progress = tqdm(range(outer_epochs*len(tasks)))
         # Outer loop
         for i, task in enumerate(tasks):
             # Create a deepcopy of the model to reset after both inner and outer loops
@@ -529,6 +538,10 @@ class Adam_MAML():
 
             # Outer loop: Evaluate and update using query data
             outerstep = outer_lr * (1 - i * outer_decay)
+
+            if hasattr(self.model, 'dropout'):
+                self.model.train()
+
             self.model.zero_grad()
             y_pred = self.model(x_qry)
             loss = loss_fn(y_pred, y_qry)
@@ -537,6 +550,8 @@ class Adam_MAML():
 
             # Reload pre-inner loop weights for the next task
             self.model.load_state_dict(weights_before)
+
+            progress.update(1)
 
             # Update weights using Adam for outer loop
             for name, param in self.model.named_parameters():
@@ -594,9 +609,6 @@ class Adam_MAML():
                 loss = loss_fn(y_pred_final,
                                y_test
                                ).item()
-                y_pred_final = scaler_y_plot.inverse_transform(y_pred_final)
-                y_pred_final = y_pred_final.detach().cpu().numpy()
-                y_pred_final = np.exp(y_pred_final)
 
                 if plot_prog:
                     plt.plot(ell_bins, y_test_comp[0]/y_test_comp[0], label='Truth', ls='--')
@@ -607,50 +619,82 @@ class Adam_MAML():
                     plt.pause(0.01)
                     print('Loss:',loss)
 
-                y_pred_all = self.predict(x_all)
-                y_pred_all = scaler_y_plot.inverse_transform(y_pred_all)
-                y_pred_all = y_pred_all.detach().cpu().numpy()
-                y_pred_all = np.exp(y_pred_all)
-                
-                y_all_comp = scaler_y_plot.inverse_transform(y_all)
-                y_all_comp = y_all_comp.detach().cpu().numpy()
-                y_all_comp = np.exp(y_all_comp)
-
-                self.model.load_state_dict(weights_before)
-
-        fig, axs = plt.subplots(1, 4, figsize=(20, 5))
-        axs[0].plot(ell_bins, y_pred_final[0], label='Prediction')
-        axs[0].plot(ell_bins, y_test_comp[0], ls='--', label='Truth')
-        axs[0].legend()
-        axs[0].set_title('Sample %d, Shots: %d' % (rand_inds[-1], n_shots))
-        axs[0].set_yscale('log')
-        axs[0].set_xscale('log')
-
-        axs[1].plot(ell_bins, y_pred_final[0]/y_test_comp[0], label='Prediction/Truth')
-        axs[1].set_ylim([0.8, 1.2])
-        axs[1].set_xscale('log')
-        axs[1].legend()
-        axs[1].set_title('Sample %d, Shots: %d' % (rand_inds[-1], n_shots))
+        # Enable dropout for final prediction to get uncertainty estimates
+        if hasattr(self.model, 'dropout'):
+            self.model.train()
+            y_pred_all = []
+            for i in range(1000):
+                y_pred = self.model(x_all)
+                y_pred = scaler_y_plot.inverse_transform(y_pred)
+                y_pred = y_pred.detach().cpu().numpy()
+                y_pred = np.exp(y_pred)
+                y_pred_all.append(y_pred)
+            # Average over all predictions
+            y_pred_all = np.array(y_pred_all)
+            # Standard deviation of predictions
+            y_pred_std = np.std(y_pred_all, axis=0)
+            y_pred_all = np.mean(y_pred_all, axis=0)
+        else:
+            y_pred_all = self.predict(x_all)
+            y_pred_all = scaler_y_plot.inverse_transform(y_pred_all)
+            y_pred_all = y_pred_all.detach().cpu().numpy()
+            y_pred_all = np.exp(y_pred_all)
         
-        axs[2].plot(loss_rec, label='Loss')
-        axs[2].set_yscale('log')
-        axs[2].legend()
-        axs[2].set_title('Outer loop loss, Epochs: %d' % (outer_epochs*n_tasks))
+        y_all_comp = scaler_y_plot.inverse_transform(y_all)
+        y_all_comp = y_all_comp.detach().cpu().numpy()
+        y_all_comp = np.exp(y_all_comp)
+
+        self.model.load_state_dict(weights_before)
+                
+        progress.close()
+
+        _, axs = plt.subplots(1, 4, figsize=(20, 5))
 
         err = np.empty((len(y_pred_all[0]), len(ell_bins)))
         for k in range(len(y_pred_all[0])):
             err[k] = abs(y_pred_all[0][k,:] - y_all_comp[0][k,:])/y_all_comp[0][k,:] * 100
-            axs[3].plot(ell_bins, err[k],ls='--',alpha=0.2)
+            axs[0].plot(ell_bins, err[k],ls='--',alpha=0.2)
         err_avg = np.mean(err, axis=0)
-        axs[3].plot(ell_bins, err_avg, ls='-', c='k', label='Average')
+        axs[0].plot(ell_bins, err_avg, ls='-', c='k', label='Average')
+        axs[0].legend()
+        axs[0].set_xscale('log')
+        axs[0].set_title('Absolute percentage error')
+
+        # Select worst performing sample for plotting
+        worst_sample = np.argmax(np.mean(err, axis=1))
+
+        axs[1].plot(ell_bins, y_pred_all[0][worst_sample], label='Prediction')
+        axs[1].plot(ell_bins, y_all_comp[0][worst_sample], label='Truth', ls='--')
+        if hasattr(self.model, 'dropout'):
+            axs[1].fill_between(ell_bins, y_pred_all[0][worst_sample]-y_pred_std[0][worst_sample],
+                                y_pred_all[0][worst_sample]+y_pred_std[0][worst_sample],
+                                alpha=0.5, label='Uncertainty')
+        axs[1].legend()
+        axs[1].set_title('Sample %d, Shots: %d' % (rand_inds[-1], n_shots))
+        axs[1].set_xscale('log')
+        axs[1].set_yscale('log')
+
+        axs[2].plot(ell_bins, y_pred_all[0][worst_sample]/y_all_comp[0][worst_sample], 
+                    label='Prediction/Truth')
+        if hasattr(self.model, 'dropout'):
+            axs[2].fill_between(ell_bins, 
+                                (y_pred_all[0][worst_sample]-y_pred_std[0][worst_sample])/y_all_comp[0][worst_sample],
+                                (y_pred_all[0][worst_sample]+y_pred_std[0][worst_sample])/y_all_comp[0][worst_sample],
+                                alpha=0.5, label='Uncertainty')
+        axs[2].set_xscale('log')
+        axs[2].legend()
+        axs[2].set_title('Sample %d, Shots: %d' % (rand_inds[-1], n_shots))
+        
+        axs[3].plot(loss_rec, label='Loss')
+        axs[3].set_yscale('log')
         axs[3].legend()
-        axs[3].set_xscale('log')
-        axs[3].set_title('Absolute percentage error')
+        axs[3].set_title('Outer loop loss, Epochs: %d' % (outer_epochs*n_tasks))
 
         plt.savefig('maml_output_final.pdf', bbox_inches='tight')
 
         if rec_loss:
-            return loss_rec      
+            return y_pred_all, y_all_comp, y_pred_std, loss_rec
+        return y_pred_all, y_all_comp, y_pred_std      
         
     def finetune_predict(self, x_train, y_train, x_test, adapt_steps):
         weights_before = copy.deepcopy(self.model.state_dict())

@@ -91,14 +91,16 @@ class SimpleMLP(nn.Module):
         x = self.fc6(x)
         return x
     
-class PCADropoutMLP(nn.Module):
-    '''A simple MLP with 3 hidden layers, ReLU activation function and dropout'''
-    def __init__(self, in_size, hidden_size, out_size, dropout_rate):
-        super(PCADropoutMLP, self).__init__()
-        self.fc1 = nn.Linear(in_size, hidden_size//2)
-        self.fc2 = nn.Linear(hidden_size//2, hidden_size)
-        self.fc3 = nn.Linear(hidden_size, hidden_size//2)
-        self.fc4 = nn.Linear(hidden_size//2, out_size)
+class DropoutMLP(nn.Module):
+    '''A simple MLP with 4 hidden layers, ReLU activation function, and dropout for uncertainty estimation'''
+    def __init__(self, in_size, hidden_size, out_size, dropout_rate=0.5):
+        super(DropoutMLP, self).__init__()
+        self.fc1 = nn.Linear(in_size, hidden_size)
+        self.fc2 = nn.Linear(hidden_size, hidden_size)
+        self.fc3 = nn.Linear(hidden_size, hidden_size)
+        self.fc4 = nn.Linear(hidden_size, hidden_size)
+        self.fc5 = nn.Linear(hidden_size, hidden_size)
+        self.fc6 = nn.Linear(hidden_size, out_size)
         self.dropout = nn.Dropout(dropout_rate)
 
     def forward(self, x):
@@ -108,5 +110,9 @@ class PCADropoutMLP(nn.Module):
         x = self.dropout(x)
         x = F.relu(self.fc3(x))
         x = self.dropout(x)
-        x = self.fc4(x)
+        x = F.relu(self.fc4(x))
+        x = self.dropout(x)
+        x = F.relu(self.fc5(x))
+        x = self.dropout(x)
+        x = self.fc6(x)
         return x
