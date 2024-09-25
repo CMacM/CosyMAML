@@ -60,9 +60,10 @@ class PZErrorRBFModel(object):
     
         return res
 
-def gen_Pz_base(mean, var, grid=np.linspace(0.1, 3.0, 50)):
+def gen_Pz_base(mean, var, grid=np.linspace(0.1, 3.0, 50), seed=None):
     '''Function to generate underlying redshift distribution'''
-    data = np.random.normal(mean, var, size=10000)
+    rng = np.random.RandomState(seed)
+    data = rng.normal(mean, var, size=10000)
 
     midpoints = grid[:-1] + (grid[1] - grid[0]) / 0.5
     pdf_true = np.histogram(data, grid)[0]

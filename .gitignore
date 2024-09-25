@@ -6,5 +6,7 @@ plots/
 *.png
 *.pyc
 *.fits
+*.h5
+*.pdf
 firecrown/cosmicshear_output/
 firecrown/__pycache__/

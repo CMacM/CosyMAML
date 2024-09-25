@@ -310,7 +310,7 @@ class Adam_MAML():
             tasks = np.tile(tasks, int(np.ceil(outer_epochs*n_tasks/n_tasks))) 
         
         loss_rec = []
-        progress = tqdm(range(outer_epochs*len(tasks)))
+        progress = tqdm(range(len(tasks)))
         # Outer loop
         for i, task in enumerate(tasks):
             # Create a deepcopy of the model to reset after both inner and outer loops
@@ -464,7 +464,7 @@ class Adam_MAML():
         err_avg = np.mean(err, axis=0)
         axs[0].plot(ell_bins, err_avg, ls='-', c='k', label='Average')
         axs[0].legend()
-        axs[0].set_xscale('log')
+        #axs[0].set_xscale('log')
         axs[0].set_title('Absolute percentage error')
 
         # Select worst performing sample for plotting
@@ -478,7 +478,7 @@ class Adam_MAML():
                                 alpha=0.5, label='Uncertainty')
         axs[1].legend()
         axs[1].set_title('Sample %d, Shots: %d' % (rand_inds[-1], n_shots))
-        axs[1].set_xscale('log')
+        #axs[1].set_xscale('log')
         axs[1].set_yscale('log')
 
         axs[2].plot(ell_bins, y_pred_all[0][worst_sample]/y_all_comp[0][worst_sample], 
@@ -488,7 +488,7 @@ class Adam_MAML():
                                 (y_pred_all[0][worst_sample]-y_pred_std[0][worst_sample])/y_all_comp[0][worst_sample],
                                 (y_pred_all[0][worst_sample]+y_pred_std[0][worst_sample])/y_all_comp[0][worst_sample],
                                 alpha=0.5, label='Uncertainty')
-        axs[2].set_xscale('log')
+        #axs[2].set_xscale('log')
         axs[2].legend()
         axs[2].set_title('Sample %d, Shots: %d' % (rand_inds[-1], n_shots))
         
