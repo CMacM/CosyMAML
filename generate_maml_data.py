@@ -102,7 +102,9 @@ def shift_mean(z, dndz, delta_z=0.02):
     # Ensure the redshift distribution is non-negative.
     # Clip to a very small value instead of zero 
     # to avoid division by zero
-    z_shift = np.clip(z_shift, 1e-10, None)
+    for i in range(len(z_shift)):
+        if z_shift[i] <= 0:
+            z_shift[i] = 1e-10*i
     return z_shift
 
 def convolve_photoz(sigma, zs, dndz_spec, return_2d=False):
@@ -118,7 +120,7 @@ def convolve_photoz(sigma, zs, dndz_spec, return_2d=False):
      # Convolve with photo-z
     sigma_z = sigma * (1 + zs)
 
-    z_ph = np.linspace(0.1, 4.0, 300)
+    z_ph = np.linspace(0.0, 4.0, 300)
 
     # find probability of galaxy with true redshift z_s to be measured at redshift z_ph
     integrand1 = np.zeros([len(zs),len(z_ph)])
@@ -241,6 +243,7 @@ def main(args):
         args.n_bins,
         len(z)
     ))
+    dndz_params = []
     for i in range(args.n_tasks):
         
         # flip a coin to decide which distribution to use
@@ -263,10 +266,9 @@ def main(args):
         # Bin the redshift distribution
         z_bin, dndz_bin = bin_dndz(args.n_bins, z, dndz_func, **kwargs)
 
-        # Convolve with photo-z and decide whether to add 
-        # noise to the redshift distribution
-        noise = True if np.random.rand() < 0.5 else False
+        # Convolve with photo-z and add noise to the redshift distribution
         dndz_bin_ph = np.zeros((args.n_bins, len(z)))
+        noise_std = np.random.uniform(0, args.noise_lim)
         for j in range(args.n_bins):
             z_ph, dndz_bin_ph[j] = convolve_photoz(
                 sigma=args.sigma_pz, 
@@ -274,18 +276,17 @@ def main(args):
                 dndz_spec=dndz_bin[j]
             )
 
-            if noise:
-                dndz_bin_ph[j] = add_noise(
-                    z_ph,
-                    dndz_bin_ph[j],
-                    args.noise
-                )
+            dndz_bin_ph[j] = add_noise(
+                z_ph,
+                dndz_bin_ph[j],
+                noise_std
+            )
 
         # Now we compute samples in parallel
         # Start by constructing the latin hypercube
         # Construct parameter hypercube from DES Y3 priors
-        Omega_m = np.array([0.1, 0.9])
-        Omega_b = np.array([0.03, 0.07])
+        Omega_m = np.array([0.05, 0.95])
+        Omega_b = np.array([0.025, 0.075])
         Omega_c = Omega_m - Omega_b
 
         h = np.array([0.55, 0.91])
@@ -329,6 +330,7 @@ def main(args):
         X_train[i] = hypercube
         dndz_save[i] = dndz_bin_ph
         z_save[i] = z_ph
+        dndz_params.append(kwargs)
 
     # Save the data
     np.savez(
@@ -340,6 +342,7 @@ def main(args):
         y_train=y_train,
         dndz=dndz_save,
         z=z_save,
+        dndz_params=dndz_params,
         ells=ells
     )
 
@@ -349,11 +352,11 @@ if __name__ == '__main__':
     parser.add_argument('--n_tasks', type=int, default=50, help='Number of tasks')
     parser.add_argument('--n_samples', type=int, default=500, help='Number of samples')
     parser.add_argument('--gaussian_prob', type=float, default=0.5, help='Probability of Gaussian distribution')
-    parser.add_argument('--noise', type=float, default=0.04, help='Standard deviation of the noise')
-    parser.add_argument('--shift', type=float, default=0.02, help='Max shift in the mean redshift')
+    parser.add_argument('--noise_lim', type=float, default=0.1, help='Standard deviation of the noise')
+    parser.add_argument('--shift', type=float, default=0.01, help='Max shift in the mean redshift')
     parser.add_argument('--sigma_pz', type=float, default=0.04, help='Photo-z error')
     parser.add_argument('--z_min', type=float, default=0.05, help='Minimum redshift')
-    parser.add_argument('--z_max', type=float, default=4.0, help='Maximum redshift')
+    parser.add_argument('--z_max', type=float, default=3.5, help='Maximum redshift')
     parser.add_argument('--n_threads', type=int, default=cpu_count(), help='Number of threads')
     parser.add_argument('--ell_max', type=int, default=5000, help='Maximum multipole')
     parser.add_argument('--seed', type=int, default=42, help='Random seed')

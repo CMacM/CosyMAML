@@ -116,3 +116,38 @@ class DropoutMLP(nn.Module):
         x = self.dropout(x)
         x = self.fc6(x)
         return x
+    
+class CNN(nn.Module):
+    def __init__(self, input_size=10, latent_dim=(16, 16), output_dim=750, dropout_rate=0.3):
+        super(CNN, self).__init__()
+        # Fully connected layers to map the input parameters to a 2D latent space
+        self.fc1 = nn.Linear(input_size, latent_dim[0] * latent_dim[1])  # Mapping to 2D latent space
+        # Reshape the output to be 2D: (batch_size, 1, latent_dim[0], latent_dim[1])
+        self.latent_dim = latent_dim
+        # Convolutional layers with dilations and dropout
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1, dilation=1)
+        self.conv2 = nn.Conv2d(in_channels=16, out_channels=32, kernel_size=3, padding=2, dilation=2)
+        self.conv3 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=4, dilation=4)
+        # Dropout layer after each convolutional layer
+        self.dropout = nn.Dropout(dropout_rate)
+        # Calculating the output size of the convolutional layers
+        conv_output_dim = latent_dim[0]  # Keep output dimensions same due to padding
+        self.fc2_input_size = 64 * conv_output_dim * conv_output_dim  # 64 channels from conv3
+        self.fc2 = nn.Linear(self.fc2_input_size, output_dim)  # Output size is 750
+
+    def forward(self, x):
+        # Step 1: Map input parameters to 2D latent space
+        x = F.relu(self.fc1(x))
+        x = x.view(-1, 1, self.latent_dim[0], self.latent_dim[1])  # Reshape to 2D latent space
+        # Step 2: Pass through convolutional layers with dropout
+        x = F.relu(self.conv1(x))
+        x = self.dropout(x)  # Apply dropout after conv1
+        x = F.relu(self.conv2(x))
+        x = self.dropout(x)  # Apply dropout after conv2
+        x = F.relu(self.conv3(x))
+        x = self.dropout(x)  # Apply dropout after conv3
+        # Step 3: Flatten and fully connected layer
+        x = x.view(x.size(0), -1)  # Flatten to (batch_size, num_features)
+        # Step 4: Fully connected output layer
+        x = self.fc2(x)
+        return x
