@@ -330,7 +330,10 @@ def main(args):
         X_train[i] = hypercube
         dndz_save[i] = dndz_bin_ph
         z_save[i] = z_ph
-        dndz_params.append(kwargs)
+        if model == "smail":
+            dndz_params.append([z0, alpha, 1])
+        else:
+            dndz_params.append([z0, sigma, 0])
 
     # Save the data
     np.savez(
