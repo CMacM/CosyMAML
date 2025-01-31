@@ -7,12 +7,14 @@ os.environ['OMP_NUM_THREADS'] = '1'
 
 import pyccl as ccl
 import numpy as np
+import h5py as h5
 
 import scipy.stats.qmc as qmc
 from scipy.interpolate import interp1d
 from scipy.integrate import simps
 
 from multiprocessing import Pool, cpu_count
+from parallelbar import progress_starmap
 
 import argparse
 
@@ -244,24 +246,44 @@ def main(args):
         len(z)
     ))
     dndz_params = []
+    model_type = []
+
+    # Construct latin hypercube of redshift parameters
+    hyperframe = qmc.LatinHypercube(d=2)
+
+    z0_smail = np.array([0.1, 0.2])
+    alpha_smail = np.array([0.6, 1.0])
+
+    z0_gaussian = np.array([0.2, 1.5])
+    sigma_gaussian = np.array([0.2, 0.6])
+
+    hyperunits_smail = hyperframe.random(args.n_tasks//2)
+    hyperunits_gaussian = hyperframe.random(args.n_tasks//2)
+
+    l_bounds_smail = np.array([z0_smail[0], alpha_smail[0]])
+    u_bounds_smail = np.array([z0_smail[1], alpha_smail[1]])
+    hypercube_smail = qmc.scale(hyperunits_smail, l_bounds_smail, u_bounds_smail)
+
+    l_bounds_gaussian = np.array([z0_gaussian[0], sigma_gaussian[0]])
+    u_bounds_gaussian = np.array([z0_gaussian[1], sigma_gaussian[1]])
+    hypercube_gaussian = qmc.scale(hyperunits_gaussian, l_bounds_gaussian, u_bounds_gaussian)
+
+    smail_i = 0
+    gaussian_i = 0
     for i in range(args.n_tasks):
         
-        # flip a coin to decide which distribution to use
-        model = np.random.choice(
-            ['smail', 'gaussian'], 
-            p=[args.gaussian_prob, 1-args.gaussian_prob]
-        )
-
-        if model == 'smail':
+        if i % 2 == 0:
             dndz_func = Smail_dndz
-            z0 = np.random.uniform(0.1, 0.2)
-            alpha = np.random.uniform(0.6, 1.0)
+            z0 = hypercube_smail[smail_i, 0]
+            alpha = hypercube_smail[smail_i, 1]
             kwargs = {'z0': z0, 'alpha': alpha}
+            smail_i += 1
         else:
             dndz_func = Gaussian_dndz
-            z0 = np.random.uniform(0.2, 1.5)
-            sigma = np.random.uniform(0.2, 0.6)
+            z0 = hypercube_gaussian[gaussian_i, 0]
+            sigma = hypercube_gaussian[gaussian_i, 1]
             kwargs = {'z0': z0, 'sigma': sigma}
+            gaussian_i += 1
 
         # Bin the redshift distribution
         z_bin, dndz_bin = bin_dndz(args.n_bins, z, dndz_func, **kwargs)
@@ -309,7 +331,6 @@ def main(args):
         ])
         hypercube = qmc.scale(hyperunits, l_bounds, u_bounds)
 
-
         # Construct arglist for parallel computation of
         # the angular power spectra
         ells = np.geomspace(2, args.ell_max, ell_bins)
@@ -320,9 +341,10 @@ def main(args):
 
         # Compute the angular power spectra in parallel
         with Pool(args.n_threads) as pool:
-            c_ells = pool.starmap(
+            c_ells = progress_starmap(
                 wrap_errors,
-                arglist
+                arglist,
+                n_cpu=args.n_threads
             )
 
         # Collect the data into lists for saving
@@ -330,24 +352,21 @@ def main(args):
         X_train[i] = hypercube
         dndz_save[i] = dndz_bin_ph
         z_save[i] = z_ph
-        if model == "smail":
-            dndz_params.append([z0, alpha, 1])
+        if i % 2 == 0:
+            dndz_params.append([z0, alpha])
         else:
-            dndz_params.append([z0, sigma, 0])
+            dndz_params.append([z0, sigma])
 
-    # Save the data
-    np.savez(
-        os.path.join(
-            args.output,
-            '{}tasks_{}samples.npz'.format(args.n_tasks, args.n_samples)
-        ),
-        X_train=X_train,
-        y_train=y_train,
-        dndz=dndz_save,
-        z=z_save,
-        dndz_params=dndz_params,
-        ells=ells
-    )
+        model_type.append(dndz_func.__name__)
+
+    # Save the data as h5 file
+    filename = '{}tasks_{}samples_seed{}.h5'.format(args.n_tasks, args.n_samples, args.seed)
+    with h5.File(os.path.join(args.output, filename), 'w') as f:
+        f.create_dataset('X_train', data=X_train)
+        f.create_dataset('y_train', data=y_train)
+        f.create_dataset('dndz', data=dndz_save)
+        f.create_dataset('z', data=z_save)
+        f.create_dataset('dndz_params', data=dndz_params)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Generate data for photo-z estimation')

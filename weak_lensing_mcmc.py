@@ -152,11 +152,18 @@ def main(args):
     if not os.path.exists(mcmc_dir):
         os.makedirs(mcmc_dir)
 
-    # Set up the redshift bins
-    z0 = args.z0
-    alpha = args.alpha
-    n_bins = args.n_bins
-    z_ph, dndz_ph_bins = setup_redshifts(z0, alpha, n_bins)
+    redshift_file = args.redshift_file
+    if redshift_file is None:
+        # Set up the redshift bins
+        z0 = args.z0
+        alpha = args.alpha
+        n_bins = args.n_bins
+        z_ph, dndz_ph_bins = setup_redshifts(z0, alpha, n_bins)
+    else:
+        f = h5.File(redshift_file, 'r')
+        z_ph = f['z'][:]
+        dndz_ph_bins = 
+
 
     print("Redshift bins set up")
 
@@ -313,7 +320,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run MCMC to estimate cosmological parameters')
     parser.add_argument('--mcmc_dir', type=str, default='mcmc', help='Directory to save MCMC output')
     parser.add_argument('--z0', type=float, default=0.11, help='Smail parameter z0')
-    parser.add_argument('--alpha', type=float, default=0.71, help='Smail parameter alpha')
+    parser.add_argument('--alpha', type=float, default=0.68, help='Smail parameter alpha')
     parser.add_argument('--n_bins', type=int, default=5, help='Number of redshift bins')
     parser.add_argument('--n_walkers', type=int, default=48, help='Number of walkers')
     parser.add_argument('--chain_len', type=int, default=1000, help='Length of chain to run between convergence checks')

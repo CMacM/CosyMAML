@@ -1,8 +1,11 @@
 import torch
 import torch.nn as nn
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, DataLoader, TensorDataset
+from sklearn.model_selection import train_test_split
 import numpy as np
 import h5py as h5
+import src.models as models
+from time import time
 
 # Redundant imports used by old code
 # import matplotlib.pyplot as plt
@@ -134,7 +137,7 @@ class MetaLearner():
         self.loss_fn = loss_fn()
         self.beta1 = beta1
         self.beta2 = beta2
-        self.epsilon = epsilon
+        self.epsilon = epsilon # 
 
         # Set seed for reproducibility if provided
         self.rng = np.random.RandomState(seed)
@@ -210,6 +213,19 @@ class MetaLearner():
             scaler_y = TorchStandardScaler()
             y_spt_task = scaler_y.fit_transform(y_spt_task)
             y_qry_task = scaler_y.transform(y_qry_task)
+
+            # replace NaN values with zeros
+            x_spt_task = torch.nan_to_num(x_spt_task)
+            x_qry_task = torch.nan_to_num(x_qry_task)
+            y_spt_task = torch.nan_to_num(y_spt_task)
+            y_qry_task = torch.nan_to_num(y_qry_task)
+                
+            # check for NaN values
+            if torch.isnan(x_spt_task).any() or torch.isnan(x_qry_task).any():
+                raise ValueError('NaN values detected in input data.')
+
+            if torch.isnan(y_spt_task).any() or torch.isnan(y_qry_task).any():
+                raise ValueError('NaN values detected in target data.')
         
             # Initialize fast weights for task specific updates
             fast_weights = {name: param.clone().requires_grad_(True) 
@@ -249,7 +265,7 @@ class MetaLearner():
 
         return meta_loss.detach().item()
 
-    def finetune(self, x_spt, y_spt, adapt_steps):
+    def finetune(self, x_spt, y_spt, adapt_steps, dropout=True, use_new_adam=False):
         '''
         Fine-tune the model on the support data.
 
@@ -264,19 +280,25 @@ class MetaLearner():
                         for name, param in self.model.named_parameters()}
 
         # Check for dropout layers and if present enable
-        if hasattr(self.model, 'dropout'):
+        if dropout:
             self.model.train()
+        else:
+            self.model.eval()
 
-        # Use a separate Adam optimizer for fine-tuning
-        finetune_adam_params = {}
-        for name, param in fast_weights.items():
-            finetune_adam_params[name] = {
-                'm': torch.zeros_like(param).to(self.device),
-                'v': torch.zeros_like(param).to(self.device),
-                't': 0
-            }
+        if use_new_adam:
+            #Use a separate Adam optimizer for fine-tuning
+            finetune_adam_params = {}
+            for name, param in fast_weights.items():
+                finetune_adam_params[name] = {
+                    'm': torch.zeros_like(param).to(self.device),
+                    'v': torch.zeros_like(param).to(self.device),
+                    't': 0
+                }
+        else:
+            finetune_adam_params = self.adam_params
 
         # Update fast weights using inner loop
+        losses = []
         for _ in range(adapt_steps):
             self.model.zero_grad()
             y_pred = self.model(x_spt, params=fast_weights)
@@ -293,10 +315,199 @@ class MetaLearner():
                 v_hat = adam_state['v'] / (1 - self.beta2 ** adam_state['t'])
                 fast_weights[name] = param - self.inner_lr * m_hat / (torch.sqrt(v_hat) + self.epsilon)
 
+            losses.append(loss_spt.item())
+
+        return fast_weights, losses
+    
+def train_standard_emulator(train_loader, X_val, y_val, device=None):
+
+    if device is None:
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    # Define the model
+    model = models.FastWeightCNN(
+        input_size=10,
+        latent_dim=(16,16),
+        output_size=750,
+        dropout_rate=0.2
+    )
+    model.to(device)
+
+    # Define the optimizer
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0)
+
+    # Define the loss function
+    loss_fn = torch.nn.MSELoss()
+
+    force_stop = np.inf
+
+    train_losses = []
+    val_losses = []
+    converged = False
+    best_val_loss = np.inf
+    strike = 0
+    epoch = 0
+    start = time()
+    while not converged:
+        #clear_output(wait=True)
+        epoch_loss = 0
+        batch_count = 0
+        model.train()
+        for X_batch, y_batch in train_loader:
+
+            optimizer.zero_grad()
+            y_pred = model(X_batch)
+            loss = loss_fn(y_pred, y_batch)
+            loss.backward()
+            optimizer.step()
+
+            epoch_loss += loss.item()
+            batch_count += 1
+
+        # Check for convergence
+        epoch += 1
+        model.eval()
+        with torch.no_grad():
+            y_pred = model(X_val)
+            val_loss = loss_fn(y_pred, y_val).item()
+            val_losses.append(val_loss)
+
+        if best_val_loss - val_loss < 1e-4:
+            strike += 1
+            if strike > 20 or epoch > force_stop:
+                converged = True
+                print('Validation loss has not improved for 20 epochs. Converged.')
+        else:
+            strike = 0
         
-        return fast_weights
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
 
+        avg_epoch_loss = epoch_loss / batch_count
+        train_losses.append(avg_epoch_loss)
+        #print(f'Epoch {epoch} - avg loss: {avg_epoch_loss} - Strike: {strike}')
+        train_time = time()-start
 
+    return model, train_time
+
+def finetune_pretrained(model, n_epochs, train_loader, loss_fn=nn.MSELoss(), dropout=True, device=None):
+
+    if device is None:
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    # Define new optimizer
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
+
+    model.to(device)
+    
+    if dropout:
+        model.train()
+    else:
+        model.eval()
+
+    train_losses = []
+    for _ in range(n_epochs):
+        epoch_loss = 0
+        batch_count = 0
+        for X_batch, y_batch in train_loader:
+
+            optimizer.zero_grad()
+            y_pred = model(X_batch)
+            loss = loss_fn(y_pred, y_batch)
+            loss.backward()
+            optimizer.step()
+
+            epoch_loss += loss.item()
+            batch_count += 1
+
+        avg_epoch_loss = epoch_loss / batch_count
+        train_losses.append(avg_epoch_loss)
+
+def load_train_test_val(filepath, n_train, n_val=None, n_test=None, seed=14, device=None):
+
+    if device is None:
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    # test with random samples
+    with h5.File(filepath, 'r') as f:
+        X = f['hypercube'][:]
+        y = f['c_ells'][:]
+
+    # split into test training and validation sets
+    # Fix test size so different samplings don't test on different numbers of samples
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, train_size=n_train, random_state=seed, shuffle=True
+    )
+
+    if n_val is None:
+        pass
+    else:
+        X_val, X_test, y_val, y_test = train_test_split(
+            X_test, y_test, train_size=n_val, test_size=n_test, random_state=seed, shuffle=True
+        )
+
+    # Take log of y
+    y_train = np.log(y_train)
+    y_test = np.log(y_test)
+
+    # Send data to torch tensors
+    X_train = torch.tensor(X_train, dtype=torch.float32).to(device)
+    X_test = torch.tensor(X_test, dtype=torch.float32).to(device)
+    y_train = torch.tensor(y_train, dtype=torch.float32).to(device)
+    y_test = torch.tensor(y_test, dtype=torch.float32).to(device)
+
+    #Scale the data
+    ScalerX = TorchStandardScaler()
+    X_train = ScalerX.fit_transform(X_train)
+    X_test = ScalerX.transform(X_test)
+
+    ScalerY = TorchStandardScaler()
+    y_train = ScalerY.fit_transform(y_train)
+        
+    train_data = TensorDataset(X_train, y_train)
+    test_data = TensorDataset(X_test, y_test)
+
+    if n_val is None:
+        return train_data, test_data, ScalerY, ScalerX
+    else:
+        y_val = np.log(y_val)
+        X_val = torch.tensor(X_val, dtype=torch.float32).to(device)
+        y_val = torch.tensor(y_val, dtype=torch.float32).to(device)
+        X_val = ScalerX.transform(X_val)
+        y_val = ScalerY.transform(y_val)
+        return train_data, test_data, X_val, y_val, ScalerY, ScalerX
+
+def test_model(model, test_loader, ScalerY, weights=None, device=None):
+
+    if device is None:
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    model.eval()
+    y_pred = torch.tensor([]).to(device)
+    y_test = torch.tensor([]).to(device)
+    for X_batch, y_batch in test_loader:
+        model.eval()
+        with torch.no_grad(): # don't compute gradients during inference
+            y_pred_batch = model(X_batch, params=weights)
+            y_pred = torch.cat((y_pred, y_pred_batch), dim=0)
+            y_test = torch.cat((y_test, y_batch), dim=0)
+    # Inverse transform the data
+    y_pred = ScalerY.inverse_transform(y_pred)
+
+    y_pred_np = y_pred.cpu().numpy()
+    y_test_np = y_test.cpu().numpy()
+
+    # Exponentiate the data
+    y_pred_np = np.exp(y_pred_np)
+    y_test_np = np.exp(y_test_np)
+
+    # Compute mean absolute percentage error along the test set
+    apes = np.abs((y_test_np - y_pred_np) / y_test_np) * 100
+    ell_ape = np.mean(apes, axis=1)
+    maml_mape = np.mean(apes, axis=0)
+    maml_frate = len(ell_ape[ell_ape > 5]) / len(ell_ape)
+
+    return maml_mape, maml_frate
 
 #### OLD CODE TO BE KEPT FOR REFERENCE ####
 
