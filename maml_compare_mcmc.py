@@ -248,7 +248,7 @@ if __name__ == '__main__':
     parser.add_argument('--n_epochs', type=int, default=64)
     parser.add_argument('--n_walkers', type=int, default=76)
     parser.add_argument('--n_check', type=int, default=1000)
-    parser.add_argument('--max_iter', type=int, default=50000)
+    parser.add_argument('--max_iter', type=int, default=200000)
     parser.add_argument('--device', type=str, default='cuda')
     args = parser.parse_args()
     main(args)

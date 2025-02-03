@@ -125,17 +125,11 @@ def run_emcee(
         # Check convergence
         try:
             tau = sampler.get_autocorr_time(tol=0)
+            converged = np.all(tau * 200 < sampler.iteration)
             print("Current iteration: {}".format(sampler.iteration))
-            print("Rounded autocorrelation times: {}".format((tau * 50).astype(int)))
+            print("Rounded autocorrelation times: {}".format((tau * 200).astype(int)))
         except emcee.autocorr.AutocorrError:
             print("Autocorrelation time could not be estimated. Continuing...")
-
-        chain = sampler.get_chain()
-        R_hat = az.rhat(chain)
-
-        if np.all(tau * 50 < sampler.iteration) and R_hat < 1.1:
-            print("Convergence achieved!")
-            converged = True
 
         if sampler.iteration >= max_iter:
             print("Maximum number of iterations reached without convergence. Exiting...")

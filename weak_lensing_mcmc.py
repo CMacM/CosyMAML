@@ -12,9 +12,12 @@ import emcee
 import argparse
 import cProfile
 import pstats
+import psutil
+import sacc
 
+from tjpcov.covariance_calculator import CovarianceCalculator
 from scipy.interpolate import interp1d
-from scipy.integrate import simps
+from scipy.integrate import simpson
 from scipy.linalg import solve
 
 from multiprocessing import Pool, cpu_count
@@ -40,10 +43,10 @@ def convolve_photoz(sigma, zs, dndz_spec):
     integrand1 = p_zs_zph * dndz_spec[:,None]   
 
     # integrate over z_s to get dN
-    integral1 = simps(integrand1, zs, axis=0)
+    integral1 = simpson(y=integrand1, x=zs, axis=0)
     dN = integral1
     
-    dz_ph = simps(dN, z_ph)
+    dz_ph = simpson(y=dN, x=z_ph)
     
     return z_ph, dN/dz_ph
 
@@ -55,7 +58,7 @@ def setup_redshifts(z0, alpha, n_bins):
     dndz_s = Smail_dndz(z, z0, alpha)
 
     # Normalize the distribution
-    area = simps(dndz_s, z)  # Integrate dndz_s over z to get the area under the curve
+    area = simpson(y=dndz_s, x=z)  # Integrate dndz_s over z to get the area under the curve
     pdf = dndz_s / area  # Normalize to make it a PDF
 
     # Compute the cumulative distribution function (CDF)
@@ -97,11 +100,30 @@ def compute_spectra(cosmo, dndz_ph_bins, z_ph, ells):
 
         return c_ells
 
-def compute_covariance(noise):
-    return np.diag(noise**2)
+def compute_covariance(cosmo, sacc_file, n_bins):
+
+    # Set up the configuration for the covariance calculator
+    config = {}
+    config['tjpcov'] = {}
+    config['tjpcov']['cosmo'] = cosmo
+    config['tjpcov']['sacc_file'] = sacc_file
+    config['tjpcov']['cov_type'] = 'FourierGaussianFsky'
+    for i in range(n_bins):
+        config['tjpcov']['Ngal_src'+str(i)] = 10/n_bins
+        config['tjpcov']['sigma_e_src'+str(i)] = np.sqrt(0.26)
+    config['tjpcov']['len_bias'] = 1.0
+    config['GaussianFsky'] = {}
+    config['GaussianFsky']['fsky'] = 0.4
+
+    # Using modifed source code for logarithmic binning
+    cov = CovarianceCalculator(config)
+
+    return cov.get_covariance()
 
 # Define the likelihood function
 def log_likelihood(theta, data, inv_cov, dndz_ph_bins, z_ph, ells):
+
+    # Define the cosmology
     cosmo = ccl.Cosmology(
         Omega_c=theta[0],
         Omega_b=theta[1],
@@ -152,62 +174,74 @@ def main(args):
     if not os.path.exists(mcmc_dir):
         os.makedirs(mcmc_dir)
 
-    redshift_file = args.redshift_file
-    if redshift_file is None:
-        # Set up the redshift bins
-        z0 = args.z0
-        alpha = args.alpha
-        n_bins = args.n_bins
-        z_ph, dndz_ph_bins = setup_redshifts(z0, alpha, n_bins)
-    else:
-        f = h5.File(redshift_file, 'r')
-        z_ph = f['z'][:]
-        dndz_ph_bins = 
-
+    # Set up the redshift bins
+    z0 = args.z0
+    alpha = args.alpha
+    n_bins = args.n_bins
+    z_ph, dndz_ph_bins = setup_redshifts(z0, alpha, n_bins)
 
     print("Redshift bins set up")
 
+    # Fiducial cosmological parameters (DES Y3)
+    theta = [0.27, 0.045, 0.67, 0.83, 0.96]
+
     # Define the cosmology
     cosmo = ccl.Cosmology(
-        Omega_c=0.27,
-        Omega_b=0.045,
-        h=0.67,
-        sigma8=0.83,
-        n_s=0.96,
+        Omega_c=theta[0],
+        Omega_b=theta[1],
+        h=theta[2],
+        sigma8=theta[3],
+        n_s=theta[4],
         matter_power_spectrum='halofit'
     )
 
-    ells = np.geomspace(2, 2000, 30)
+    ells = np.geomspace(2, 5000, 50)
 
     # Compute the spectra
-    zph_list = [z_ph for i in range(n_bins)]
+    zph_list = [z_ph for _ in range(n_bins)]
     c_ells = compute_spectra(cosmo, dndz_ph_bins, zph_list, ells)
+
+    # Store C_ells in a Sacc file
+    s = sacc.Sacc()
+    for i in range(n_bins):
+        s.add_tracer('NZ', 'src{}'.format(i), z=z_ph, nz=dndz_ph_bins[i])
+
+    indices = np.tril_indices(n_bins)
+    zipped_inds = list(zip(*indices))
+    for i, arg in enumerate(zipped_inds):
+        j, k = arg
+        s.add_ell_cl('cl_ee', 'src{}'.format(j), 'src{}'.format(k), ells, c_ells[i])
+    s.save_fits(os.path.join(mcmc_dir, 'sacc_fiducial_data.fits'), overwrite=True)
 
     data_vector = c_ells.flatten() # Flatten the array to make it a vector
 
-    # Add noise
-    noise = 0.1 * data_vector
-    data_vector += np.random.normal(0, noise)
+    # generate covariance matrix with tjpcov
+    cov = compute_covariance(cosmo, s, n_bins)
 
-    # generate covariance matrix
-    cov = compute_covariance(noise)
+    # Add covariance to Sacc file
+    s.add_covariance(cov)
+    s.save_fits(os.path.join(mcmc_dir, 'sacc_fiducial_data.fits'), overwrite=True)
+
+    # Also save as npy file
+    np.save(os.path.join(mcmc_dir, 'covariance_matrix.npy'), cov)
+
+    # Invert the covariance matrix
     inv_cov = np.linalg.inv(cov)
     print("Data vector and covariance matrix set up")
     
     # Set the random seed for reproducibility
     np.random.seed(args.seed)
-
-    # test the likelihood function
-    theta = [0.27, 0.045, 0.67, 0.83, 0.96]
-
+    
     # Comment out if not using shifts
     for i in range(n_bins):
-        theta.append(0.0)
+        theta.append(0.0) # Fiducial shifts for each redshift bin
 
     # Initialize the walkers
     nwalkers = args.n_walkers
     ndim = len(theta)
-    chain_len = args.chain_len
+
+    if nwalkers*2 < ndim:
+        raise ValueError("Number of walkers must be greater than half the number of parameters")
 
     # Define the priors
     priors = [
@@ -240,7 +274,7 @@ def main(args):
     converged = False # Convergence flag
 
     # Check for existing backend file
-    backend_file = os.path.join(mcmc_dir, '{}walkers_chain_outputs.h5'.format(nwalkers))
+    backend_file = os.path.join(mcmc_dir, '{}walkers_chain_outputs_CCL.h5'.format(nwalkers))
 
     if os.path.exists(backend_file) and args.clobber:
         print("Clobbering existing backend file")
@@ -259,8 +293,12 @@ def main(args):
         backend.reset(nwalkers, ndim) # Reset the backend
         print("No existing backend file found. Starting from scratch")
 
+    chain_len = args.chain_len
+    max_iter = args.max_iter
+
     # Initialise a pool
-    n_threads = min(cpu_count(), args.n_threads)
+    n_threads = min(args.n_walkers, args.n_threads)
+    profile = args.profile
     with Pool(n_threads) as pool:
 
         # set up the blob type
@@ -277,31 +315,25 @@ def main(args):
             blobs_dtype=btype
         )
         
+        start = time()
         while not converged:
             # Sample 
-            start = time()
-            sampler.run_mcmc(pos, chain_len, progress=True)
-            end = time()
+            sampler.run_mcmc(pos, chain_len, progress=False)
 
             # Check convergence
             try:
                 tau = sampler.get_autocorr_time(tol=0)
-                converged = np.all(tau * 50 < sampler.iteration)
+                converged = np.all(tau * 200 < sampler.iteration)
                 print("Current iteration: {}".format(sampler.iteration))
-                print("Rounded autocorrelation times: {}".format((tau * 50).astype(int)))
+                print("Rounded autocorrelation times: {}".format((tau * 200).astype(int)))
             except emcee.autocorr.AutocorrError:
                 print("Autocorrelation time could not be estimated. Continuing...")
 
-            if sampler.iteration >= args.max_iter:
+            if sampler.iteration >= max_iter:
                 print("Maximum number of iterations reached without convergence. Exiting...")
                 break
 
-            # Estimate completion time
-            time_per_iter = (end - start) / chain_len
-            time_left = time_per_iter * (np.max(tau) * 50 - sampler.iteration)
-            print("Estimated time left: {}mins".format(time_left/60))
-
-            if args.profile:
+            if profile:
                 # Check data has saved correctly
                 samples = backend.get_chain()
                 log_prob = backend.get_log_prob()
@@ -312,8 +344,22 @@ def main(args):
                 assert model_vectors.shape == (sampler.iteration, nwalkers, len(data_vector))
 
                 break # Break after one iteration if profiling
-
+    
+    end = time()
     print("Sampling completed in {} iterations".format(sampler.iteration))
+    print("Writing sampling metadata to file...")
+
+    # Calculate cpu hours
+    cpu_hours = (end - start) * n_threads / 3600
+    print(f"CPU count: {psutil.cpu_count(logical=False)}")
+    print(f"CPU usage per core: {psutil.cpu_percent(percpu=True)}")
+
+    # Save the metadata in a text file
+    with open(os.path.join(mcmc_dir, '{}walkers_metadata.txt'.format(nwalkers)), 'w') as f:
+        f.write("Sampling completed in {} iterations\n".format(sampler.iteration))
+        f.write("Total time taken: {} seconds\n".format(end - start))
+        f.write("Number of threads used: {}\n".format(n_threads))
+        f.write("Total CPU hours: {}\n".format(cpu_hours))
 
 if __name__ == '__main__':
     # Add command line arguments for the script
@@ -323,7 +369,7 @@ if __name__ == '__main__':
     parser.add_argument('--alpha', type=float, default=0.68, help='Smail parameter alpha')
     parser.add_argument('--n_bins', type=int, default=5, help='Number of redshift bins')
     parser.add_argument('--n_walkers', type=int, default=48, help='Number of walkers')
-    parser.add_argument('--chain_len', type=int, default=1000, help='Length of chain to run between convergence checks')
+    parser.add_argument('--chain_len', type=int, default=100, help='Length of chain to run between convergence checks')
     parser.add_argument('--max_iter', type=int, default=1000, help='Maximum number of iterations')
     parser.add_argument('--seed', type=int, default=42, help='Random seed')
     parser.add_argument('--n_threads', type=int, default=cpu_count(), help='Number of threads to use')

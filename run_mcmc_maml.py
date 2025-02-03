@@ -1,6 +1,4 @@
 import os
-os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'
-
 import numpy as np
 import torch
 import sacc
@@ -22,10 +20,10 @@ masterseed = 14
 np.random.seed(masterseed)
 torch.manual_seed(masterseed)
 torch.cuda.manual_seed(masterseed)
-torch.use_deterministic_algorithms(False)
 
 def main(args):
 
+    print('Initializing MAML model...')
     # set device for all tensors
     device = args.device
 
@@ -175,3 +173,4 @@ if __name__ == '__main__':
     parser.add_argument('--max_iter', type=int, default=100000)
     parser.add_argument('--device', type=str, default='cuda')
     args = parser.parse_args()
+    main(args)
