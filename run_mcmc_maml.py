@@ -58,18 +58,28 @@ def main(args):
     print(f'Training / fine-tuning emulators with {args.n_finetune} samples...')
     # Load training data for MCMC dndz
     train_data, test_data, X_val, y_val, ScalerY, ScalerX = training.load_train_test_val(
-        filepath=args.mcmc_train_file, n_train=args.n_finetune, n_val=4000, n_test=6000, seed=masterseed,
+        filepath=args.mcmc_train_file, n_train=args.n_finetune, n_val=args.n_val, n_test=6000, seed=masterseed,
         device=device
     )
     del test_data # we don't need this here
 
     # finetune MAML model
     X_train, y_train = train_data[:]
-    start = time()
-    task_weights, _ = metalearner.finetune(
-        X_train, y_train, adapt_steps=args.n_epochs, use_new_adam=True
-    )
-    maml_ft_time = time() - start
+    if args.n_epochs > 0:
+        task_weights, _ = metalearner.finetune(
+            X_train,
+            y_train,
+            adapt_steps=args.n_epochs,
+            use_new_adam=True
+        )
+    else:
+        task_weights, _ = metalearner.finetune(
+            X_train,
+            y_train,
+            x_val=X_val,
+            y_val=y_val,
+            use_new_adam=True
+        )
 
     # Load in fiducial data
     S = sacc.Sacc.load_fits(args.fiducial_file)
@@ -81,7 +91,7 @@ def main(args):
     # Extract C_ell and covariance blocks
     c_ells = []
     for comb in tracer_combs:
-        ell, cell = S.get_ell_cl(
+        _, cell = S.get_ell_cl(
             data_type='cl_ee',
             tracer1=comb[0],
             tracer2=comb[1],
@@ -110,15 +120,15 @@ def main(args):
 
     # Define the priors
     priors = [
-        (0.1, 0.9), # Omega_c
-        (0.01, 0.1), # Omega_b
-        (0.5, 0.9), # h
-        (0.7, 1.0), # sigma8
+        (0.17, 0.4), # Omega_c
+        (0.03, 0.07), # Omega_b
+        (0.4, 1.1), # h
+        (0.65, 1.0), # sigma8
         (0.8, 1.1) # n_s
     ]
 
     # Comment out if not using shifts
-    delta_z = 0.002 # LSST Y1 mean uncertainty
+    delta_z = 0.004 # LSST Y1 mean uncertainty
     for i in range(n_bins):
         priors.append((-delta_z, delta_z)) # Shifts for each redshift bin
 
@@ -137,7 +147,13 @@ def main(args):
     pos = np.array(pos).T
 
     # Construct a hook class to the MAML model
-    MAMLHook = mcmc.EmulatorHook(metalearner.model, ScalerX, ScalerY, weights=task_weights, device=device)
+    MAMLHook = mcmc.EmulatorHook(
+        metalearner.model,
+        ScalerX,
+        ScalerY,
+        weights=task_weights,
+        device=device
+    )
     # Define backend file for emcee
     maml_backend = f'mcmc/{nwalkers}_maml_emulator_mcmc_samples.h5'
 
@@ -155,7 +171,9 @@ def main(args):
         nwalkers=nwalkers,
         n_check=args.n_check,
         max_iter=args.max_iter,
-        clobber=True
+        tau_factor=args.tau_factor,
+        clobber=True,
+        progress=True
     )
     maml_mcmc_time = time() - start
 
@@ -167,10 +185,12 @@ if __name__ == '__main__':
     parser.add_argument('--mcmc_train_file', type=str, default='data/mcmc_dndz_nsamples=30000.h5')
     parser.add_argument('--fiducial_file', type=str, default='mcmc/sacc_fiducial_data.fits')
     parser.add_argument('--n_finetune', type=int, default=500)
+    parser.add_argument('--n_val', type=int, default=100)
     parser.add_argument('--n_epochs', type=int, default=64)
     parser.add_argument('--n_walkers', type=int, default=76)
     parser.add_argument('--n_check', type=int, default=1000)
     parser.add_argument('--max_iter', type=int, default=100000)
     parser.add_argument('--device', type=str, default='cuda')
+    parser.add_argument('--tau_factor', type=float, default=50)
     args = parser.parse_args()
     main(args)

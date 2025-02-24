@@ -112,8 +112,7 @@ def compute_covariance(cosmo, sacc_file, n_bins):
         config['tjpcov']['Ngal_src'+str(i)] = 10/n_bins
         config['tjpcov']['sigma_e_src'+str(i)] = np.sqrt(0.26)
     config['tjpcov']['len_bias'] = 1.0
-    config['GaussianFsky'] = {}
-    config['GaussianFsky']['fsky'] = 0.4
+    config['tjpcov']['fsky'] = 0.4
 
     # Using modifed source code for logarithmic binning
     cov = CovarianceCalculator(config)
@@ -197,33 +196,58 @@ def main(args):
 
     ells = np.geomspace(2, 5000, 50)
 
-    # Compute the spectra
-    zph_list = [z_ph for _ in range(n_bins)]
-    c_ells = compute_spectra(cosmo, dndz_ph_bins, zph_list, ells)
+    if args.clobber_sacc == False:
+        print('Existing fiducial data found. Loading...')
+        # Load in fiducial data
+        S = sacc.Sacc.load_fits(os.path.join(mcmc_dir, 'sacc_fiducial_data.fits'))
+        print(S.mean.size)
 
-    # Store C_ells in a Sacc file
-    s = sacc.Sacc()
-    for i in range(n_bins):
-        s.add_tracer('NZ', 'src{}'.format(i), z=z_ph, nz=dndz_ph_bins[i])
+        # Define tracer combs
+        tracer_combs = S.get_tracer_combinations()
 
-    indices = np.tril_indices(n_bins)
-    zipped_inds = list(zip(*indices))
-    for i, arg in enumerate(zipped_inds):
-        j, k = arg
-        s.add_ell_cl('cl_ee', 'src{}'.format(j), 'src{}'.format(k), ells, c_ells[i])
-    s.save_fits(os.path.join(mcmc_dir, 'sacc_fiducial_data.fits'), overwrite=True)
+        # Extract C_ell and covariance blocks
+        c_ells = []
+        for comb in tracer_combs:
+            _, cell = S.get_ell_cl(
+                data_type='cl_ee',
+                tracer1=comb[0],
+                tracer2=comb[1],
+                return_cov=False
+            )
+            c_ells.append(cell)
 
-    data_vector = c_ells.flatten() # Flatten the array to make it a vector
+        # get covariance matrix
+        cov = S.covariance.covmat
+        # prepare data for MCMC
+        data_vector = np.concatenate(c_ells)
+    else:
+        # Compute the spectra
+        zph_list = [z_ph for _ in range(n_bins)]
+        c_ells = compute_spectra(cosmo, dndz_ph_bins, zph_list, ells)
 
-    # generate covariance matrix with tjpcov
-    cov = compute_covariance(cosmo, s, n_bins)
+        # Store C_ells in a Sacc file
+        s = sacc.Sacc()
+        for i in range(n_bins):
+            s.add_tracer('NZ', 'src{}'.format(i), z=z_ph, nz=dndz_ph_bins[i])
 
-    # Add covariance to Sacc file
-    s.add_covariance(cov)
-    s.save_fits(os.path.join(mcmc_dir, 'sacc_fiducial_data.fits'), overwrite=True)
+        indices = np.tril_indices(n_bins)
+        zipped_inds = list(zip(*indices))
+        for i, arg in enumerate(zipped_inds):
+            j, k = arg
+            s.add_ell_cl('cl_ee', 'src{}'.format(j), 'src{}'.format(k), ells, c_ells[i])
+        s.save_fits(os.path.join(mcmc_dir, 'sacc_fiducial_data.fits'), overwrite=True)
 
-    # Also save as npy file
-    np.save(os.path.join(mcmc_dir, 'covariance_matrix.npy'), cov)
+        data_vector = c_ells.flatten() # Flatten the array to make it a vector
+
+        # generate covariance matrix with tjpcov
+        cov = compute_covariance(cosmo, s, n_bins)
+
+        # Add covariance to Sacc file
+        s.add_covariance(cov)
+        s.save_fits(os.path.join(mcmc_dir, 'sacc_fiducial_data.fits'), overwrite=True)
+
+        # Also save as npy file
+        np.save(os.path.join(mcmc_dir, 'covariance_matrix.npy'), cov)
 
     # Invert the covariance matrix
     inv_cov = np.linalg.inv(cov)
@@ -245,38 +269,51 @@ def main(args):
 
     # Define the priors
     priors = [
-        (0.1, 0.9), # Omega_c
-        (0.01, 0.1), # Omega_b
-        (0.5, 0.9), # h
-        (0.7, 1.0), # sigma8
+        (0.17, 0.4), # Omega_c
+        (0.03, 0.07), # Omega_b
+        (0.4, 1.1), # h
+        (0.65, 1.0), # sigma8
         (0.8, 1.1) # n_s
     ]
 
     # Comment out if not using shifts
-    delta_z = 0.002 # LSST Y1 mean uncertainty
+    delta_z = 0.004 # LSST Y1 mean uncertainty
     for i in range(n_bins):
         priors.append((-delta_z, delta_z)) # Shifts for each redshift bin
 
     # Define the initial positions
-    pos = [
-        theta[0] + 1e-2 * np.random.randn(nwalkers), # Omega_c
-        theta[1] + 1e-3 * np.random.randn(nwalkers), # Omega_b
-        theta[2] + 1e-2 * np.random.randn(nwalkers), # h
-        theta[3] + 1e-2 * np.random.randn(nwalkers), # sigma8
-        theta[4] + 1e-2 * np.random.randn(nwalkers), # n_s
-    ]
+    # pos = [
+    #     theta[0] + 1e-2 * np.random.randn(nwalkers), # Omega_c
+    #     theta[1] + 1e-3 * np.random.randn(nwalkers), # Omega_b
+    #     theta[2] + 1e-2 * np.random.randn(nwalkers), # h
+    #     theta[3] + 1e-2 * np.random.randn(nwalkers), # sigma8
+    #     theta[4] + 1e-2 * np.random.randn(nwalkers), # n_s
+    # ]
 
-    # Comment out if not using shifts
+    # # Comment out if not using shifts
+    # for i in range(n_bins):
+    #     pos += (theta[5+i] + 4e-4 * np.random.randn(nwalkers),)
+    # pos = np.array(pos).T
+
+    # 10% spread around the known good point
+    spreads = 0.1 * np.array(theta)
     for i in range(n_bins):
-        pos += (theta[5+i] + 1e-4 * np.random.randn(nwalkers),)
-    pos = np.array(pos).T
+        spreads[5+i] += 4e-4
+
+    pos = [theta + spreads * np.random.randn(ndim) for _ in range(nwalkers)]
+    #print(pos[0])
+    
+    # # Comment out if not using shifts
+    # for i in range(n_bins):
+    #     pos += (theta[5+i] + 4e-4 * np.random.randn(nwalkers),)
+    # pos = np.array(pos).T
 
     converged = False # Convergence flag
 
     # Check for existing backend file
-    backend_file = os.path.join(mcmc_dir, '{}walkers_chain_outputs_CCL.h5'.format(nwalkers))
+    backend_file = os.path.join(mcmc_dir, args.backend_file)
 
-    if os.path.exists(backend_file) and args.clobber:
+    if os.path.exists(backend_file) and args.clobber_chain:
         print("Clobbering existing backend file")
         os.remove(backend_file)
 
@@ -318,14 +355,14 @@ def main(args):
         start = time()
         while not converged:
             # Sample 
-            sampler.run_mcmc(pos, chain_len, progress=False)
+            sampler.run_mcmc(pos, chain_len, progress=True)
 
             # Check convergence
             try:
                 tau = sampler.get_autocorr_time(tol=0)
-                converged = np.all(tau * 200 < sampler.iteration)
+                converged = np.all(tau * args.tau_factor < sampler.iteration)
                 print("Current iteration: {}".format(sampler.iteration))
-                print("Rounded autocorrelation times: {}".format((tau * 200).astype(int)))
+                print("Rounded autocorrelation times: {}".format((tau * args.tau_factor).astype(int)))
             except emcee.autocorr.AutocorrError:
                 print("Autocorrelation time could not be estimated. Continuing...")
 
@@ -365,16 +402,19 @@ if __name__ == '__main__':
     # Add command line arguments for the script
     parser = argparse.ArgumentParser(description='Run MCMC to estimate cosmological parameters')
     parser.add_argument('--mcmc_dir', type=str, default='mcmc', help='Directory to save MCMC output')
-    parser.add_argument('--z0', type=float, default=0.11, help='Smail parameter z0')
-    parser.add_argument('--alpha', type=float, default=0.68, help='Smail parameter alpha')
+    parser.add_argument('--z0', type=float, default=0.13, help='Smail parameter z0')
+    parser.add_argument('--alpha', type=float, default=0.78, help='Smail parameter alpha')
     parser.add_argument('--n_bins', type=int, default=5, help='Number of redshift bins')
-    parser.add_argument('--n_walkers', type=int, default=48, help='Number of walkers')
-    parser.add_argument('--chain_len', type=int, default=100, help='Length of chain to run between convergence checks')
-    parser.add_argument('--max_iter', type=int, default=1000, help='Maximum number of iterations')
-    parser.add_argument('--seed', type=int, default=42, help='Random seed')
+    parser.add_argument('--n_walkers', type=int, default=76, help='Number of walkers')
+    parser.add_argument('--chain_len', type=int, default=1000, help='Length of chain to run between convergence checks')
+    parser.add_argument('--max_iter', type=int, default=100000, help='Maximum number of iterations')
+    parser.add_argument('--tau_factor', type=int, default=50, help='Factor to multiply by the autocorrelation time to determine convergence')
+    parser.add_argument('--seed', type=int, default=14, help='Random seed')
     parser.add_argument('--n_threads', type=int, default=cpu_count(), help='Number of threads to use')
     parser.add_argument('--profile', action='store_true', help='Run the profiler')
-    parser.add_argument('--clobber', action='store_true', help='Overwrite existing files')
+    parser.add_argument('--clobber_chain', action='store_true', help='Overwrite existing MCMC file')
+    parser.add_argument('--clobber_sacc', action='store_true', help='Overwrite existing Sacc file')
+    parser.add_argument('--backend_file', type=str, default='CCL_chain_outputs.h5')
     args = parser.parse_args() # Parse the arguments
 
     if args.profile: # If profiling is enabled

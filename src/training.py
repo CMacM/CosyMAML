@@ -160,6 +160,19 @@ class MetaLearner():
                     't': 0
                 }
 
+    def _update_adam(self, adam_params, learning_rate, weights, grad):
+        '''
+        Step the Adam optimizer for the model and update the fast weights.
+        '''
+        for (name, param), grad in zip(weights.items(), grad):
+            adam_state = adam_params[name]
+            adam_state['t'] += 1
+            adam_state['m'] = self.beta1 * adam_state['m'] + (1 - self.beta1) * grad
+            adam_state['v'] = self.beta2 * adam_state['v'] + (1 - self.beta2) * (grad ** 2)
+            m_hat = adam_state['m'] / (1 - self.beta1 ** adam_state['t'])
+            v_hat = adam_state['v'] / (1 - self.beta2 ** adam_state['t'])
+            weights[name] = param - learning_rate * m_hat / (torch.sqrt(v_hat) + self.epsilon)
+
     def _inner_update(self, x, y, fast_weights, steps):
         '''
         Perform an inner update on the model.
@@ -182,14 +195,7 @@ class MetaLearner():
             grad = torch.autograd.grad(loss_spt, fast_weights.values())
 
             # update fast weights using Adam optimizer
-            for (name, param), grad in zip(fast_weights.items(), grad):
-                adam_state = self.adam_params[name]
-                adam_state['t'] += 1
-                adam_state['m'] = self.beta1 * adam_state['m'] + (1 - self.beta1) * grad
-                adam_state['v'] = self.beta2 * adam_state['v'] + (1 - self.beta2) * (grad ** 2)
-                m_hat = adam_state['m'] / (1 - self.beta1 ** adam_state['t'])
-                v_hat = adam_state['v'] / (1 - self.beta2 ** adam_state['t'])
-                fast_weights[name] = param - self.inner_lr * m_hat / (torch.sqrt(v_hat) + self.epsilon)
+            self._update_adam(self.adam_params, self.inner_lr, fast_weights, grad)
 
         return fast_weights
 
@@ -254,6 +260,9 @@ class MetaLearner():
         # Compute gradients of meta loss and update meta parameters
         grad = torch.autograd.grad(meta_loss, self.model.parameters())
         # Update meta parameters using Adam optimizer
+        # To DO: Find a way to homogenise this with the update function
+        # Currently the "weights.items()" in the function gives a "no attribute..."
+        # error when passed the named parameters of the model.
         for (name, param), grad in zip(self.model.named_parameters(), grad):
             adam_state = self.adam_params[name]
             adam_state['t'] += 1
@@ -263,9 +272,10 @@ class MetaLearner():
             v_hat = adam_state['v'] / (1 - self.beta2 ** adam_state['t'])
             param.data -= self.outer_lr * m_hat / (torch.sqrt(v_hat) + self.epsilon)
 
+
         return meta_loss.detach().item()
 
-    def finetune(self, x_spt, y_spt, adapt_steps, dropout=True, use_new_adam=False):
+    def finetune(self, x_spt, y_spt, adapt_steps=None, x_val=None, y_val=None, dropout=True, use_new_adam=False):
         '''
         Fine-tune the model on the support data.
 
@@ -299,23 +309,49 @@ class MetaLearner():
 
         # Update fast weights using inner loop
         losses = []
-        for _ in range(adapt_steps):
-            self.model.zero_grad()
-            y_pred = self.model(x_spt, params=fast_weights)
-            loss_spt = self.loss_fn(y_pred, y_spt)
-            grad = torch.autograd.grad(loss_spt, fast_weights.values())
+        if adapt_steps is not None:
+            for _ in range(adapt_steps):
+                self.model.zero_grad()
+                y_pred = self.model(x_spt, params=fast_weights)
+                loss_spt = self.loss_fn(y_pred, y_spt)
+                grad = torch.autograd.grad(loss_spt, fast_weights.values())
 
-            # update fast weights using Adam optimizer
-            for (name, param), grad in zip(fast_weights.items(), grad):
-                adam_state = finetune_adam_params[name]
-                adam_state['t'] += 1
-                adam_state['m'] = self.beta1 * adam_state['m'] + (1 - self.beta1) * grad
-                adam_state['v'] = self.beta2 * adam_state['v'] + (1 - self.beta2) * (grad ** 2)
-                m_hat = adam_state['m'] / (1 - self.beta1 ** adam_state['t'])
-                v_hat = adam_state['v'] / (1 - self.beta2 ** adam_state['t'])
-                fast_weights[name] = param - self.inner_lr * m_hat / (torch.sqrt(v_hat) + self.epsilon)
+                # update fast weights using Adam optimizer
+                self._update_adam(finetune_adam_params, self.inner_lr, fast_weights, grad)
 
-            losses.append(loss_spt.item())
+                losses.append(loss_spt.item())
+        elif x_val is not None and y_val is not None:
+            converged = False
+            best_val_loss = np.inf
+            strike = 0
+            while not converged:
+                self.model.train()
+                self.model.zero_grad()
+                y_pred = self.model(x_spt, params=fast_weights)
+                loss_spt = self.loss_fn(y_pred, y_spt)
+                grad = torch.autograd.grad(loss_spt, fast_weights.values())
+
+                losses.append(loss_spt.item())
+
+                # update fast weights using Adam optimizer
+                self._update_adam(finetune_adam_params, self.inner_lr, fast_weights, grad)
+
+                self.model.eval()
+                with torch.no_grad():
+                    y_pred = self.model(x_val, params=fast_weights)
+                    val_loss = self.loss_fn(y_pred, y_val).item()
+
+                if best_val_loss - val_loss < 1e-4:
+                    strike += 1
+                    if strike > 20:
+                        converged = True
+                else:
+                    strike = 0
+
+                if val_loss < best_val_loss:
+                    best_val_loss = val_loss
+        else:
+            raise ValueError('Either adapt_steps or x_val and y_val must be provided.')
 
         return fast_weights, losses
     
@@ -386,17 +422,17 @@ def train_standard_emulator(train_loader, X_val, y_val, device=None):
         avg_epoch_loss = epoch_loss / batch_count
         train_losses.append(avg_epoch_loss)
         #print(f'Epoch {epoch} - avg loss: {avg_epoch_loss} - Strike: {strike}')
-        train_time = time()-start
+    train_time = time()-start
 
-    return model, train_time
+    return model, train_time, train_losses, val_losses
 
-def finetune_pretrained(model, n_epochs, train_loader, loss_fn=nn.MSELoss(), dropout=True, device=None):
+def finetune_pretrained(model, train_loader, loss_fn=nn.MSELoss(), n_epochs=None, x_val=None, y_val=None, dropout=True, device=None):
 
     if device is None:
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # Define new optimizer
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0)
 
     model.to(device)
     
@@ -406,22 +442,64 @@ def finetune_pretrained(model, n_epochs, train_loader, loss_fn=nn.MSELoss(), dro
         model.eval()
 
     train_losses = []
-    for _ in range(n_epochs):
-        epoch_loss = 0
-        batch_count = 0
-        for X_batch, y_batch in train_loader:
+    if n_epochs is not None:
+        for _ in range(n_epochs):
+            model.train()
+            epoch_loss = 0
+            batch_count = 0
+            for X_batch, y_batch in train_loader:
 
-            optimizer.zero_grad()
-            y_pred = model(X_batch)
-            loss = loss_fn(y_pred, y_batch)
-            loss.backward()
-            optimizer.step()
+                optimizer.zero_grad()
+                y_pred = model(X_batch)
+                loss = loss_fn(y_pred, y_batch)
+                loss.backward()
+                optimizer.step()
 
-            epoch_loss += loss.item()
-            batch_count += 1
+                epoch_loss += loss.item()
+                batch_count += 1
 
-        avg_epoch_loss = epoch_loss / batch_count
-        train_losses.append(avg_epoch_loss)
+            avg_epoch_loss = epoch_loss / batch_count
+            train_losses.append(avg_epoch_loss)
+    elif (x_val is not None) and (y_val is not None):
+        converged = False
+        best_val_loss = np.inf
+        strike = 0
+        while not converged:
+            model.train()
+            epoch_loss = 0
+            batch_count = 0
+            for X_batch, y_batch in train_loader:
+
+                optimizer.zero_grad()
+                y_pred = model(X_batch)
+                loss = loss_fn(y_pred, y_batch)
+                loss.backward()
+                optimizer.step()
+
+                epoch_loss += loss.item()
+                batch_count += 1
+
+            avg_epoch_loss = epoch_loss / batch_count
+            train_losses.append(avg_epoch_loss)
+
+            model.eval()
+            with torch.no_grad():
+                y_pred = model(x_val)
+                val_loss = loss_fn(y_pred, y_val).item()
+
+            if best_val_loss - val_loss < 1e-4:
+                strike += 1
+                if strike > 20:
+                    converged = True
+            else:
+                strike = 0
+
+            if val_loss < best_val_loss:
+                best_val_loss = val_loss
+    else:
+        raise ValueError('Either n_epochs or x_val and y_val must be provided.')
+    
+    return train_losses
 
 def load_train_test_val(filepath, n_train, n_val=None, n_test=None, seed=14, device=None):
 
@@ -436,14 +514,17 @@ def load_train_test_val(filepath, n_train, n_val=None, n_test=None, seed=14, dev
     # split into test training and validation sets
     # Fix test size so different samplings don't test on different numbers of samples
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, train_size=n_train, random_state=seed, shuffle=True
+        X, y, train_size=n_train, test_size=n_test, random_state=seed, shuffle=True
     )
 
     if n_val is None:
         pass
+    elif n_val == len(X_test):
+        X_val = X_test
+        y_val = y_test
     else:
         X_val, X_test, y_val, y_test = train_test_split(
-            X_test, y_test, train_size=n_val, test_size=n_test, random_state=seed, shuffle=True
+            X_test, y_test, train_size=n_val, random_state=seed, shuffle=True
         )
 
     # Take log of y

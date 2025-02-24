@@ -80,19 +80,24 @@ def main(args):
             seed = np.random.randint(0, 1000)
 
             # Load the training data
-            train_data, test_loader, X_val, y_val, ScalerY, _ = training.load_train_test_val(
-                filepath=args.datafile, n_train=samples, n_val=4000, n_test=6000, seed=seed
+            train_data, test_data, X_val, y_val, ScalerY, _ = training.load_train_test_val(
+                filepath=args.datafile, n_train=samples, n_val=100, n_test=6000, seed=seed
             )
 
             # Train a fresh emulator
             train_loader = DataLoader(train_data, batch_size=5000, shuffle=False)
-            fresh_model, fresh_time = training.train_standard_emulator(train_loader, X_val, y_val)
+            test_loader = DataLoader(test_data, batch_size=5000, shuffle=False)
+            fresh_model, fresh_time, _, _ = training.train_standard_emulator(train_loader, X_val, y_val)
 
             # Sub-select 500 samples from the training set:
             X_train, y_train = train_data[:500]
             start = time()
             task_weights, _ = metalearner.finetune(
-                X_train, y_train, adapt_steps=64, use_new_adam=True
+                X_train,
+                y_train,
+                x_val=X_val,
+                y_val=y_val,
+                use_new_adam=True
             )
             maml_time = time() - start
 

@@ -83,8 +83,10 @@ def run_emcee(
         inv_cov,
         nwalkers=128, 
         n_check=1000,
-        max_iter=50000, 
-        clobber=False
+        max_iter=50000,
+        tau_factor=50,
+        clobber=False,
+        progress=False
     ):
 
     #Check for existing backend file
@@ -120,14 +122,15 @@ def run_emcee(
     while not converged:
         clear_output(wait=True)
         # Sample 
-        sampler.run_mcmc(pos, n_check, progress=True)
+        sampler.run_mcmc(pos, n_check, progress=progress)
 
         # Check convergence
         try:
             tau = sampler.get_autocorr_time(tol=0)
-            converged = np.all(tau * 200 < sampler.iteration)
-            print("Current iteration: {}".format(sampler.iteration))
-            print("Rounded autocorrelation times: {}".format((tau * 200).astype(int)))
+            converged = np.all(tau * tau_factor < sampler.iteration)
+            if progress:
+                print("Current iteration: {}".format(sampler.iteration))
+                print("Autocorrelation time: {}".format(tau * tau_factor))
         except emcee.autocorr.AutocorrError:
             print("Autocorrelation time could not be estimated. Continuing...")
 

@@ -13,7 +13,7 @@ from time import time
 from multiprocessing import Pool, cpu_count
 from parallelbar import progress_starmap
 
-import src.datamaker as datamaker
+import CosyMAML.src.simulate as simulate
 
 import argparse
 import os
@@ -46,7 +46,7 @@ def main(n_tasks, n_samples, seed):
     shifts = np.empty((n_tasks, n_bins, n_samples))
     qrd_pz = np.empty((n_tasks, n_bins, n_samples, gridsize-1))
     for i in trange(n_tasks):    
-        survey_pz[i], z_mid = datamaker.gen_Pz_base(
+        survey_pz[i], z_mid = simulate.gen_Pz_base(
             task_means[i],
             task_vars[i],
             grid=z
@@ -79,7 +79,7 @@ def main(n_tasks, n_samples, seed):
         print("Generating P(z) realizations...")
         for j in range(n_bins):
             zs = np.linspace(bin_edges[j], bin_edges[j+1], gridsize)
-            spec_bin, zs = datamaker.gen_Pz_base(
+            spec_bin, zs = simulate.gen_Pz_base(
                             task_means[i],
                             task_vars[i],
                             grid=zs
@@ -105,7 +105,7 @@ def main(n_tasks, n_samples, seed):
             dz_ph = simps(dN, z_ph)
             dndz_ph = dN/dz_ph
 
-            qrd_pz[i,j], true_means[i,j] = datamaker.gen_Pz_samples(
+            qrd_pz[i,j], true_means[i,j] = simulate.gen_Pz_samples(
                                                         dndz_ph,
                                                         zs,
                                                         seed=14,
@@ -133,7 +133,7 @@ def main(n_tasks, n_samples, seed):
 
     for i in trange(n_tasks):
         # Generate new Hypercube for each task to randomise the cosmology samples
-        cosmo_hypercube = datamaker.gen_hypercube(OmC, OmB, h, n_s, sigma8, n_samples)
+        cosmo_hypercube = simulate.gen_hypercube(OmC, OmB, h, n_s, sigma8, n_samples)
         for j in range(inputs):
             if j < inputs-2:
                 X_train[i, :, j] = cosmo_hypercube[:, j]
