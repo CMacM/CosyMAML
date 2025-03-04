@@ -45,7 +45,7 @@ class EmulatorHook():
         # Transfer results to CPU and convert to numpy
         model_vectors = model_vectors.cpu().detach().numpy()
 
-        return model_vectors
+        return model_vectors   
     
 # Define the likelihood function to use emulator with batching
 def log_likelihood(theta_batch, data, inv_cov, ClHook):

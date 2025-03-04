@@ -5,28 +5,34 @@ import pyccl as ccl
 from scipy.integrate import simps
 from scipy.interpolate import interp1d
 import scipy.stats.qmc as qmc
+from tjpcov.covariance_calculator import CovarianceCalculator
 
 class SpectraWrapper():
-    def __init__(self, func):
+    def __init__(self, func, stop=True):
         self.func = func
+        self.stop = stop
 
     def __call__(self, theta, dndz_ph_bins, z_ph, ells):
         try:
             return self.func(theta, dndz_ph_bins, z_ph, ells)
         except Exception as e:
-            # Dump data and re-raise the exception
-            print('Caught exception in worker thread:')
-            print('Dumping data for debugging')
-            np.savez(
-                os.path.join(
-                    'spectra_data', 'debug_worker{}.npz'.format(os.getpid())
-                    ),
-                theta=theta,
-                dndz_ph_bins=dndz_ph_bins,
-                z_ph=z_ph,
-                ells=ells
-            )
-            raise e
+            if self.stop:
+                # Dump data and re-raise the exception
+                print('Caught exception in worker thread:')
+                print('Dumping data for debugging')
+                np.savez(
+                    os.path.join(
+                        'spectra_data', 'debug_worker{}.npz'.format(os.getpid())
+                        ),
+                    theta=theta,
+                    dndz_ph_bins=dndz_ph_bins,
+                    z_ph=z_ph,
+                    ells=ells
+                )
+                raise e
+            else:
+                inds = list(zip(*np.tril_indices(len(dndz_ph_bins))))
+                return np.zeros((len(inds),len(ells))).flatten()
 
 # define various functions to produce redshift distributions
 def Smail_dndz(z, z0=0.13, alpha=0.78):
@@ -127,7 +133,7 @@ def shift_mean(z, dndz, delta_z=0.02):
     # to avoid division by zero
     for i in range(len(z_shift)):
         if z_shift[i] <= 0:
-            z_shift[i] = 1e-10*i
+            z_shift[i] = 1e-6*i
     return z_shift
 
 def convolve_photoz(sigma, zs, dndz_spec, return_2d=False):
@@ -168,8 +174,8 @@ def cosmo_hypercube(
         Omega_c=np.array([0.165, 0.45]),
         Omega_b=np.array([0.025, 0.075]),
         h=np.array([0.35, 1.15]),
-        n_s=np.array([0.75, 1.15]),
         sigma8=np.array([0.6, 1.05]),
+        n_s=np.array([0.75, 1.15]),
         delta_z=np.array([-0.0045, 0.0045]),
         n_samples=1000,
         dim=10
@@ -257,7 +263,13 @@ def compute_spectra_cluster(theta, dndz_ph_bins, z_ph, ells, bias=1.5):
     )
 
     n_bins = len(dndz_ph_bins)
-    inds = list(zip(*np.tril_indices(n_bins)))
+    inds = []
+    for i in range(n_bins):
+        for j in range(n_bins):
+            if i == j:
+                inds.append((i, j))
+            # elif i == j-1:
+            #     inds.append((i, j))
 
     z_ph_shifted = np.empty((n_bins, len(z_ph)))
     for i in range(n_bins):
@@ -285,4 +297,23 @@ def compute_spectra_cluster(theta, dndz_ph_bins, z_ph, ells, bias=1.5):
         c_ells[i,:] = ccl.angular_cl(cosmo, tracer1, tracer2, ells)
     
     return c_ells.flatten()
+
+def compute_covariance(cosmo, sacc_file, n_bins):
+
+    # Set up the configuration for the covariance calculator
+    config = {}
+    config['tjpcov'] = {}
+    config['tjpcov']['cosmo'] = cosmo
+    config['tjpcov']['sacc_file'] = sacc_file
+    config['tjpcov']['cov_type'] = 'FourierGaussianFsky'
+    for i in range(n_bins):
+        config['tjpcov']['Ngal_src'+str(i)] = 10/n_bins
+        config['tjpcov']['sigma_e_src'+str(i)] = np.sqrt(0.26)
+    config['tjpcov']['len_bias'] = 1.0
+    config['tjpcov']['fsky'] = 0.4
+
+    # Using modifed source code for logarithmic binning
+    cov = CovarianceCalculator(config)
+
+    return cov.get_covariance()
 

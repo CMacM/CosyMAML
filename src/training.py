@@ -360,11 +360,14 @@ def train_standard_emulator(train_loader, X_val, y_val, device=None):
     if device is None:
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+    in_size = X_val.shape[-1]
+    out_size = y_val.shape[-1]
+
     # Define the model
     model = models.FastWeightCNN(
-        input_size=10,
+        input_size=in_size,
         latent_dim=(16,16),
-        output_size=750,
+        output_size=out_size,
         dropout_rate=0.2
     )
     model.to(device)
