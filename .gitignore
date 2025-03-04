@@ -1,7 +1,8 @@
 src/__pycache__/
 __pycache__/
-data/
+spectra_data/
 plots/
+mcmc_chains/
 *.npz
 *.png
 *.pyc
