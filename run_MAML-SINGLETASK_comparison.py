@@ -14,6 +14,7 @@ reload(training)
 reload(models)
 
 import argparse
+import tqdm
 
 # Set up random seed for reproducibility
 masterseed = 14
@@ -76,7 +77,7 @@ def main(args):
     # Load metaleraner weights
     metalearner.model.load_state_dict(
         torch.load(
-            '{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(5, 1000, 20)
+            'weights/cl_ee_{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(5, 500, 20)
         )
     )
 
@@ -91,12 +92,15 @@ def main(args):
     maml_times = np.zeros((len(n_finetune), smooth))
     seeds = np.zeros((len(n_finetune), smooth))
 
+    # Initialise progress bar to track progress
+    progbar = tqdm.tqdm(total=len(n_finetune)*smooth)
+
     for i, samples in enumerate(n_finetune):
         for j in range(smooth):
 
             seed = np.random.randint(10000)
 
-            train_data, test_data, X_val, y_val, ScalerY, _ = training.load_train_test_val(
+            train_data, test_data, ScalerY, _ = training.load_train_test_val(
                 filepath=args.finetune_file,
                 n_train=samples,
                 n_val=None,
@@ -104,17 +108,15 @@ def main(args):
                 seed=seed,
                 device=device
             )
-            train_loader = DataLoader(train_data, batch_size=5000, shuffle=False)
-            test_loader = DataLoader(test_data, batch_size=5000, shuffle=False)
+            train_loader = DataLoader(train_data, batch_size=2500, shuffle=False)
+            test_loader = DataLoader(test_data, batch_size=2500, shuffle=False)
             
             # Fine-tune the single-task emulator
             start = time()
             pretrain_model.load_state_dict(original_model)
             _ = training.finetune_pretrained(
                 model = pretrain_model,
-                #x_val=X_val,
-                #y_val=y_val,
-                n_epochs=32,
+                n_epochs=64,
                 train_loader = train_loader,
                 device=device
             )
@@ -126,9 +128,7 @@ def main(args):
             task_weights, _ = metalearner.finetune(
                 X_train, 
                 y_train, 
-                #x_val=X_val,
-                #y_val=y_val,
-                adapt_steps=32,
+                adapt_steps=64,
                 use_new_adam=True
             )
             maml_times[i,j] = time() - start
@@ -148,8 +148,13 @@ def main(args):
             maml_mapes[i,j] = np.mean(maml_mape)
             maml_frates[i,j] = maml_frate
 
+            # Update progress bar
+            progbar.update(1)
+    # Close progress bar
+    progbar.close()
+
     # Write results to file
-    fname = f'maml_compare_pretrained_nsmooth={args.smooth}.h5'
+    fname = f'results/maml_compare_pretrained_nsamps={args.nft_sizes}_nsmooth={args.smooth}.h5'
     with h5.File(fname, 'w') as f:
         f.create_dataset('n_finetune', data=n_finetune)
         f.create_dataset('pretrain_times', data=pretrain_times)
@@ -162,12 +167,12 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Compare MAML vs Pretrained Emulators')
-    parser.add_argument('--pretrain_file', type=str, default='spectra_data/cl_ee_27_dndz_nsamples=30000.h5', help='Path to pretraining data')
+    parser.add_argument('--pretrain_file', type=str, default='spectra_data/cl_ee_3_dndz_nsamples=30000.h5', help='Path to pretraining data')
     parser.add_argument('--finetune_file', type=str, default='spectra_data/cl_ee_mcmc_dndz_nsamples=30000.h5', help='Path to finetuning data')
-    parser.add_argument('--n_train', type=int, default=20000, help='Number of samples for pretraining')
-    parser.add_argument('--ft_min', type=int, default=100, help='Minimum number of samples for finetuning')
+    parser.add_argument('--n_train', type=int, default=10000, help='Number of samples for pretraining')
+    parser.add_argument('--ft_min', type=int, default=10, help='Minimum number of samples for finetuning')
     parser.add_argument('--ft_max', type=int, default=1000, help='Maximum number of samples for finetuning')
-    parser.add_argument('--nft_sizes', type=int, default=50, help='Number of different finetuning sample sizes')
+    parser.add_argument('--nft_sizes', type=int, default=40, help='Number of different finetuning sample sizes')
     parser.add_argument('--smooth', type=int, default=20, help='Number of smoothings to perform')
     parser.add_argument('--device', type=str, default='cuda', help='Device to use for training')
     args = parser.parse_args()

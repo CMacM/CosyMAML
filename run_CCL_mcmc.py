@@ -241,6 +241,7 @@ def main(args):
 
     # Initialise a pool
     n_threads = min(args.n_walkers, args.n_threads)
+    print('Using {} threads'.format(n_threads))
     profile = args.profile
     with Pool(n_threads) as pool:
 

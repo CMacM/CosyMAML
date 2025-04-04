@@ -355,7 +355,7 @@ class MetaLearner():
 
         return fast_weights, losses
     
-def train_standard_emulator(train_loader, X_val, y_val, device=None):
+def train_standard_emulator(train_loader, X_val=None, y_val=None, n_epochs=None, device=None):
 
     if device is None:
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -421,6 +421,9 @@ def train_standard_emulator(train_loader, X_val, y_val, device=None):
         
         if val_loss < best_val_loss:
             best_val_loss = val_loss
+
+        if epoch == n_epochs:
+            converged = True
 
         avg_epoch_loss = epoch_loss / batch_count
         train_losses.append(avg_epoch_loss)

@@ -30,9 +30,12 @@ def main(args):
         args.n_samples_start, args.n_samples_end, args.n_samples_n
     ).astype(int)
 
-    # Split first word of datafile to get dndz type
-    dndz_type = args.datafile.split('_')[0].split('/')[-1]
-    print(f'Running for dndz type: {dndz_type}')
+    if args.for_multipeak:
+        tag = 'multipeak'
+        datafile = 'spectra_data/cl_ee_multi_peak_dndz_nsamples=30000.h5'
+    else:
+        tag = 'mcmc'
+        datafile = 'spectra_data/cl_ee_mcmc_dndz_nsamples=30000.h5'
 
     # Set up empty arrays to store results
     fresh_times = np.zeros((args.smooth, len(n_samples)))
@@ -67,7 +70,7 @@ def main(args):
     # Load metaleraner weights
     metalearner.model.load_state_dict(
         torch.load(
-            '{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(5, 1000, 20)
+            'weights/cl_ee_{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(5, 500, 20)
         )
     )
 
@@ -81,22 +84,21 @@ def main(args):
 
             # Load the training data
             train_data, test_data, X_val, y_val, ScalerY, _ = training.load_train_test_val(
-                filepath=args.datafile, n_train=samples, n_val=100, n_test=6000, seed=seed
+                filepath=datafile, n_train=samples, n_val=100, n_test=19000, seed=seed
             )
 
             # Train a fresh emulator
-            train_loader = DataLoader(train_data, batch_size=5000, shuffle=False)
-            test_loader = DataLoader(test_data, batch_size=5000, shuffle=False)
-            fresh_model, fresh_time, _, _ = training.train_standard_emulator(train_loader, X_val, y_val)
+            train_loader = DataLoader(train_data, batch_size=2500, shuffle=False)
+            test_loader = DataLoader(test_data, batch_size=2500, shuffle=False)
+            fresh_model, fresh_time, _, _ = training.train_standard_emulator(train_loader, X_val, y_val, n_epochs=64)
 
             # Sub-select 500 samples from the training set:
-            X_train, y_train = train_data[:500]
+            X_train, y_train = train_data[:args.n_finetune]
             start = time()
             task_weights, _ = metalearner.finetune(
                 X_train,
                 y_train,
-                x_val=X_val,
-                y_val=y_val,
+                adapt_steps=64,
                 use_new_adam=True
             )
             maml_time = time() - start
@@ -120,7 +122,7 @@ def main(args):
             seeds[j, i] = seed
 
     # Write results to file
-    fname = f'{dndz_type}_maml_compare_untrained_nsamps={args.n_samples_n}_nsmooth={args.smooth}.h5'
+    fname = f'results/{tag}_maml_compare_untrained_nsamps={args.n_samples_n}_nsmooth={args.smooth}.h5'
     with h5.File(fname, 'w') as f:
         f.create_dataset('n_samples', data=n_samples)
         f.create_dataset('fresh_times', data=fresh_times)
@@ -133,9 +135,10 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--datafile', type=str, default='data/mcmc_dndz_nsamples=30000.h5')
-    parser.add_argument('--n_samples_start', type=int, default=500)
-    parser.add_argument('--n_samples_end', type=int, default=20000)
+    parser.add_argument('--for_multipeak', action='store_true')
+    parser.add_argument('--n_finetune', type=int, default=100)
+    parser.add_argument('--n_samples_start', type=int, default=10)
+    parser.add_argument('--n_samples_end', type=int, default=10000)
     parser.add_argument('--n_samples_n', type=int, default=40)
     parser.add_argument('--smooth', type=int, default=20)
     args = parser.parse_args()

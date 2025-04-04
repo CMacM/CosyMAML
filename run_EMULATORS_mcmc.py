@@ -38,7 +38,7 @@ def main(args):
     )
 
     # Pretrain an emulator in the standard way
-    train_loader = DataLoader(train_data, batch_size=5000, shuffle=False)
+    train_loader = DataLoader(train_data, batch_size=2500, shuffle=False)
     print('Pre-training emulator with {} samples...'.format(len(train_data)))
     pretrain_model, pretrain_time, _, _ = training.train_standard_emulator(train_loader, X_val, y_val, device=device)
     print('Pre-training time:', pretrain_time)
@@ -67,7 +67,7 @@ def main(args):
     # Load metaleraner weights
     metalearner.model.load_state_dict(
         torch.load(
-            'weights/cl_ee_5batch_1000samples_20tasks_metalearner_weights.pt'.format(5, 1000, 20)
+            'weights/cl_ee_{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(5, 500, 20)
         )
     )
 
@@ -79,7 +79,7 @@ def main(args):
     )
 
     # Train a fresh emulator
-    train_loader = DataLoader(train_data, batch_size=5000, shuffle=False)
+    train_loader = DataLoader(train_data, batch_size=2500, shuffle=False)
     fresh_model, fresh_time, losses, _ = training.train_standard_emulator(train_loader, X_val, y_val, device=device)
     print('Fresh training time:', fresh_time)
     print('Final loss:', losses[-1])
@@ -252,11 +252,11 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--pretrain_file', type=str, default='spectra_data/cl_ee_27_dndz_nsamples=30000.h5')
+    parser.add_argument('--pretrain_file', type=str, default='spectra_data/cl_ee_3_dndz_nsamples=30000.h5')
     parser.add_argument('--mcmc_train_file', type=str, default='spectra_data/cl_ee_mcmc_dndz_nsamples=30000.h5')
     parser.add_argument('--fiducial_file', type=str, default='mcmc_chains/cl_ee_fiducial_sacc.fits')
-    parser.add_argument('--n_train', type=int, default=20000)
-    parser.add_argument('--n_finetune', type=int, default=500)
+    parser.add_argument('--n_train', type=int, default=10000)
+    parser.add_argument('--n_finetune', type=int, default=100)
     parser.add_argument('--n_walkers', type=int, default=76)
     parser.add_argument('--n_check', type=int, default=1000)
     parser.add_argument('--max_iter', type=int, default=200000)
