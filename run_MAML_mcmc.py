@@ -149,15 +149,6 @@ def main(args):
         spreads[n_bins+i] += 4e-4
     pos = [theta + spreads * np.random.randn(ndim) for _ in range(nwalkers)]
 
-        # Define the initial positions
-    # pos = [
-    #     theta[0] + 1e-2 * np.random.randn(nwalkers), # Omega_c
-    #     theta[1] + 1e-3 * np.random.randn(nwalkers), # Omega_b
-    #     theta[2] + 1e-2 * np.random.randn(nwalkers), # h
-    #     theta[3] + 1e-2 * np.random.randn(nwalkers), # sigma8
-    #     theta[4] + 1e-2 * np.random.randn(nwalkers), # n_s
-    # ]
-
     pos = np.array(pos)
 
     # Construct a hook class to the MAML model
@@ -169,7 +160,7 @@ def main(args):
         device=device
     )
     # Define backend file for emcee
-    maml_backend = f'mcmc/{nwalkers}_maml_emulator_mcmc_samples.h5'
+    maml_backend = f'/exafs//{nwalkers}_maml_emulator_mcmc_samples.h5'
 
     # Run the emcee sampler
     print('Running emcee with MAML emulator...')
