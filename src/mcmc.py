@@ -5,7 +5,6 @@ import numpy as np
 import emcee
 import torch
 import os
-import arviz as az
 
 import src.training as training
 import src.models as models

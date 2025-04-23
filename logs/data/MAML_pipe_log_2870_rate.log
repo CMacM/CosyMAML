@@ -1,0 +1,4802 @@
+---
+timestamp: 1744379882
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379893
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379903
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379913
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379924
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379934
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379945
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379955
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379966
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379976
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379986
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744379997
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380007
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380018
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380028
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380039
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380049
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380059
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380070
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380080
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380091
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380101
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380112
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380122
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380132
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380143
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380153
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380164
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380174
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380184
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380195
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380205
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380216
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380226
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380236
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380247
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380257
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380268
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380278
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380288
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380299
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380309
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380320
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380330
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380341
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380351
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380361
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380372
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380382
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380393
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380403
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380413
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380424
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380434
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380445
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380455
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380465
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380476
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380486
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380497
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380507
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380517
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380528
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380538
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380549
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380559
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380569
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380580
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380590
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380600
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380611
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380621
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380632
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380642
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380652
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380663
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380673
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380684
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380694
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380704
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380715
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380725
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380736
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380746
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380756
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380767
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380777
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380787
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380798
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380808
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380819
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380829
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380839
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380850
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380860
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380870
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380881
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380891
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380902
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380912
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380922
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380933
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380943
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380954
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380964
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380974
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380985
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744380995
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381005
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381016
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381026
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381037
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381047
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381057
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381068
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381078
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381088
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381099
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381109
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381120
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381130
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381140
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381151
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381161
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381172
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381182
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381192
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381203
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381213
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381223
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381234
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381244
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381255
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381265
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381275
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381286
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381296
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381307
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381317
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381327
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381338
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381348
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381359
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381369
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381379
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381390
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381400
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381410
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381421
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381431
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381442
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381452
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381462
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381473
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381483
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381494
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381504
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381515
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows: []
+...
+---
+timestamp: 1744381525
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 62, op: 30, cl: 30, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 12}
+...
+---
+timestamp: 1744381536
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 94, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381546
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381557
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381568
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381578
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381589
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381599
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381610
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381621
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381631
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 106, op: 52, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381642
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381652
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381663
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381674
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381684
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 110, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381695
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381705
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381716
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 113, op: 56, cl: 56, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381727
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 92, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381737
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 94, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381748
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381759
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381769
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381780
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 49, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381790
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 102, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381801
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 108, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381812
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381822
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381833
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381844
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381854
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381865
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381875
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381886
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381897
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381907
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381918
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381928
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 92, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381939
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381950
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 95, op: 47, cl: 47, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381960
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744381971
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381981
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 49, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744381992
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 110, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382003
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382013
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382024
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382035
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382045
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382056
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382066
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382077
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 0, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382087
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 95, op: 47, cl: 47, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382098
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 108, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382109
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382119
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 96, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382130
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382141
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 95, op: 47, cl: 47, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382151
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382162
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382172
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382183
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382194
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382204
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382215
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382225
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382236
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382247
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382257
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 10}
+...
+---
+timestamp: 1744382268
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, pu: 0, sw: 11}
+...
+---
+timestamp: 1744382279
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 95, op: 47, cl: 47, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382289
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 112, op: 56, cl: 56, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382300
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382310
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382321
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 104, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382332
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 93, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382342
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382353
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382364
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382374
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382385
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382395
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382406
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382417
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382427
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382438
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 108, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382448
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382459
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382470
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382480
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382491
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382501
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382512
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 106, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382523
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 91, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382533
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 94, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382544
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382555
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382565
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382576
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382587
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382597
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382608
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382618
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382629
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382640
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382650
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382661
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382671
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382682
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382692
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382703
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382714
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382724
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 91, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382735
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382746
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382756
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382767
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382777
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382788
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382799
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382809
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 113, op: 56, cl: 56, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382820
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382830
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382841
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382852
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382862
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382873
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382883
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382894
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382905
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382915
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 104, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382926
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 93, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382937
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382947
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382958
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382968
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744382979
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744382989
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383000
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383011
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383021
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 110, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383032
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383043
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383053
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 110, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383064
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383074
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383085
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383096
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383106
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383117
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 89, op: 44, cl: 44, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383127
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383138
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383149
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383159
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 106, op: 52, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383170
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 102, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383181
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383191
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383202
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383212
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383223
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383234
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383244
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 0, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383255
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383265
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383276
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383287
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383297
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383308
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 93, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383318
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 91, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383329
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383340
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383350
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383361
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383371
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383382
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 108, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383393
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383403
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383414
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383424
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383435
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 108, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383446
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383456
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383467
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383478
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383488
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383499
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383509
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 92, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383520
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383531
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 95, op: 47, cl: 47, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383541
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383552
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383563
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383573
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 110, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383584
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383594
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 108, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383605
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383615
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383626
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383637
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383647
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383658
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383668
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383679
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383690
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383700
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383711
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 91, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383722
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 92, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383732
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383743
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383754
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383764
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383775
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 102, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383785
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383796
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383807
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383817
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383828
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383838
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383849
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383860
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383870
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383881
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383891
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383902
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383912
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 95, op: 47, cl: 47, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383923
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 102, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383934
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 95, op: 47, cl: 47, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383944
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383955
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383966
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 102, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383976
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 113, op: 56, cl: 56, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744383987
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744383998
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384008
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384019
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384029
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 110, op: 55, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384040
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384051
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384061
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384072
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384082
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384093
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384104
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 91, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384114
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384125
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 93, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384136
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384146
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384157
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384167
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384178
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384189
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384199
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384210
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384220
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384231
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384242
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384252
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384263
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384274
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384284
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384295
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 102, op: 51, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384305
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 94, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384316
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384327
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 95, op: 47, cl: 47, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384337
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 96, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384348
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 108, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384359
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384369
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384380
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 104, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384391
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384401
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 110, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384412
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384422
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384433
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384443
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384454
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384465
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384475
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384486
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384497
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384507
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384518
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 92, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384528
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 103, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384539
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384550
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384560
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384571
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384582
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384592
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384603
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384613
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 106, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384624
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384635
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384645
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384656
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384666
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 106, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384677
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384688
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384698
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384709
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 88, op: 44, cl: 44, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384720
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 93, op: 46, cl: 46, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384730
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384741
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 95, op: 47, cl: 47, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384751
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384762
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384772
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384783
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384794
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384804
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384815
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384825
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384836
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384847
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384857
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384868
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384879
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384889
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 106, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384900
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 104, op: 51, cl: 51, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384910
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 83, op: 41, cl: 41, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384921
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 92, op: 45, cl: 45, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384931
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 105, op: 52, cl: 52, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384942
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384953
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384963
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384974
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744384984
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 108, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744384995
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 98, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744385006
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744385016
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 109, op: 54, cl: 54, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744385027
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 100, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744385037
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 111, op: 55, cl: 55, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744385048
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 97, op: 48, cl: 48, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744385059
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 101, op: 50, cl: 50, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744385069
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 113, op: 56, cl: 56, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744385080
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 99, op: 49, cl: 49, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...
+---
+timestamp: 1744385090
+query_duration: 10
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 107, op: 53, cl: 53, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 10}
+...
+---
+timestamp: 1744385101
+query_duration: 11
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_job_operation_rates_during_query_windows:
+- "2870:1000054:x440-03":{ops: 85, op: 42, cl: 42, mn: 0, ul: 0, ga: 1, sa: 0, gx: 0, rd: 0, wr: 0, sw: 11}
+...

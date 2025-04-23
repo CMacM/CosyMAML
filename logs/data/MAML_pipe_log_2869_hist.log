@@ -1,0 +1,2058 @@
+---
+timestamp: 1744368826
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 25
+top_5_jobs: []
+...
+---
+timestamp: 1744368827
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 25
+top_5_jobs: []
+...
+---
+timestamp: 1744368829
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 25
+top_5_jobs: []
+...
+---
+timestamp: 1744368830
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 308, op: 2, ga: 6, rd: 150, rb: {'4M': 94, '4K': 2, '512K': 36, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368831
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368833
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368834
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368836
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368837
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368838
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368840
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368841
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368843
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368844
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368845
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368847
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368848
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368850
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368851
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368853
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368854
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368855
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368857
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368858
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368860
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368861
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368862
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368864
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368865
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368867
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368868
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368870
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368871
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368872
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368874
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368875
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368877
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368878
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368879
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368881
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368882
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368884
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368885
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368886
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368888
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368889
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368891
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368892
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368893
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368895
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368896
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368898
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368899
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368900
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368902
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368903
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368905
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368906
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368907
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368909
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368910
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368911
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368913
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368914
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368916
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368917
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368918
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368920
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4K': 2, '512K': 38, '1M': 2, '4M': 272, '16M': 16}}
+...
+---
+timestamp: 1744368921
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368923
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368924
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368925
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368927
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368928
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368929
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368931
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368932
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368934
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368935
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368936
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368938
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368939
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368941
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368942
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368943
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368945
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368946
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368948
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368949
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368950
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368952
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 670, op: 2, cl: 2, ga: 6, rd: 330, rb: {'4M': 272, '4K': 2, '512K': 38, '1M': 2, '16M': 16}}
+...
+---
+timestamp: 1744368953
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 728, op: 12, cl: 10, ga: 20, sa: 4, gx: 2, rd: 334, wr: 4, pu: 4, rb: {'4M': 274, '4K': 4, '512K': 38, '1M': 2, '16M': 16}, wb: {'16M': 4}}
+...
+---
+timestamp: 1744368954
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 774, op: 12, cl: 12, ga: 20, sa: 4, gx: 2, rd: 356, wr: 4, pu: 4, rb: {'4M': 274, '4K': 4, '16M': 38, '512K': 38, '1M': 2}, wb: {'16M': 4}}
+...
+---
+timestamp: 1744368956
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 774, op: 12, cl: 12, ga: 20, sa: 4, gx: 2, rd: 356, wr: 4, pu: 4, rb: {'4K': 4, '512K': 38, '1M': 2, '4M': 274, '16M': 38}, wb: {'16M': 4}}
+...
+---
+timestamp: 1744368957
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 774, op: 12, cl: 12, ga: 20, sa: 4, gx: 2, rd: 356, wr: 4, pu: 4, rb: {'4M': 274, '4K': 4, '16M': 38, '512K': 38, '1M': 2}, wb: {'16M': 4}}
+...
+---
+timestamp: 1744368959
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 774, op: 12, cl: 12, ga: 20, sa: 4, gx: 2, rd: 356, wr: 4, pu: 4, rb: {'4M': 274, '4K': 4, '512K': 38, '1M': 2, '16M': 38}, wb: {'16M': 4}}
+...
+---
+timestamp: 1744368960
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 958, op: 92, cl: 90, mn: 2, ul: 2, ga: 28, sa: 4, gx: 4, rd: 362, wr: 4, pu: 4, rb: {'4M': 276, '1': 2, '4K': 4, '16M': 38, '512K': 40, '1M': 2}, wb: {'16M': 4}}
+...
+---
+timestamp: 1744368962
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 1100, op: 164, cl: 160, mn: 2, ul: 2, ga: 28, sa: 4, gx: 4, rd: 362, wr: 4, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '512K': 40, '1': 2, '1M': 2}, wb: {'16M': 4}}
+...
+---
+timestamp: 1744368963
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 1280, op: 247, cl: 245, mn: 2, ul: 2, ga: 34, sa: 4, gx: 6, rd: 362, wr: 6, pu: 4, rb: {'4M': 276, '1': 2, '512K': 40, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 4, '4K': 2}}
+...
+---
+timestamp: 1744368965
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 1449, op: 332, cl: 329, mn: 2, ul: 2, ga: 34, sa: 4, gx: 6, rd: 362, wr: 6, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 4, '4K': 2}}
+...
+---
+timestamp: 1744368967
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 1607, op: 411, cl: 408, mn: 2, ul: 2, ga: 34, sa: 4, gx: 6, rd: 362, wr: 6, pu: 4, rb: {'4M': 276, '1': 2, '512K': 40, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 4, '4K': 2}}
+...
+---
+timestamp: 1744368969
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 1767, op: 489, cl: 486, mn: 2, ul: 2, ga: 34, sa: 4, gx: 6, rd: 362, wr: 8, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '16M': 38, '1M': 2, '1': 2}, wb: {'16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368970
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 1934, op: 572, cl: 570, mn: 2, ul: 2, ga: 34, sa: 4, gx: 6, rd: 362, wr: 8, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744368972
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 2084, op: 647, cl: 645, mn: 2, ul: 2, ga: 34, sa: 4, gx: 6, rd: 362, wr: 8, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744368974
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 2262, op: 732, cl: 730, mn: 2, ul: 2, ga: 40, sa: 4, gx: 8, rd: 362, wr: 8, pu: 4, rb: {'4K': 4, '512K': 40, '1M': 2, '4M': 276, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368975
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 2422, op: 812, cl: 810, mn: 2, ul: 2, ga: 40, sa: 4, gx: 8, rd: 362, wr: 8, pu: 4, rb: {'4K': 4, '4M': 276, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744368977
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 2582, op: 892, cl: 890, mn: 2, ul: 2, ga: 40, sa: 4, gx: 8, rd: 362, wr: 8, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368979
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 2742, op: 972, cl: 970, mn: 2, ul: 2, ga: 40, sa: 4, gx: 8, rd: 362, wr: 8, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744368980
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 2914, op: 1058, cl: 1056, mn: 2, ul: 2, ga: 40, sa: 4, gx: 8, rd: 362, wr: 8, pu: 4, rb: {'4K': 4, '4M': 276, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744368982
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 3074, op: 1138, cl: 1136, mn: 2, ul: 2, ga: 40, sa: 4, gx: 8, rd: 362, wr: 8, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368984
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 3242, op: 1218, cl: 1216, mn: 2, ul: 2, ga: 46, sa: 4, gx: 10, rd: 362, wr: 8, pu: 4, rb: {'4K': 4, '4M': 276, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744368985
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 3422, op: 1308, cl: 1306, mn: 2, ul: 2, ga: 46, sa: 4, gx: 10, rd: 362, wr: 8, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368987
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 3582, op: 1388, cl: 1386, mn: 2, ul: 2, ga: 46, sa: 4, gx: 10, rd: 362, wr: 8, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368989
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 3732, op: 1463, cl: 1461, mn: 2, ul: 2, ga: 46, sa: 4, gx: 10, rd: 362, wr: 8, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368991
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 3882, op: 1538, cl: 1536, mn: 2, ul: 2, ga: 46, sa: 4, gx: 10, rd: 362, wr: 8, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368992
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 4042, op: 1618, cl: 1616, mn: 2, ul: 2, ga: 46, sa: 4, gx: 10, rd: 362, wr: 8, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368994
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 4224, op: 1703, cl: 1701, mn: 2, ul: 2, ga: 52, sa: 4, gx: 12, rd: 362, wr: 10, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 2}}
+...
+---
+timestamp: 1744368996
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 4394, op: 1788, cl: 1786, mn: 2, ul: 2, ga: 52, sa: 4, gx: 12, rd: 362, wr: 10, pu: 4, rb: {'1': 2, '4M': 276, '512K': 40, '4K': 4, '16M': 38, '1M': 2}, wb: {'4M': 2, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744368997
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 4539, op: 1861, cl: 1858, mn: 2, ul: 2, ga: 52, sa: 4, gx: 12, rd: 362, wr: 10, pu: 4, rb: {'4K': 4, '4M': 276, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 2}}
+...
+---
+timestamp: 1744368999
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 4714, op: 1948, cl: 1946, mn: 2, ul: 2, ga: 52, sa: 4, gx: 12, rd: 362, wr: 10, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 2}}
+...
+---
+timestamp: 1744369000
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 4854, op: 2018, cl: 2016, mn: 2, ul: 2, ga: 52, sa: 4, gx: 12, rd: 362, wr: 10, pu: 4, rb: {'1': 2, '4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38}, wb: {'4M': 2, '4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744369002
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 5046, op: 2114, cl: 2112, mn: 2, ul: 2, ga: 52, sa: 4, gx: 12, rd: 362, wr: 10, pu: 4, rb: {'1': 2, '4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38}, wb: {'4M': 2, '4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744369004
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 5213, op: 2194, cl: 2191, mn: 2, ul: 2, ga: 58, sa: 4, gx: 14, rd: 362, wr: 10, pu: 4, rb: {'1': 2, '4M': 276, '512K': 40, '4K': 4, '16M': 38, '1M': 2}, wb: {'4M': 2, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369005
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 5374, op: 2274, cl: 2272, mn: 2, ul: 2, ga: 58, sa: 4, gx: 14, rd: 362, wr: 10, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 2, '4K': 2}}
+...
+---
+timestamp: 1744369007
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 5534, op: 2354, cl: 2352, mn: 2, ul: 2, ga: 58, sa: 4, gx: 14, rd: 362, wr: 10, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 2}}
+...
+---
+timestamp: 1744369009
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 5674, op: 2424, cl: 2422, mn: 2, ul: 2, ga: 58, sa: 4, gx: 14, rd: 362, wr: 10, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 2}}
+...
+---
+timestamp: 1744369010
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 5834, op: 2504, cl: 2502, mn: 2, ul: 2, ga: 58, sa: 4, gx: 14, rd: 362, wr: 10, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 2}}
+...
+---
+timestamp: 1744369012
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 5994, op: 2584, cl: 2582, mn: 2, ul: 2, ga: 58, sa: 4, gx: 14, rd: 362, wr: 10, pu: 4, rb: {'4M': 276, '1': 2, '4K': 4, '16M': 38, '512K': 40, '1M': 2}, wb: {'4M': 2, '4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744369014
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 6160, op: 2664, cl: 2661, mn: 2, ul: 2, ga: 64, sa: 4, gx: 15, rd: 362, wr: 10, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 2}}
+...
+---
+timestamp: 1744369015
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 6307, op: 2737, cl: 2734, mn: 2, ul: 2, ga: 64, sa: 4, gx: 16, rd: 362, wr: 10, pu: 4, rb: {'4K': 4, '4M': 276, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 2}}
+...
+---
+timestamp: 1744369017
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 6462, op: 2814, cl: 2812, mn: 2, ul: 2, ga: 64, sa: 4, gx: 16, rd: 362, wr: 10, pu: 4, rb: {'1': 2, '4M': 276, '512K': 40, '4K': 4, '16M': 38, '1M': 2}, wb: {'4M': 2, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369019
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 6622, op: 2894, cl: 2892, mn: 2, ul: 2, ga: 64, sa: 4, gx: 16, rd: 362, wr: 10, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 2}}
+...
+---
+timestamp: 1744369020
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 6782, op: 2974, cl: 2972, mn: 2, ul: 2, ga: 64, sa: 4, gx: 16, rd: 362, wr: 10, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 2}}
+...
+---
+timestamp: 1744369022
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 6942, op: 3054, cl: 3052, mn: 2, ul: 2, ga: 64, sa: 4, gx: 16, rd: 362, wr: 10, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4M': 2, '4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744369023
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 7114, op: 3140, cl: 3138, mn: 2, ul: 2, ga: 64, sa: 4, gx: 16, rd: 362, wr: 10, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 2}}
+...
+---
+timestamp: 1744369025
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 7286, op: 3220, cl: 3218, mn: 2, ul: 2, ga: 70, sa: 4, gx: 18, rd: 362, wr: 12, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1M': 2, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 4}}
+...
+---
+timestamp: 1744369027
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 7446, op: 3300, cl: 3298, mn: 2, ul: 2, ga: 70, sa: 4, gx: 18, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 4, '4K': 2}}
+...
+---
+timestamp: 1744369029
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 7597, op: 3376, cl: 3373, mn: 2, ul: 2, ga: 70, sa: 4, gx: 18, rd: 362, wr: 12, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 4}}
+...
+---
+timestamp: 1744369030
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 7766, op: 3460, cl: 3458, mn: 2, ul: 2, ga: 70, sa: 4, gx: 18, rd: 362, wr: 12, pu: 4, rb: {'4K': 4, '512K': 40, '1M': 2, '4M': 276, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 4, '4K': 2}}
+...
+---
+timestamp: 1744369032
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 7916, op: 3535, cl: 3533, mn: 2, ul: 2, ga: 70, sa: 4, gx: 18, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 4}}
+...
+---
+timestamp: 1744369034
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 8076, op: 3615, cl: 3613, mn: 2, ul: 2, ga: 70, sa: 4, gx: 18, rd: 362, wr: 12, pu: 4, rb: {'4K': 4, '4M': 276, '16M': 38, '512K': 40, '1': 2, '1M': 2}, wb: {'4K': 2, '16M': 6, '4M': 4}}
+...
+---
+timestamp: 1744369035
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 8254, op: 3700, cl: 3698, mn: 2, ul: 2, ga: 76, sa: 4, gx: 20, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '4M': 4, '16M': 6}}
+...
+---
+timestamp: 1744369037
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 8394, op: 3770, cl: 3768, mn: 2, ul: 2, ga: 76, sa: 4, gx: 20, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4K': 2, '4M': 4, '16M': 6}}
+...
+---
+timestamp: 1744369039
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 8554, op: 3850, cl: 3848, mn: 2, ul: 2, ga: 76, sa: 4, gx: 20, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 4, '4K': 2}}
+...
+---
+timestamp: 1744369040
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 8714, op: 3930, cl: 3928, mn: 2, ul: 2, ga: 76, sa: 4, gx: 20, rd: 362, wr: 12, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 4, '4K': 2}}
+...
+---
+timestamp: 1744369042
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 8874, op: 4010, cl: 4008, mn: 2, ul: 2, ga: 76, sa: 4, gx: 20, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 4}}
+...
+---
+timestamp: 1744369044
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 9066, op: 4106, cl: 4104, mn: 2, ul: 2, ga: 76, sa: 4, gx: 20, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 4, '4K': 2}}
+...
+---
+timestamp: 1744369045
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 9235, op: 4187, cl: 4184, mn: 2, ul: 2, ga: 82, sa: 4, gx: 22, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4M': 4, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369047
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 9413, op: 4276, cl: 4273, mn: 2, ul: 2, ga: 82, sa: 4, gx: 22, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 4}}
+...
+---
+timestamp: 1744369049
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 9557, op: 4348, cl: 4345, mn: 2, ul: 2, ga: 82, sa: 4, gx: 22, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 4}}
+...
+---
+timestamp: 1744369050
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 9731, op: 4435, cl: 4432, mn: 2, ul: 2, ga: 82, sa: 4, gx: 22, rd: 362, wr: 12, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 4}}
+...
+---
+timestamp: 1744369052
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 9884, op: 4511, cl: 4509, mn: 2, ul: 2, ga: 82, sa: 4, gx: 22, rd: 362, wr: 12, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 4}}
+...
+---
+timestamp: 1744369054
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 10054, op: 4596, cl: 4594, mn: 2, ul: 2, ga: 82, sa: 4, gx: 22, rd: 362, wr: 12, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 4, '4K': 2}}
+...
+---
+timestamp: 1744369055
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 10206, op: 4666, cl: 4664, mn: 2, ul: 2, ga: 88, sa: 4, gx: 24, rd: 362, wr: 14, pu: 4, rb: {'4K': 4, '512K': 40, '1M': 2, '4M': 276, '16M': 38, '1': 2}, wb: {'4K': 2, '4M': 6, '16M': 6}}
+...
+---
+timestamp: 1744369057
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 10366, op: 4746, cl: 4744, mn: 2, ul: 2, ga: 88, sa: 4, gx: 24, rd: 362, wr: 14, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369059
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 10526, op: 4826, cl: 4824, mn: 2, ul: 2, ga: 88, sa: 4, gx: 24, rd: 362, wr: 14, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1M': 2, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 6}}
+...
+---
+timestamp: 1744369060
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 10666, op: 4896, cl: 4894, mn: 2, ul: 2, ga: 88, sa: 4, gx: 24, rd: 362, wr: 14, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369062
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 10826, op: 4976, cl: 4974, mn: 2, ul: 2, ga: 88, sa: 4, gx: 24, rd: 362, wr: 14, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369063
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 10986, op: 5056, cl: 5054, mn: 2, ul: 2, ga: 88, sa: 4, gx: 24, rd: 362, wr: 14, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '1': 2, '512K': 40, '1M': 2}, wb: {'4K': 2, '4M': 6, '16M': 6}}
+...
+---
+timestamp: 1744369065
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 11176, op: 5147, cl: 5145, mn: 2, ul: 2, ga: 94, sa: 4, gx: 26, rd: 362, wr: 14, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369067
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 11336, op: 5227, cl: 5225, mn: 2, ul: 2, ga: 94, sa: 4, gx: 26, rd: 362, wr: 14, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '512K': 40, '1': 2, '1M': 2}, wb: {'4K': 2, '16M': 6, '4M': 6}}
+...
+---
+timestamp: 1744369068
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 11496, op: 5307, cl: 5305, mn: 2, ul: 2, ga: 94, sa: 4, gx: 26, rd: 362, wr: 14, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369070
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 11656, op: 5387, cl: 5385, mn: 2, ul: 2, ga: 94, sa: 4, gx: 26, rd: 362, wr: 14, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 6}}
+...
+---
+timestamp: 1744369072
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 11816, op: 5467, cl: 5465, mn: 2, ul: 2, ga: 94, sa: 4, gx: 26, rd: 362, wr: 14, pu: 4, rb: {'4M': 276, '1': 2, '512K': 40, '4K': 4, '16M': 38, '1M': 2}, wb: {'4M': 6, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369074
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 11986, op: 5552, cl: 5550, mn: 2, ul: 2, ga: 94, sa: 4, gx: 26, rd: 362, wr: 14, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1M': 2, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 6}}
+...
+---
+timestamp: 1744369075
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 12154, op: 5632, cl: 5630, mn: 2, ul: 2, ga: 100, sa: 4, gx: 28, rd: 362, wr: 14, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4K': 2, '4M': 6, '16M': 6}}
+...
+---
+timestamp: 1744369077
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 12314, op: 5712, cl: 5710, mn: 2, ul: 2, ga: 100, sa: 4, gx: 28, rd: 362, wr: 14, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369079
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 12474, op: 5792, cl: 5790, mn: 2, ul: 2, ga: 100, sa: 4, gx: 28, rd: 362, wr: 14, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369080
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 12634, op: 5872, cl: 5870, mn: 2, ul: 2, ga: 100, sa: 4, gx: 28, rd: 362, wr: 14, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369082
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 12794, op: 5952, cl: 5950, mn: 2, ul: 2, ga: 100, sa: 4, gx: 28, rd: 362, wr: 14, pu: 4, rb: {'4M': 276, '1': 2, '512K': 40, '4K': 4, '16M': 38, '1M': 2}, wb: {'4M': 6, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369084
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 12954, op: 6032, cl: 6030, mn: 2, ul: 2, ga: 100, sa: 4, gx: 28, rd: 362, wr: 14, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 6}}
+...
+---
+timestamp: 1744369085
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 13136, op: 6119, cl: 6117, mn: 2, ul: 2, ga: 106, sa: 4, gx: 30, rd: 362, wr: 14, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 6}}
+...
+---
+timestamp: 1744369087
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 13298, op: 6198, cl: 6196, mn: 2, ul: 2, ga: 106, sa: 4, gx: 30, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 8}}
+...
+---
+timestamp: 1744369089
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 13458, op: 6278, cl: 6276, mn: 2, ul: 2, ga: 106, sa: 4, gx: 30, rd: 362, wr: 16, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 8, '4K': 2}}
+...
+---
+timestamp: 1744369090
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 13618, op: 6358, cl: 6356, mn: 2, ul: 2, ga: 106, sa: 4, gx: 30, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '1': 2, '512K': 40, '1M': 2}, wb: {'4K': 2, '4M': 8, '16M': 6}}
+...
+---
+timestamp: 1744369092
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 13778, op: 6438, cl: 6436, mn: 2, ul: 2, ga: 106, sa: 4, gx: 30, rd: 362, wr: 16, pu: 4, rb: {'4K': 4, '4M': 276, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 8}}
+...
+---
+timestamp: 1744369094
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 13938, op: 6518, cl: 6516, mn: 2, ul: 2, ga: 106, sa: 4, gx: 30, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 8, '4K': 2}}
+...
+---
+timestamp: 1744369095
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 14106, op: 6598, cl: 6596, mn: 2, ul: 2, ga: 112, sa: 4, gx: 32, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 8}}
+...
+---
+timestamp: 1744369097
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 14247, op: 6669, cl: 6666, mn: 2, ul: 2, ga: 112, sa: 4, gx: 32, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '1': 2, '512K': 40, '4K': 4, '16M': 38, '1M': 2}, wb: {'4M': 8, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369099
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 14416, op: 6753, cl: 6751, mn: 2, ul: 2, ga: 112, sa: 4, gx: 32, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 8, '4K': 2}}
+...
+---
+timestamp: 1744369100
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 14566, op: 6828, cl: 6826, mn: 2, ul: 2, ga: 112, sa: 4, gx: 32, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '1': 2, '4K': 4, '512K': 40, '1M': 2, '16M': 38}, wb: {'4M': 8, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369102
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 14726, op: 6908, cl: 6906, mn: 2, ul: 2, ga: 112, sa: 4, gx: 32, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 8, '4K': 2}}
+...
+---
+timestamp: 1744369104
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 14886, op: 6988, cl: 6986, mn: 2, ul: 2, ga: 112, sa: 4, gx: 32, rd: 362, wr: 16, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 8, '4K': 2}}
+...
+---
+timestamp: 1744369105
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 15054, op: 7068, cl: 7066, mn: 2, ul: 2, ga: 118, sa: 4, gx: 34, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 8}}
+...
+---
+timestamp: 1744369107
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 15226, op: 7154, cl: 7152, mn: 2, ul: 2, ga: 118, sa: 4, gx: 34, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '512K': 40, '1M': 2, '1': 2}, wb: {'4K': 2, '16M': 6, '4M': 8}}
+...
+---
+timestamp: 1744369108
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 15386, op: 7234, cl: 7232, mn: 2, ul: 2, ga: 118, sa: 4, gx: 34, rd: 362, wr: 16, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 8}}
+...
+---
+timestamp: 1744369110
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 15526, op: 7304, cl: 7302, mn: 2, ul: 2, ga: 118, sa: 4, gx: 34, rd: 362, wr: 16, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1M': 2, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 8}}
+...
+---
+timestamp: 1744369112
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 15686, op: 7384, cl: 7382, mn: 2, ul: 2, ga: 118, sa: 4, gx: 34, rd: 362, wr: 16, pu: 4, rb: {'4K': 4, '4M': 276, '16M': 38, '1': 2, '512K': 40, '1M': 2}, wb: {'4K': 2, '4M': 8, '16M': 6}}
+...
+---
+timestamp: 1744369113
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 15846, op: 7464, cl: 7462, mn: 2, ul: 2, ga: 118, sa: 4, gx: 34, rd: 362, wr: 16, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 8, '4K': 2}}
+...
+---
+timestamp: 1744369115
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 16014, op: 7544, cl: 7542, mn: 2, ul: 2, ga: 124, sa: 4, gx: 36, rd: 362, wr: 16, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 8}}
+...
+---
+timestamp: 1744369117
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 16178, op: 7624, cl: 7622, mn: 2, ul: 2, ga: 124, sa: 4, gx: 36, rd: 362, wr: 18, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 10, '4K': 2}}
+...
+---
+timestamp: 1744369118
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 16338, op: 7704, cl: 7702, mn: 2, ul: 2, ga: 124, sa: 4, gx: 36, rd: 362, wr: 18, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 10, '4K': 2}}
+...
+---
+timestamp: 1744369120
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 16498, op: 7784, cl: 7782, mn: 2, ul: 2, ga: 124, sa: 4, gx: 36, rd: 362, wr: 18, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 10}}
+...
+---
+timestamp: 1744369122
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 16658, op: 7864, cl: 7862, mn: 2, ul: 2, ga: 124, sa: 4, gx: 36, rd: 362, wr: 18, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 10, '4K': 2}}
+...
+---
+timestamp: 1744369123
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 16818, op: 7944, cl: 7942, mn: 2, ul: 2, ga: 124, sa: 4, gx: 36, rd: 362, wr: 18, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 10, '4K': 2}}
+...
+---
+timestamp: 1744369125
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 16986, op: 8024, cl: 8022, mn: 2, ul: 2, ga: 130, sa: 4, gx: 38, rd: 362, wr: 18, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 10, '4K': 2}}
+...
+---
+timestamp: 1744369127
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 17146, op: 8104, cl: 8102, mn: 2, ul: 2, ga: 130, sa: 4, gx: 38, rd: 362, wr: 18, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 10, '4K': 2}}
+...
+---
+timestamp: 1744369128
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 17318, op: 8190, cl: 8188, mn: 2, ul: 2, ga: 130, sa: 4, gx: 38, rd: 362, wr: 18, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 10, '4K': 2}}
+...
+---
+timestamp: 1744369130
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 17478, op: 8270, cl: 8268, mn: 2, ul: 2, ga: 130, sa: 4, gx: 38, rd: 362, wr: 18, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1M': 2, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 10}}
+...
+---
+timestamp: 1744369132
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 17638, op: 8350, cl: 8348, mn: 2, ul: 2, ga: 130, sa: 4, gx: 38, rd: 362, wr: 18, pu: 4, rb: {'4M': 276, '4K': 4, '16M': 38, '1': 2, '512K': 40, '1M': 2}, wb: {'4K': 2, '4M': 10, '16M': 6}}
+...
+---
+timestamp: 1744369133
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 17798, op: 8430, cl: 8428, mn: 2, ul: 2, ga: 130, sa: 4, gx: 38, rd: 362, wr: 18, pu: 4, rb: {'4K': 4, '512K': 40, '1M': 2, '4M': 276, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 10}}
+...
+---
+timestamp: 1744369135
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 17966, op: 8510, cl: 8508, mn: 2, ul: 2, ga: 136, sa: 4, gx: 40, rd: 362, wr: 18, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 10}}
+...
+---
+timestamp: 1744369137
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 18106, op: 8580, cl: 8578, mn: 2, ul: 2, ga: 136, sa: 4, gx: 40, rd: 362, wr: 18, pu: 4, rb: {'4M': 276, '1': 2, '512K': 40, '4K': 4, '1M': 2, '16M': 38}, wb: {'4M': 10, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369138
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 18266, op: 8660, cl: 8658, mn: 2, ul: 2, ga: 136, sa: 4, gx: 40, rd: 362, wr: 18, pu: 4, rb: {'4K': 4, '512K': 40, '1M': 2, '4M': 276, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 10, '4K': 2}}
+...
+---
+timestamp: 1744369140
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 18425, op: 8740, cl: 8737, mn: 2, ul: 2, ga: 136, sa: 4, gx: 40, rd: 362, wr: 18, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1M': 2, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 10}}
+...
+---
+timestamp: 1744369142
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 18583, op: 8819, cl: 8816, mn: 2, ul: 2, ga: 136, sa: 4, gx: 40, rd: 362, wr: 18, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 10}}
+...
+---
+timestamp: 1744369143
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 18726, op: 8890, cl: 8888, mn: 2, ul: 2, ga: 136, sa: 4, gx: 40, rd: 362, wr: 18, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 10}}
+...
+---
+timestamp: 1744369145
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 18894, op: 8970, cl: 8968, mn: 2, ul: 2, ga: 142, sa: 4, gx: 42, rd: 362, wr: 18, pu: 4, rb: {'4M': 276, '1': 2, '512K': 40, '4K': 4, '1M': 2, '16M': 38}, wb: {'4M': 10, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369146
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 19054, op: 9050, cl: 9048, mn: 2, ul: 2, ga: 142, sa: 4, gx: 42, rd: 362, wr: 18, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 10, '4K': 2}}
+...
+---
+timestamp: 1744369148
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 19218, op: 9130, cl: 9128, mn: 2, ul: 2, ga: 142, sa: 4, gx: 42, rd: 362, wr: 20, pu: 4, rb: {'4K': 4, '512K': 40, '1M': 2, '4M': 276, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 12}}
+...
+---
+timestamp: 1744369150
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 19390, op: 9216, cl: 9214, mn: 2, ul: 2, ga: 142, sa: 4, gx: 42, rd: 362, wr: 20, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 12}}
+...
+---
+timestamp: 1744369151
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 19550, op: 9296, cl: 9294, mn: 2, ul: 2, ga: 142, sa: 4, gx: 42, rd: 362, wr: 20, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 12}}
+...
+---
+timestamp: 1744369153
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 19690, op: 9366, cl: 9364, mn: 2, ul: 2, ga: 142, sa: 4, gx: 42, rd: 362, wr: 20, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 12, '4K': 2}}
+...
+---
+timestamp: 1744369155
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 19850, op: 9446, cl: 9444, mn: 2, ul: 2, ga: 142, sa: 4, gx: 42, rd: 362, wr: 20, pu: 4, rb: {'4K': 4, '512K': 40, '1M': 2, '4M': 276, '16M': 38, '1': 2}, wb: {'4M': 12, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369156
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 20038, op: 9536, cl: 9534, mn: 2, ul: 2, ga: 148, sa: 4, gx: 44, rd: 362, wr: 20, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 12, '4K': 2}}
+...
+---
+timestamp: 1744369158
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 20178, op: 9606, cl: 9604, mn: 2, ul: 2, ga: 148, sa: 4, gx: 44, rd: 362, wr: 20, pu: 4, rb: {'4K': 4, '4M': 276, '16M': 38, '1': 2, '512K': 40, '1M': 2}, wb: {'4K': 2, '4M': 12, '16M': 6}}
+...
+---
+timestamp: 1744369160
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 20338, op: 9686, cl: 9684, mn: 2, ul: 2, ga: 148, sa: 4, gx: 44, rd: 362, wr: 20, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1M': 2, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 12}}
+...
+---
+timestamp: 1744369161
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 20498, op: 9766, cl: 9764, mn: 2, ul: 2, ga: 148, sa: 4, gx: 44, rd: 362, wr: 20, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '16M': 38, '1': 2, '1M': 2}, wb: {'16M': 6, '4K': 2, '4M': 12}}
+...
+---
+timestamp: 1744369163
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 20658, op: 9846, cl: 9844, mn: 2, ul: 2, ga: 148, sa: 4, gx: 44, rd: 362, wr: 20, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 12}}
+...
+---
+timestamp: 1744369165
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 20818, op: 9926, cl: 9924, mn: 2, ul: 2, ga: 148, sa: 4, gx: 44, rd: 362, wr: 20, pu: 4, rb: {'4K': 4, '512K': 40, '1M': 2, '4M': 276, '16M': 38, '1': 2}, wb: {'4M': 12, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369166
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 20986, op: 10006, cl: 10004, mn: 2, ul: 2, ga: 154, sa: 4, gx: 46, rd: 362, wr: 20, pu: 4, rb: {'4M': 276, '512K': 40, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4M': 12, '4K': 2}}
+...
+---
+timestamp: 1744369168
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 21146, op: 10086, cl: 10084, mn: 2, ul: 2, ga: 154, sa: 4, gx: 46, rd: 362, wr: 20, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 12, '4K': 2}}
+...
+---
+timestamp: 1744369170
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 21306, op: 10166, cl: 10164, mn: 2, ul: 2, ga: 154, sa: 4, gx: 46, rd: 362, wr: 20, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '1M': 2, '16M': 38, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 12}}
+...
+---
+timestamp: 1744369171
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 21352, op: 10188, cl: 10188, mn: 2, ul: 2, ga: 154, sa: 4, gx: 46, rd: 362, wr: 20, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 12, '4K': 2}}
+...
+---
+timestamp: 1744369173
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 21352, op: 10188, cl: 10188, mn: 2, ul: 2, ga: 154, sa: 4, gx: 46, rd: 362, wr: 20, pu: 4, rb: {'4M': 276, '512K': 40, '1': 2, '4K': 4, '16M': 38, '1M': 2}, wb: {'16M': 6, '4M': 12, '4K': 2}}
+...
+---
+timestamp: 1744369174
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 21352, op: 10188, cl: 10188, mn: 2, ul: 2, ga: 154, sa: 4, gx: 46, rd: 362, wr: 20, pu: 4, rb: {'4M': 276, '4K': 4, '512K': 40, '1M': 2, '16M': 38, '1': 2}, wb: {'4M': 12, '16M': 6, '4K': 2}}
+...
+---
+timestamp: 1744369175
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 21352, op: 10188, cl: 10188, mn: 2, ul: 2, ga: 154, sa: 4, gx: 46, rd: 362, wr: 20, pu: 4, rb: {'4M': 276, '1': 2, '4K': 4, '512K': 40, '1M': 2, '16M': 38}, wb: {'4M': 12, '4K': 2, '16M': 6}}
+...
+---
+timestamp: 1744369177
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 21352, op: 10188, cl: 10188, mn: 2, ul: 2, ga: 154, sa: 4, gx: 46, rd: 362, wr: 20, pu: 4, rb: {'512K': 40, '4M': 276, '4K': 4, '16M': 38, '1M': 2, '1': 2}, wb: {'16M': 6, '4K': 2, '4M': 12}}
+...
+---
+timestamp: 1744369178
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "2869:1000054:x440-03":{ops: 21356, op: 10188, cl: 10188, mn: 2, ul: 2, ga: 154, sa: 4, gx: 46, rd: 362, wr: 22, pu: 4, rb: {'512K': 40, '4M': 276, '1': 2, '4K': 4, '1M': 2, '16M': 38}, wb: {'16M': 6, '4M': 14, '4K': 2}}
+...
