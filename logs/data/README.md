@@ -28,7 +28,7 @@ force_stop = 500
 n_check = 1000
 max_iter = 1000000
 
-Job 2950 - Replication of MAML paper w/ npz (1s intervals)
+Job 2977 - Replication of MAML paper w/ npz (1s intervals)
 nodes = 1
 cpus_per_node = 32
 batch_size = 5

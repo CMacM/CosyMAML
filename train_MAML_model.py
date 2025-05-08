@@ -1,19 +1,16 @@
 import numpy as np
 import h5py as h5
 import torch
-import sacc
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 from time import time
 
 import src.training as training
 import src.models as models
-import src.mcmc as mcmc
 
 from importlib import reload
 reload(training)
 reload(models)
-reload(mcmc)
 
 import argparse
 
@@ -156,7 +153,9 @@ def main(args):
         epoch += 1
 
         # fine-tune the model on the validation set
-        task_weights, _ = metalearner.finetune(X_val_train, y_val_train, adapt_steps=args.n_ft_epochs, use_new_adam=True)
+        task_weights, _ = metalearner.finetune(
+                X_val_train, y_val_train, adapt_steps=args.n_ft_epochs, use_new_adam=True
+            )
 
         # Evaluate the model on the test set
         metalearner.model.eval()
@@ -208,133 +207,8 @@ def main(args):
         )
     )
 
-    # Load metaleraner weights
-    #### I/O KEY READ POINT ####
-    metalearner.model.load_state_dict(
-        torch.load(
-            '/exafs/400NVX2/cmacmahon/weights/{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(
-                args.batch_size, args.n_samples, args.n_tasks
-            )
-        )
-    )
-
-    print('Finetuning model to MCMC N(z) task...')
-
-    # Load in data for finetuning the MAML model
-    #### I/O KEY READ POINT ####
-    train_data, _, ScalerY, ScalerX = training.load_train_test_val(
-        filepath=args.mcmc_trainfile, n_train=args.n_finetune, n_val=None, n_test=None, seed=args.seed,
-        device=device
-    )
-    X_train, y_train = train_data[:]
-
-    # Finetune the MAML model to get new weights
-    task_weights, _ = metalearner.finetune(
-        X_train,
-        y_train,
-        adapt_steps=args.n_ft_epochs,
-        use_new_adam=True
-    )
-
-    # Load in fiducial data
-    #### I/O KEY READ POINT ####
-    sacc_path = '/exafs/400NVX2/cmacmahon/spectra_data/cl_ee_fiducial_sacc.fits'
-    S = sacc.Sacc.load_fits(sacc_path)
-
-    # Define tracer combs
-    tracer_combs = S.get_tracer_combinations()
-
-    # Extract C_ell from SACC
-    c_ells = []
-    for comb in tracer_combs:
-        _, cell = S.get_ell_cl(
-            data_type='cl_ee',
-            tracer1=comb[0],
-            tracer2=comb[1],
-            return_cov=False
-        )
-        c_ells.append(cell)
-
-    # Get the covariance matrix from SACC
-    cov_full = S.covariance.covmat
-
-    # Specify fiducial cosmology and number of z-bins
-    theta = [0.27, 0.045, 0.67, 0.83, 0.96]
-    n_bins = len(S.tracers)
-
-    # Comment out if not using shifts
-    for i in range(n_bins):
-        theta.append(0.0)
-
-    # Prepare data and cov for MCMC
-    inv_cov = np.linalg.inv(cov_full)
-    data_vector = np.concatenate(c_ells)
-
-    # Initialize the walkers
-    nwalkers = args.n_walkers
-    ndim = len(theta)
-
-    # Define the priors
-    priors = [
-        (0.17, 0.4), # Omega_c
-        (0.03, 0.07), # Omega_b
-        (0.4, 1.1), # h
-        (0.65, 1.0), # sigma8
-        (0.8, 1.1) # n_s
-    ]
-
-    # Comment out if not using shifts
-    delta_z = 0.004 # LSST Y1 mean uncertainty
-    for i in range(n_bins):
-        priors.append((-delta_z, delta_z)) # Shifts for each redshift bin
-
-    # 10% spread around the known good point
-    spreads = 0.1 * np.array(theta)
-    for i in range(n_bins):
-        spreads[n_bins+i] += 4e-4
-    pos = [theta + spreads * np.random.randn(ndim) for _ in range(nwalkers)]
-
-    # Convert to numpy array
-    pos = np.array(pos)
-
-    # Construct a hook to call the MAML model during MCMC
-    MAMLHook = mcmc.EmulatorHook(
-        metalearner.model,
-        ScalerX,
-        ScalerY,
-        weights=task_weights, #Weights from finetuning
-        device=device
-    )
-    # Define backend file for emcee to store samples
-    ### I/O KEY WRITE POINT ### 
-    # Need to understand how the emcee backend works with writes
-    maml_backend = f'/exafs/400NVX2/cmacmahon/chains/{nwalkers}_maml_emulator_mcmc_samples.h5'
-
-    # Run the emcee sampler
-    print('Running emcee with MAML emulator...')
-    start = time()
-    mcmc.run_emcee(
-        ClHook=MAMLHook,
-        backend_file=maml_backend,
-        ndim=ndim,
-        priors=priors,
-        pos=pos,
-        data_vector=data_vector,
-        inv_cov=inv_cov,
-        nwalkers=nwalkers,
-        n_check=args.n_check,
-        max_iter=args.max_iter,
-        tau_factor=args.tau_factor,
-        clobber=True, # Need to check how clobering affects I/O
-        progress=False
-    )
-    maml_mcmc_time = time() - start
-
-    # Print out the MCMC times in minutes
-    print(f'MAML model MCMC time: {maml_mcmc_time/60:.2f} minutes')
-
 if __name__ == '__main__':
-
+    
     # Set up command-line argument parsing
     parser = argparse.ArgumentParser()
     parser.add_argument('--device', type=str, default='cpu')
@@ -347,19 +221,11 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', type=int, default=5)
     parser.add_argument('--n_samples', type=int, default=500)
     parser.add_argument('--n_tasks', type=int, default=20)
-    parser.add_argument('--force_stop', type=int, default=100)
-    parser.add_argument('--n_ft_epochs', type=int, default=64)
     parser.add_argument('--n_finetune', type=int, default=100)
-    parser.add_argument('--n_check', type=int, default=1000)
-    parser.add_argument('--max_iter', type=int, default=100000)
-    parser.add_argument('--n_walkers', type=int, default=76)
+    parser.add_argument('--n_ft_epochs', type=int, default=64)
+    parser.add_argument('--force_stop', type=int, default=100)
     parser.add_argument('--seed', type=int, default=14)
-    parser.add_argument('--tau_factor', type=float, default=50)
 
     # Parse the command-line arguments and run the main function
     args = parser.parse_args()
     main(args)
-
-
-
-

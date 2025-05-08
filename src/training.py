@@ -510,9 +510,14 @@ def load_train_test_val(filepath, n_train, n_val=None, n_test=None, seed=14, dev
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # test with random samples
-    with h5.File(filepath, 'r') as f:
-        X = f['hypercube'][:]
-        y = f['c_ells'][:]
+    if filepath.endswith('.h5'):
+        with h5.File(filepath, 'r') as f:
+            X = f['hypercube'][:]
+            y = f['c_ells'][:]
+    elif filepath.endswith('.npz'):
+        with np.load(filepath) as f:
+            X = f['hypercube'][:]
+            y = f['c_ells'][:]
 
     # split into test training and validation sets
     # Fix test size so different samplings don't test on different numbers of samples

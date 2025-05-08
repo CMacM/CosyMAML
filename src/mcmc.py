@@ -6,10 +6,15 @@ import emcee
 import torch
 import os
 
+import h5py
+
 import src.training as training
 import src.models as models
 
 from time import time
+from emcee.autocorr import integrated_time, AutocorrError
+from tqdm import tqdm
+
 from importlib import reload
 reload(training)
 reload(models)
@@ -138,3 +143,77 @@ def run_emcee(
             break
 
     print("Sampling completed in {} iterations".format(sampler.iteration))
+
+def run_batched_mh(
+        ClHook,
+        backend_file,
+        ndim,
+        priors,
+        initial_pos,
+        data_vector,
+        inv_cov,
+        batch_size=128,
+        max_iter=50000,
+        n_check=1000,
+        tau_factor=50,
+        proposal_scale=0.01,
+        clobber=True,
+        progress=False
+    ):
+
+    if clobber and os.path.exists(backend_file):
+        os.remove(backend_file)
+
+    current = np.array(initial_pos)
+    chain = np.zeros((max_iter, ndim), dtype=np.float32)
+    converged = False
+    tau_factor = 50
+
+    # Evaluate initial log prob
+    current_log_prob = log_probability(current[None, :], priors, data_vector, inv_cov, ClHook)[0]
+
+    # Initialise tqdm progress bar
+    if progress:
+        pbar = tqdm(total=max_iter, desc="MCMC Sampling", unit="step")
+        pbar.update(0)
+
+    with h5py.File(backend_file, "w") as f:
+        dset = f.create_dataset("chain", shape=(max_iter, ndim), dtype="f4")
+        dlogp = f.create_dataset("log_prob", shape=(max_iter,), dtype="f4")
+
+        for step in range(max_iter):
+            proposals = current + proposal_scale * np.random.randn(batch_size, ndim)
+            log_probs = log_probability(proposals, priors, data_vector, inv_cov, ClHook)
+
+            # Softmax-based sampling to pick a new state
+            log_ratios = log_probs - current_log_prob
+            weights = np.exp(log_ratios - np.max(log_ratios))  # stability
+            weights /= np.sum(weights)
+
+            idx = np.random.choice(batch_size, p=weights)
+            current = proposals[idx]
+            current_log_prob = log_probs[idx]
+
+            # Save sample
+            chain[step] = current
+            dset[step] = current
+            dlogp[step] = current_log_prob
+
+            # Update progress bar
+            if progress:
+                pbar.update(1)
+                pbar.set_postfix({"log_prob": current_log_prob})
+                pbar.refresh()
+
+            # Convergence check
+            if step >= n_check and step % n_check == 0:
+                try:
+                    tau = integrated_time(chain[:step], tol=0)
+                    converged = np.all(tau * tau_factor < step)
+                    if converged:
+                        print(f"Converged at step {step} with tau = {tau}")
+                except AutocorrError:
+                    print("Autocorrelation time could not be estimated. Continuing...")
+
+    if progress:
+        pbar.close()
