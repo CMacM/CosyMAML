@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import h5py as h5
 import torch
 from torch.utils.data import DataLoader, TensorDataset
@@ -30,6 +31,7 @@ def main(args):
     # Load the training data and split into train and validation sets
     #### I/O KEY READ POINT ####
     # check if file is hdf5 or npz
+    start = time()
     if args.trainfile.endswith('.npz'):
         with np.load(args.trainfile) as data:
             X_train = data['X_train'][task_inds[:-1]]
@@ -42,6 +44,7 @@ def main(args):
             y_train = f['y_train'][task_inds[:-1]]
             X_val = f['X_train'][task_inds[-1]]
             y_val = f['y_train'][task_inds[-1]]
+    read_data = time()-start
 
     # Slice number of shots we want to train with
     X_train = X_train[:,sample_inds,:]
@@ -190,34 +193,54 @@ def main(args):
 
     # Save loss history
     #### I/O KEY WRITE POINT ####
-    with h5.File(
-        '/exafs/400NVX2/cmacmahon/weights/{}batch_{}samples_{}tasks_metalearner_losses.h5'.format(
-            args.batch_size, args.n_samples, args.n_tasks
-        ), 'w') as f:
-        f.create_dataset('meta_losses', data=meta_losses)
-        f.create_dataset('val_losses', data=val_losses)
-        f.create_dataset('total_time', data=total_time)
-
-    # Save meta weights
-    #### I/O KEY WRITE POINT ####
-    torch.save(
-        metalearner.model.state_dict(),
-        '/exafs/400NVX2/cmacmahon/weights/{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(
+    loss_filename = os.path.join(
+        args.model_dir, '{}batch_{}samples_{}tasks_metalearner_losses.h5'.format(
             args.batch_size, args.n_samples, args.n_tasks
         )
     )
+    start = time()
+    with h5.File(loss_filename, 'w') as f:
+        f.create_dataset('meta_losses', data=meta_losses)
+        f.create_dataset('val_losses', data=val_losses)
+        f.create_dataset('total_time', data=total_time)
+    write_loss = time()-start
+
+    # Save meta weights
+    #### I/O KEY WRITE POINT ####
+    weights_filename = os.path.join(
+        args.model_dir, '{}batch_{}samples_{}tasks_metalearner_weights.h5'.format(
+            args.batch_size, args.n_samples, args.n_tasks
+        )
+    )
+
+    start = time()
+    torch.save(metalearner.model.state_dict() ,weights_filename)
+    write_weights = time()-start
+
+    if args.time_io:
+        # Write to txt file
+        job_id = os.getenv('SLURM_JOB_ID', 'local')
+        filepath = '~/CosyMAML/logs/io/{}_io_timings.txt'.format(job_id)
+        with open(filepath, 'w') as f:
+            # Get current job ID
+            
+            # Write the job ID and times to the file
+            f.write(f'Job ID: {job_id}\n')
+            f.write('read_data write_loss write_weights\n')
+            f.write(f'{read_data} {write_loss} {write_weights}\n')
 
 if __name__ == '__main__':
     
     # Set up command-line argument parsing
     parser = argparse.ArgumentParser()
-    parser.add_argument('--device', type=str, default='cpu')
+    parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu')
     parser.add_argument('--trainfile', type=str, 
         default='/exafs/400NVX2/cmacmahon/spectra_data/cl_ee_200tasks_5000samples_seed456.h5'
     )
     parser.add_argument('--mcmc_trainfile', type=str, 
         default='/exafs/400NVX2/cmacmahon/spectra_data/cl_ee_mcmc_dndz_nsamples=30000.h5'
     )
+    parser.add_argument('--model_dir', type=str, default='/exafs/400NVX2/cmacmahon/weights')
     parser.add_argument('--batch_size', type=int, default=5)
     parser.add_argument('--n_samples', type=int, default=500)
     parser.add_argument('--n_tasks', type=int, default=20)
@@ -225,6 +248,7 @@ if __name__ == '__main__':
     parser.add_argument('--n_ft_epochs', type=int, default=64)
     parser.add_argument('--force_stop', type=int, default=100)
     parser.add_argument('--seed', type=int, default=14)
+    parser.add_argument('--time_io', action='store_true')
 
     # Parse the command-line arguments and run the main function
     args = parser.parse_args()
