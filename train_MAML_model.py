@@ -31,7 +31,7 @@ def main(args):
     # Load the training data and split into train and validation sets
     #### I/O KEY READ POINT ####
     # check if file is hdf5 or npz
-    start = time()
+    start_read = time()
     if args.trainfile.endswith('.npz'):
         with np.load(args.trainfile) as data:
             X_train = data['X_train'][task_inds[:-1]]
@@ -44,8 +44,9 @@ def main(args):
             y_train = f['y_train'][task_inds[:-1]]
             X_val = f['X_train'][task_inds[-1]]
             y_val = f['y_train'][task_inds[-1]]
-    read_data = time()-start
+    end_read = time()
 
+    start_prep = time()
     # Slice number of shots we want to train with
     X_train = X_train[:,sample_inds,:]
     y_train = y_train[:,sample_inds,:]
@@ -88,6 +89,7 @@ def main(args):
     # Get size of input and output
     in_size = X_train.shape[-1]
     out_size = y_train.shape[-1]
+    end_prep = time()
 
     ### Hyperparams currently hardcoded to what was used in the paper ###
 
@@ -198,7 +200,7 @@ def main(args):
             args.batch_size, args.n_samples, args.n_tasks
         )
     )
-    start = time()
+    start_write = time()
     with h5.File(loss_filename, 'w') as f:
         f.create_dataset('meta_losses', data=meta_losses)
         f.create_dataset('val_losses', data=val_losses)
@@ -213,21 +215,15 @@ def main(args):
         )
     )
 
-    start = time()
     torch.save(metalearner.model.state_dict() ,weights_filename)
-    write_weights = time()-start
+    end_write = time()
 
-    if args.time_io:
-        # Write to txt file
-        job_id = os.getenv('SLURM_JOB_ID', 'local')
-        filepath = '~/CosyMAML/logs/io/{}_io_timings.txt'.format(job_id)
-        with open(filepath, 'w') as f:
-            # Get current job ID
-            
-            # Write the job ID and times to the file
-            f.write(f'Job ID: {job_id}\n')
-            f.write('read_data write_loss write_weights\n')
-            f.write(f'{read_data} {write_loss} {write_weights}\n')
+    # Write timing information to file
+    job_id = os.environ.get('SLURM_JOB_ID', 'local')
+    timing_filename = os.path.join(args.log_dir, f'{job_id}_timing.txt')
+    with open(timing_filename, 'a') as f:
+        f.write('start_read, end_read, start_prep, end_prep, start_write, write_loss, end_write\n')
+        f.write(f'{start_read}, {end_read}, {start_prep}, {end_prep}, {start_write}, {write_loss}, {end_write}\n')
 
 if __name__ == '__main__':
     
@@ -241,6 +237,7 @@ if __name__ == '__main__':
         default='/exafs/400NVX2/cmacmahon/spectra_data/cl_ee_mcmc_dndz_nsamples=30000.h5'
     )
     parser.add_argument('--model_dir', type=str, default='/exafs/400NVX2/cmacmahon/weights')
+    parser.add_argument('--log_dir', type=str, default='/exafs/400NVX2/cmacmahon/logs')
     parser.add_argument('--batch_size', type=int, default=5)
     parser.add_argument('--n_samples', type=int, default=500)
     parser.add_argument('--n_tasks', type=int, default=20)
@@ -248,7 +245,6 @@ if __name__ == '__main__':
     parser.add_argument('--n_ft_epochs', type=int, default=64)
     parser.add_argument('--force_stop', type=int, default=100)
     parser.add_argument('--seed', type=int, default=14)
-    parser.add_argument('--time_io', action='store_true')
 
     # Parse the command-line arguments and run the main function
     args = parser.parse_args()
