@@ -48,7 +48,7 @@ echo \
 # Then start logging values only
 nvidia-smi --query-gpu=timestamp,utilization.gpu,memory.used,memory.total,power.draw,temperature.gpu,clocks.sm \
     --format=csv,noheader,nounits \
-    --loop-ms=100 >> $HOME/CosyMAML/logs/gpu/gpu_metrics_$SLURM_JOB_ID.csv &
+    --loop=5 >> $HOME/CosyMAML/logs/gpu/gpu_metrics_$SLURM_JOB_ID.csv &
 GPU_MONITOR_PID=$!
 
 # Run your AI pipeline
@@ -57,8 +57,7 @@ srun python3 $HOME/CosyMAML/train_MAML_model.py \
     --trainfile $HOME/spectra_data/cl_ee_200tasks_5000samples_seed456.h5 \
     --mcmc_trainfile $HOME/spectra_data/cl_ee_mcmc_dndz_nsamples=30000.h5 \
     --model_dir $HOME/model_weights/ \
-    --log_dir $HOME/CosyMAML/logs/io/ \
-    --time_io
+    --log_dir $HOME/CosyMAML/logs/io/
 
 # Stop GPU monitoring
 kill $GPU_MONITOR_PID
