@@ -97,8 +97,8 @@ class TorchStandardScaler():
         self.std = None
         
     def fit(self, X):
-        self.mean = X.mean(0, keepdim=True)
-        self.std = X.std(0, unbiased=False, keepdim=True)
+        self.mean = X.mean(0, keepdim=True).to(X.device)
+        self.std = X.std(0, unbiased=False, keepdim=True).to(X.device)
         return self
     
     def transform(self, X):

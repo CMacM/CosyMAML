@@ -5,9 +5,9 @@
 #SBATCH --qos=dev
 
 # Use 32 tasks for A100-40 or unspecified, 48 for A100-80
-#SBATCH --partition=gpu
+#SBATCH --partition=gpu-a100-40
 #SBATCH --nodes=1
-
+#SBATCH --ntasks=4
 #SBATCH --cpus-per-task=1 
 #SBATCH --gres=gpu:4
 
@@ -29,38 +29,35 @@ MY_PID=$$
 source $HOME/miniconda3/etc/profile.d/conda.sh
 conda activate cosymaml
 
-# Start glljobstat monitoring in the background
-# Runs in the base environment job is submitted from
-# python3 $HOME/glljobstat.py -i 5 -f $SLURM_JOB_ID -fm -r > $HOME/CosyMAML/logs/data/MAML_pipe_log_${SLURM_JOB_ID}_rate.log &
-# GLL_RATE_PID=$!
-
-# # -f filters job, -fm tells glljobstat to only include this job
-# python3 $HOME/glljobstat.py -i 5 -f $SLURM_JOB_ID -fm -hi > $HOME/CosyMAML/logs/data/MAML_pipe_log_${SLURM_JOB_ID}_hist.log &
-# GLL_HIST_PID=$!
-
-# sleep 5
-
-# Add a header to the log file
+# Add a header to the nvidia-smi log file
 echo \
-    "timestamp,utilization.gpu,memory.used,memory.total,power.draw,temperature.gpu,clocks.sm" \
+    "gpu.id,timestamp,utilization.gpu,memory.used,memory.total,power.draw,temperature.gpu,clocks.sm" \
     > $HOME/CosyMAML/logs/gpu/gpu_metrics_$SLURM_JOB_ID.csv
 
 # Then start logging values only
-nvidia-smi --query-gpu=timestamp,utilization.gpu,memory.used,memory.total,power.draw,temperature.gpu,clocks.sm \
+nvidia-smi --query-gpu=index,timestamp,utilization.gpu,memory.used,memory.total,power.draw,temperature.gpu,clocks.sm \
     --format=csv,noheader,nounits \
-    --loop=5 >> $HOME/CosyMAML/logs/gpu/gpu_metrics_$SLURM_JOB_ID.csv &
+    --loop=1 >> $HOME/CosyMAML/logs/gpu/gpu_metrics_$SLURM_JOB_ID.csv &
 GPU_MONITOR_PID=$!
 
-# Run your AI pipeline
-srun python3 $HOME/CosyMAML/train_MAML_model.py \
+# Start IOSTAT monitoring
+iostat -xt 1 > $HOME/CosyMAML/logs/io/iostat_$SLURM_JOB_ID.csv &
+IOSTAT_PID=$!
+
+# Run MAML training
+srun --ntasks=1 --gres=gpu:1 \
+    python3 $HOME/CosyMAML/train_MAML_model.py \
     --device cuda \
     --trainfile $HOME/spectra_data/cl_ee_200tasks_5000samples_seed456.h5 \
-    --mcmc_trainfile $HOME/spectra_data/cl_ee_mcmc_dndz_nsamples=30000.h5 \
     --model_dir $HOME/model_weights/ \
     --log_dir $HOME/CosyMAML/logs/io/
 
-# Stop GPU monitoring
+# Run batched MH chains
+echo "Launching 4 parallel chains (1 per GPU)"
+srun --multi-prog --cpu-bind=none $HOME/CosyMAML/slurm_monitoring/parallel_chains.conf
+
+#Stop GPU monitoring
 kill $GPU_MONITOR_PID
 
-# Stop glljobstat monitoring
-# kill $GLL_RATE_PID, $GLL_HIST_PID
+# Stop IOSTAT monitoring
+kill $IOSTAT_PID

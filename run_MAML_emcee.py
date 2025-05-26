@@ -18,8 +18,16 @@ def main(args):
     device = args.device
     print(f'Using device: {device}')
 
-    np.random.seed(args.seed)
-    torch.manual_seed(args.seed)
+    # Check if the device is a GPU
+    if device == 'cuda':
+        torch.cuda.set_device(args.chain_id)
+
+    # Use chain ID to seed the random number generator
+    # This ensures that each chain starts with a different random seed
+    seed = 14 + 14*args.chain_id
+
+    np.random.seed(seed)
+    torch.manual_seed(seed)
 
     print('Finetuning model to MCMC N(z) task...')
 
@@ -27,7 +35,7 @@ def main(args):
     #### I/O KEY READ POINT ####
     trainfile_path = os.path.join(args.data_dir, args.mcmc_trainfile)
     train_data, _, ScalerY, ScalerX = training.load_train_test_val(
-        filepath=trainfile_path, n_train=args.n_finetune, n_val=None, n_test=None, seed=args.seed,
+        filepath=trainfile_path, n_train=args.n_finetune, n_val=None, n_test=None, seed=seed,
         device=device
     )
     X_train, y_train = train_data[:]
@@ -51,7 +59,7 @@ def main(args):
         beta1=0.9,
         beta2=0.999,
         epsilon=1e-8,
-        seed=14,
+        seed=seed,
         device=device
     )
 
@@ -126,15 +134,13 @@ def main(args):
     for i in range(n_bins):
         priors.append((-delta_z, delta_z)) # Shifts for each redshift bin
 
-    np.random.seed(42 + args.chain_id)  # Ensure different but reproducible initializations
-
     # Define spreads as before
     spreads = 0.1 * np.array(theta)
     for i in range(n_bins):
         spreads[n_bins + i] += 4e-4
 
-    # Generate a single starting position for this chain
-    pos = theta + spreads * np.random.randn(len(theta))
+    pos = [theta + spreads * np.random.randn(ndim) for _ in range(args.nwalkers)]
+    pos = np.array(pos)
 
     # Construct a hook to call the MAML model during MCMC
     MAMLHook = mcmc.EmulatorHook(
@@ -149,55 +155,37 @@ def main(args):
     ### I/O KEY WRITE POINT ### 
     # Need to understand how the emcee backend works with writes
     backend_file = os.path.join(args.data_dir, f'chains/chain_{args.chain_id}.h5')
+    print('Writing to backend file:', backend_file)
 
-    # Run the custom BMH sampler
-    print('Running emcee with MAML emulator...')
+    # Run the emcee sampler, pos needs to be an array of shape (nwalkers, ndim)
     start = time()
-    mcmc.run_batched_mh(
+    mcmc.run_emcee(
         ClHook=MAMLHook,
         backend_file=backend_file,
         ndim=ndim,
         priors=priors,
-        initial_pos=pos,
+        pos=pos,
         data_vector=data_vector,
         inv_cov=inv_cov,
-        batch_size=args.batch_size,
+        nwalkers=args.nwalkers,
         max_iter=args.max_iter,
         n_check=args.n_check,
         tau_factor=args.tau_factor,
-        proposal_scale=args.proposal_scale,
-        progress=args.progress,
+        clobber=True,
+        progress=args.progress
     )
     maml_mcmc_time = time() - start
 
-    # Run the emcee sampler, pos needs to be an array of shape (nwalkers, ndim)
-    # nwalkers = 128
-    # pos = [theta + spreads * np.random.randn(ndim) for _ in range(nwalkers)]
-    # pos = np.array(pos)
-    # mcmc.run_emcee(
-    #     ClHook=MAMLHook,
-    #     backend_file=backend_file,
-    #     ndim=ndim,
-    #     priors=priors,
-    #     pos=pos,
-    #     data_vector=data_vector,
-    #     inv_cov=inv_cov,
-    #     nwalkers=nwalkers,
-    #     max_iter=args.max_iter,
-    #     n_check=args.n_check,
-    #     tau_factor=args.tau_factor,
-    #     clobber=True,
-    #     progress=args.progress
-    # )
-    # maml_mcmc_time = time() - start
-
     # Print out the MCMC times in minutes
-    print(f'Chain converged after: {maml_mcmc_time/60:.2f} minutes')
+    print(f'Chain {args.chain_id} converged in {maml_mcmc_time/60:.2f} minutes')
+
+    # Exit the script
+    print('Exiting script')
+    sys.exit(0)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu')
-    parser.add_argument('--seed', type=int, default=14)
     parser.add_argument('--data_dir', type=str, default='/exafs/400NVX2/cmacmahon/')
     parser.add_argument('--mcmc_trainfile', type=str, default='spectra_data/cl_ee_mcmc_dndz_nsamples=30000.h5')
     parser.add_argument('--n_finetune', type=int, default=100)
@@ -206,7 +194,7 @@ if __name__ == '__main__':
     parser.add_argument('--max_iter', type=int, default=500000)
     parser.add_argument('--n_check', type=int, default=1000)
     parser.add_argument('--tau_factor', type=int, default=50)
-    parser.add_argument('--proposal_scale', type=float, default=0.001)
+    parser.add_argument('--nwalkers', type=int, default=128)
     parser.add_argument('--chain_id', type=int, default=0)
     parser.add_argument('--progress', action='store_true', default=False)
 
