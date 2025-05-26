@@ -3,7 +3,7 @@ import os
 import h5py as h5
 import torch
 from torch.utils.data import DataLoader, TensorDataset
-import torch.profiler
+from torch.profiler import profile, ProfilerActivity, tensorboard_trace_handler
 from sklearn.model_selection import train_test_split
 from datetime import datetime
 from time import time
@@ -17,7 +17,91 @@ reload(models)
 
 import argparse
 
+def training_loop(metalearner, train_dataloader, X_val_train, y_val_train, X_val_test, y_val_test, force_stop):
+
+    # Initialise training variables
+    converged = False
+    meta_losses = []
+    val_losses = []
+    epoch = 0
+    best_val_loss = np.inf
+    strike = 0
+    
+    # Train the model
+    print('Training started...')
+    start = time()
+    while not converged:
+        epoch_loss = 0.0  # Accumulate loss for reporting purposes
+        batch_count = 0   # Keep track of the number of batches
+        metalearner.model.train()
+        # Iterate through all batches in the dataloader
+        for x_batch, y_batch in train_dataloader:
+            x_batch = x_batch.to(metalearner.device)  # Move to GPU if available
+            y_batch = y_batch.to(metalearner.device)
+
+            # Take logarithm of y_batch
+            y_batch = torch.log(y_batch)
+
+            # Split the data into support and query sets
+            x_spt, y_spt, x_qry, y_qry = training.support_query_split(
+                x_batch, y_batch, spt_frac=0.6
+            )
+
+            # Perform one meta update step across the batch, scaling applied internally
+            meta_loss = metalearner.meta_train(
+                x_spt, y_spt, x_qry, y_qry, inner_steps=5
+            )
+            
+            # Accumulate meta-loss for epoch statistics
+            epoch_loss += meta_loss
+            batch_count += 1
+
+        # Compute average meta-loss for the epoch
+        avg_meta_loss = epoch_loss / batch_count
+        meta_losses.append(avg_meta_loss)
+        epoch += 1
+
+        # fine-tune the model on the validation set
+        task_weights, _ = metalearner.finetune(
+                X_val_train, y_val_train, adapt_steps=args.n_ft_epochs, use_new_adam=True
+            )
+
+        # Evaluate the model on the test set
+        metalearner.model.eval()
+        with torch.no_grad():
+            y_pred = metalearner.model(X_val_test, params=task_weights)
+            new_val_loss = metalearner.loss_fn(y_pred, y_val_test).item()
+            val_losses.append(new_val_loss)
+
+        # Stop training if the maximum number of epochs is reached
+        if epoch > force_stop:
+            converged = True
+            print('Epoch limit reached. Stopping training.')
+
+        # Check for convergence based on validation loss
+        if best_val_loss - new_val_loss < 1e-5:
+            strike += 1
+            # Stop training if validation loss has not improved for 20 epochs
+            if strike >= 20:
+                converged = True
+                print('Validation loss has not improved for 20 epochs. Stopping training.')
+        else:
+            strike = 0
+
+        # Update the best validation loss if necessary
+        if new_val_loss < best_val_loss:
+            best_val_loss = new_val_loss
+
+        print(f'Epoch {epoch} - Val Loss: {new_val_loss} - Strike: {strike}')
+    
+    total_time = time()-start
+    print(f'Training took {total_time/60} minutes, saving model and losses...')
+
+    return meta_losses, val_losses, total_time
+
 def main(args):
+
+    start_make = datetime.now()
 
     device = args.device
 
@@ -116,85 +200,26 @@ def main(args):
         device=device
     )
 
-    # Initialise training variables
-    converged = False
-    meta_losses = []
-    val_losses = []
-    epoch = 0
-    best_val_loss = np.inf
-    strike = 0
-    force_stop = args.force_stop
-
-    # Train the model
-    print('Training started...')
-    start = time()
-    while not converged:
-        epoch_loss = 0.0  # Accumulate loss for reporting purposes
-        batch_count = 0   # Keep track of the number of batches
-        metalearner.model.train()
-        # Iterate through all batches in the dataloader
-        for x_batch, y_batch in train_dataloader:
-            x_batch = x_batch.to(metalearner.device)  # Move to GPU if available
-            y_batch = y_batch.to(metalearner.device)
-
-            # Take logarithm of y_batch
-            y_batch = torch.log(y_batch)
-
-            # Split the data into support and query sets
-            x_spt, y_spt, x_qry, y_qry = training.support_query_split(
-                x_batch, y_batch, spt_frac=0.6
+    if args.profile:
+        with profile(
+            activities=[ProfilerActivity.CPU],
+            record_shapes=True,
+            with_flops=True,
+            on_trace_ready=tensorboard_trace_handler('./profiler_logs'),
+            with_stack=False
+        ) as prof:
+            # Run the training loop with profiling
+            meta_losses, val_losses, total_time = training_loop(
+                metalearner, train_dataloader, X_val_train, y_val_train, X_val_test, y_val_test, args.force_stop
             )
 
-            # Perform one meta update step across the batch, scaling applied internally
-            meta_loss = metalearner.meta_train(
-                x_spt, y_spt, x_qry, y_qry, inner_steps=5
-            )
-            
-            # Accumulate meta-loss for epoch statistics
-            epoch_loss += meta_loss
-            batch_count += 1
-
-        # Compute average meta-loss for the epoch
-        avg_meta_loss = epoch_loss / batch_count
-        meta_losses.append(avg_meta_loss)
-        epoch += 1
-
-        # fine-tune the model on the validation set
-        task_weights, _ = metalearner.finetune(
-                X_val_train, y_val_train, adapt_steps=args.n_ft_epochs, use_new_adam=True
-            )
-
-        # Evaluate the model on the test set
-        metalearner.model.eval()
-        with torch.no_grad():
-            y_pred = metalearner.model(X_val_test, params=task_weights)
-            new_val_loss = metalearner.loss_fn(y_pred, y_val_test).item()
-            val_losses.append(new_val_loss)
-
-        # Stop training if the maximum number of epochs is reached
-        if epoch > force_stop:
-            converged = True
-            print('Epoch limit reached. Stopping training.')
-
-        # Check for convergence based on validation loss
-        if best_val_loss - new_val_loss < 1e-5:
-            strike += 1
-            # Stop training if validation loss has not improved for 20 epochs
-            if strike >= 20:
-                converged = True
-                print('Validation loss has not improved for 20 epochs. Stopping training.')
-        else:
-            strike = 0
-
-        # Update the best validation loss if necessary
-        if new_val_loss < best_val_loss:
-            best_val_loss = new_val_loss
-
-        print(f'Epoch {epoch} - Val Loss: {new_val_loss} - Strike: {strike}')
+            print(prof.key_averages().table(sort_by="flops", row_limit=10))
+    else:
+        # Run the training loop
+        meta_losses, val_losses, total_time = training_loop(
+            metalearner, train_dataloader, X_val_train, y_val_train, X_val_test, y_val_test, args.force_stop
+        )
     
-    total_time = time()-start
-    print(f'Training took {total_time/60} minutes, saving model and losses...')
-
     # Save loss history
     #### I/O KEY WRITE POINT ####
     loss_filename = os.path.join(
@@ -221,6 +246,9 @@ def main(args):
     torch.save(metalearner.model.state_dict() ,weights_filename)
     end_write_weights = datetime.now()
 
+    end_make = datetime.now()
+    print(f'Total makespan: {end_make - start_make}')
+
     # Write timing information to file
     job_id = os.environ.get('SLURM_JOB_ID', 'local')
     timing_filename = os.path.join(args.log_dir, f'{job_id}_timing.txt')
@@ -245,7 +273,9 @@ if __name__ == '__main__':
     parser.add_argument('--n_ft_epochs', type=int, default=64)
     parser.add_argument('--force_stop', type=int, default=100)
     parser.add_argument('--seed', type=int, default=14)
+    parser.add_argument('--profile', action='store_true', help='Enable profiling of the training loop')
 
     # Parse the command-line arguments and run the main function
     args = parser.parse_args()
+
     main(args)
