@@ -74,7 +74,7 @@ def training_loop(metalearner, train_dataloader, X_val_train, y_val_train, X_val
             val_losses.append(new_val_loss)
 
         # Stop training if the maximum number of epochs is reached
-        if epoch > force_stop:
+        if epoch >= force_stop:
             converged = True
             print('Epoch limit reached. Stopping training.')
 
@@ -92,16 +92,23 @@ def training_loop(metalearner, train_dataloader, X_val_train, y_val_train, X_val
         if new_val_loss < best_val_loss:
             best_val_loss = new_val_loss
 
+            # store weights for best model
+            best_weights = metalearner.model.state_dict()
+
         print(f'Epoch {epoch} - Val Loss: {new_val_loss} - Strike: {strike}')
     
+    # Restore weights for best model
+    print(f'Restoring weights for best model. Val loss: {best_val_loss}')
+    metalearner.model.load_state_dict(best_weights)
+
     total_time = time()-start
-    print(f'Training took {total_time/60} minutes, saving model and losses...')
+    print(f'Training took {total_time} seconds, saving model and losses...')
 
     return meta_losses, val_losses, total_time
 
 def main(args):
-
-    start_make = datetime.now()
+    print(args.trainfile)
+    start_make = time()
 
     device = args.device
 
@@ -118,19 +125,27 @@ def main(args):
     #### I/O KEY READ POINT ####
     # check if file is hdf5 or npz
     start_read = datetime.now()
-    if args.trainfile.endswith('.npz'):
-        with np.load(args.trainfile) as data:
-            X_train = data['X_train'][task_inds[:-1]]
-            y_train = data['y_train'][task_inds[:-1]]
-            X_val = data['X_train'][task_inds[-1]]
-            y_val = data['y_train'][task_inds[-1]]
-    elif args.trainfile.endswith('.h5'):
-        with h5.File(args.trainfile, 'r') as f:
-            X_train = f['X_train'][task_inds[:-1]]
-            y_train = f['y_train'][task_inds[:-1]]
-            X_val = f['X_train'][task_inds[-1]]
-            y_val = f['y_train'][task_inds[-1]]
+    start = time()
+    with h5.File(args.trainfile, 'r') as f:
+        X_train = f['X_train'][task_inds[:-1]]
+        y_train = f['y_train'][task_inds[:-1]]
+        X_val = f['X_train'][task_inds[-1]]
+        y_val = f['y_train'][task_inds[-1]]
     end_read = datetime.now()
+    end = time()
+    load_time = end - start
+    print(f'Loading training data took {load_time} seconds')
+
+    X_train_volume = X_train.nbytes
+    y_train_volume = y_train.nbytes
+    X_val_volume = X_val.nbytes
+    y_val_volume = y_val.nbytes
+    total_volume = X_train_volume + y_train_volume + X_val_volume + y_val_volume
+    print(f'Total volume loaded = {total_volume / 1e9:.2f} GB')
+
+    # estimate bandwidth
+    bandwidth = total_volume / load_time
+    print(f"Estimated bandwidth: {bandwidth / 1e9:.2f} GB/s")
 
     start_prep = datetime.now()
     # Slice number of shots we want to train with
@@ -199,26 +214,32 @@ def main(args):
         seed=14,
         device=device
     )
-
+    
+    # Start profiling if requested
     if args.profile:
-        with profile(
-            activities=[ProfilerActivity.CPU],
-            record_shapes=True,
+        profiler = torch.profiler.profile(
+            activities=[
+                torch.profiler.ProfilerActivity.CPU,
+                torch.profiler.ProfilerActivity.CUDA,
+            ],
             with_flops=True,
-            on_trace_ready=tensorboard_trace_handler('./profiler_logs'),
-            with_stack=False
-        ) as prof:
-            # Run the training loop with profiling
-            meta_losses, val_losses, total_time = training_loop(
-                metalearner, train_dataloader, X_val_train, y_val_train, X_val_test, y_val_test, args.force_stop
-            )
-
-            print(prof.key_averages().table(sort_by="flops", row_limit=10))
-    else:
-        # Run the training loop
-        meta_losses, val_losses, total_time = training_loop(
-            metalearner, train_dataloader, X_val_train, y_val_train, X_val_test, y_val_test, args.force_stop
+            record_shapes=False,
+            profile_memory=False
         )
+        profiler.start()
+
+    # Run the training loop with profiling
+    meta_losses, val_losses, total_time = training_loop(
+        metalearner, train_dataloader, X_val_train, y_val_train, X_val_test, y_val_test, args.force_stop
+    )
+
+    # Stop profiling if requested
+    if args.profile:
+        profiler.stop()
+        # Write summary to a file
+        with open('training_profiler_avgs.txt', 'w') as f:
+            f.write(profiler.key_averages().table(sort_by="flops", row_limit=10))
+        #profiler.export_chrome_trace("torch_profiler_trace.json")
     
     # Save loss history
     #### I/O KEY WRITE POINT ####
@@ -246,7 +267,7 @@ def main(args):
     torch.save(metalearner.model.state_dict() ,weights_filename)
     end_write_weights = datetime.now()
 
-    end_make = datetime.now()
+    end_make = time()
     print(f'Total makespan: {end_make - start_make}')
 
     # Write timing information to file

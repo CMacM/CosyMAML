@@ -15,6 +15,8 @@ reload(training)
 reload(models)
 
 def main(args):
+    start_make = time()
+
     device = args.device
     print(f'Using device: {device}')
 
@@ -30,6 +32,20 @@ def main(args):
     torch.manual_seed(seed)
 
     print('Finetuning model to MCMC N(z) task...')
+
+    # Start profiling if requested
+    if args.profile:
+        ft_profiler = torch.profiler.profile(
+            activities=[
+                torch.profiler.ProfilerActivity.CPU,
+                torch.profiler.ProfilerActivity.CUDA,
+            ],
+            with_flops=True,
+            record_shapes=False,
+            profile_memory=False
+        )
+
+        ft_profiler.start()
 
     # Load in data for finetuning the MAML model
     #### I/O KEY READ POINT ####
@@ -77,6 +93,13 @@ def main(args):
         adapt_steps=args.n_ft_epochs,
         use_new_adam=True
     )
+
+    if args.profile:
+        ft_profiler.stop()
+        # Write summary to a file
+        with open('finetune_profiler_avgs.txt', 'w') as f:
+            f.write(ft_profiler.key_averages().table(sort_by="flops", row_limit=10))
+        #ft_profiler.export_chrome_trace("torch_profiler_trace.json")
 
     # Load in fiducial data
     #### I/O KEY READ POINT ####
@@ -157,6 +180,19 @@ def main(args):
     backend_file = os.path.join(args.data_dir, f'chains/chain_{args.chain_id}.h5')
     print('Writing to backend file:', backend_file)
 
+    if args.profile:
+        # Start profiling for the MCMC run
+        mcmc_profiler = torch.profiler.profile(
+            activities=[
+                torch.profiler.ProfilerActivity.CPU,
+                torch.profiler.ProfilerActivity.CUDA,
+            ],
+            with_flops=True,
+            record_shapes=False,
+            profile_memory=False
+        )
+        mcmc_profiler.start()
+
     # Run the emcee sampler, pos needs to be an array of shape (nwalkers, ndim)
     start = time()
     mcmc.run_emcee(
@@ -176,8 +212,19 @@ def main(args):
     )
     maml_mcmc_time = time() - start
 
+    # Stop profiling if requested
+    if args.profile:
+        mcmc_profiler.stop()
+        # Write summary to a file
+        with open('inference_profiler_avgs.txt', 'w') as f:
+            f.write(mcmc_profiler.key_averages().table(sort_by="flops", row_limit=10))
+        #profiler.export_chrome_trace("torch_profiler_trace.json")
+
     # Print out the MCMC times in minutes
-    print(f'Chain {args.chain_id} converged in {maml_mcmc_time/60:.2f} minutes')
+    print(f'Chain {args.chain_id} converged in {maml_mcmc_time:.2f} seconds')
+
+    end_make = time()
+    print(f'Total makespan {args.chain_id}: {(end_make - start_make):.2f} seconds')
 
     # Exit the script
     print('Exiting script')
@@ -197,6 +244,7 @@ if __name__ == '__main__':
     parser.add_argument('--nwalkers', type=int, default=128)
     parser.add_argument('--chain_id', type=int, default=0)
     parser.add_argument('--progress', action='store_true', default=False)
+    parser.add_argument('--profile', action='store_true', default=False, help='Enable profiling for the script')
 
     args = parser.parse_args()
     main(args)
