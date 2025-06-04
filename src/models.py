@@ -207,48 +207,6 @@ class FastWeightCNN(nn.Module):
 
         return x
 
-    # def forward(self, x, params=None):
-    #     """
-    #     Forward pass using fast weights if provided.
-    #     :param x: Input tensor.
-    #     :param params: Task-specific parameters (fast weights) for MAML.
-    #     """
-    #     if params is None:
-    #         # Use the current model parameters if no fast weights are provided
-    #         params = {name: param for name, param in self.named_parameters()}
-        
-    #     # Mapping fast weights for the layers
-    #     fc1_weight = params['fc1.weight']
-    #     fc1_bias = params['fc1.bias']
-    #     conv1_weight = params['conv1.weight']
-    #     conv1_bias = params['conv1.bias']
-    #     conv2_weight = params['conv2.weight']
-    #     conv2_bias = params['conv2.bias']
-    #     conv3_weight = params['conv3.weight']
-    #     conv3_bias = params['conv3.bias']
-    #     fc2_weight = params['fc2.weight']
-    #     fc2_bias = params['fc2.bias']
-
-    #     # Step 1: Map input parameters to 2D latent space
-    #     x = F.relu(F.linear(x, fc1_weight, fc1_bias))
-    #     x = x.view(-1, 1, self.latent_dim[0], self.latent_dim[1])
-
-    #     # Step 2: Pass through convolutional layers
-    #     x = F.relu(F.conv2d(x, conv1_weight, conv1_bias, padding=1, dilation=1))
-    #     x = self.dropout(x)
-    #     x = F.relu(F.conv2d(x, conv2_weight, conv2_bias, padding=2, dilation=2))
-    #     x = self.dropout(x)
-    #     x = F.relu(F.conv2d(x, conv3_weight, conv3_bias, padding=4, dilation=4))
-    #     x = self.dropout(x)
-
-    #     # Step 3: Flatten the output for the fully connected layer
-    #     x = x.view(x.size(0), -1)  # Flatten to (batch_size, num_features)
-
-    #     # Step 4: Fully connected output layer
-    #     x = F.linear(x, fc2_weight, fc2_bias)
-
-    #     return x
-
     def get_params(self):
         """
         Return a dictionary of all learnable parameters in the network.

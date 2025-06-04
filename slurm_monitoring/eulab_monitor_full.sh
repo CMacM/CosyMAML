@@ -27,11 +27,11 @@ conda activate cosymaml
 echo "Starting monitoring"
 # Start glljobstat monitoring in the background
 # Runs in the base environment job is submitted from
-python3 /home/cmacmahon/glljobstat.py -i 10 -f $SLURM_JOB_ID -fm -r > /home/cmacmahon/CosyMAML/logs/data/MAML_pipe_log_${SLURM_JOB_ID}_rate.log &
+python3 /home/cmacmahon/glljobstat.py -i 1 -f $SLURM_JOB_ID -fm -r > /home/cmacmahon/CosyMAML/logs/data/MAML_pipe_log_${SLURM_JOB_ID}_rate.log &
 PID1=$!
 
 # -f filters job, -fm tells glljobstat to only include this job
-python3 /home/cmacmahon/glljobstat.py -i 10 -f $SLURM_JOB_ID -fm -hi > /home/cmacmahon/CosyMAML/logs/data/MAML_pipe_log_${SLURM_JOB_ID}_hist.log &
+python3 /home/cmacmahon/glljobstat.py -i 1 -f $SLURM_JOB_ID -fm -hi > /home/cmacmahon/CosyMAML/logs/data/MAML_pipe_log_${SLURM_JOB_ID}_hist.log &
 PID2=$!
  
 echo "Monitoring processes started"

@@ -73,11 +73,6 @@ def training_loop(metalearner, train_dataloader, X_val_train, y_val_train, X_val
             new_val_loss = metalearner.loss_fn(y_pred, y_val_test).item()
             val_losses.append(new_val_loss)
 
-        # Stop training if the maximum number of epochs is reached
-        if epoch >= force_stop:
-            converged = True
-            print('Epoch limit reached. Stopping training.')
-
         # Check for convergence based on validation loss
         if best_val_loss - new_val_loss < 1e-5:
             strike += 1
@@ -96,6 +91,11 @@ def training_loop(metalearner, train_dataloader, X_val_train, y_val_train, X_val
             best_weights = metalearner.model.state_dict()
 
         print(f'Epoch {epoch} - Val Loss: {new_val_loss} - Strike: {strike}')
+
+        # Stop training if the maximum number of epochs is reached
+        if epoch >= force_stop:
+            converged = True
+            print('Epoch limit reached. Stopping training.')
     
     # Restore weights for best model
     print(f'Restoring weights for best model. Val loss: {best_val_loss}')
@@ -151,6 +151,22 @@ def main(args):
     # Slice number of shots we want to train with
     X_train = X_train[:,sample_inds,:]
     y_train = y_train[:,sample_inds,:]
+
+    # Start profiling if requested
+    if args.profile:
+        activities = [
+            torch.profiler.ProfilerActivity.CPU,
+        ]
+
+        if args.device == 'cuda':
+            activities.append(torch.profiler.ProfilerActivity.CUDA)
+
+        profiler = torch.profiler.profile(
+            activities=activities,
+            with_flops=True,
+            profile_memory=True
+        )
+        profiler.start()
 
     # Convert to torch tensor
     X_train = torch.tensor(X_train, dtype=torch.float32)
@@ -214,19 +230,6 @@ def main(args):
         seed=14,
         device=device
     )
-    
-    # Start profiling if requested
-    if args.profile:
-        profiler = torch.profiler.profile(
-            activities=[
-                torch.profiler.ProfilerActivity.CPU,
-                torch.profiler.ProfilerActivity.CUDA,
-            ],
-            with_flops=True,
-            record_shapes=False,
-            profile_memory=False
-        )
-        profiler.start()
 
     # Run the training loop with profiling
     meta_losses, val_losses, total_time = training_loop(
@@ -239,8 +242,7 @@ def main(args):
         # Write summary to a file
         with open('training_profiler_avgs.txt', 'w') as f:
             f.write(profiler.key_averages().table(sort_by="flops", row_limit=10))
-        #profiler.export_chrome_trace("torch_profiler_trace.json")
-    
+            
     # Save loss history
     #### I/O KEY WRITE POINT ####
     loss_filename = os.path.join(
@@ -271,11 +273,11 @@ def main(args):
     print(f'Total makespan: {end_make - start_make}')
 
     # Write timing information to file
-    job_id = os.environ.get('SLURM_JOB_ID', 'local')
-    timing_filename = os.path.join(args.log_dir, f'{job_id}_timing.txt')
-    with open(timing_filename, 'a') as f:
-        f.write('start_read,end_read,start_prep,end_prep,start_write_loss,end_write_loss,start_write_weights,end_write_weights\n')
-        f.write(f'{start_read},{end_read},{start_prep},{end_prep},{start_write_loss},{end_write_loss},{start_write_weights},{end_write_weights}\n')
+    # job_id = os.environ.get('SLURM_JOB_ID', 'local')
+    # timing_filename = os.path.join(args.log_dir, f'{job_id}_timing.txt')
+    # with open(timing_filename, 'a') as f:
+    #     f.write('start_read,end_read,start_prep,end_prep,start_write_loss,end_write_loss,start_write_weights,end_write_weights\n')
+    #     f.write(f'{start_read},{end_read},{start_prep},{end_prep},{start_write_loss},{end_write_loss},{start_write_weights},{end_write_weights}\n')
 
 if __name__ == '__main__':
     
