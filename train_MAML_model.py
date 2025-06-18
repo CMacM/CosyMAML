@@ -259,15 +259,18 @@ def main(args):
 
     # Save meta weights
     #### I/O KEY WRITE POINT ####
-    weights_filename = os.path.join(
-        args.model_dir, '{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(
-            args.batch_size, args.n_samples, args.n_tasks
+    if args.profile:
+        pass
+    else:
+        weights_filename = os.path.join(
+            args.model_dir, '{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(
+                args.batch_size, args.n_samples, args.n_tasks
+            )
         )
-    )
 
-    start_write_weights = datetime.now()
-    torch.save(metalearner.model.state_dict() ,weights_filename)
-    end_write_weights = datetime.now()
+        start_write_weights = datetime.now()
+        torch.save(metalearner.model.state_dict() ,weights_filename)
+        end_write_weights = datetime.now()
 
     end_make = time()
     print(f'Total makespan: {end_make - start_make}')
@@ -287,7 +290,7 @@ if __name__ == '__main__':
     parser.add_argument('--trainfile', type=str, 
         default='/exafs/400NVX2/cmacmahon/spectra_data/cl_ee_200tasks_5000samples_seed456.h5'
     )
-    parser.add_argument('--model_dir', type=str, default='/exafs/400NVX2/cmacmahon/weights')
+    parser.add_argument('--model_dir', type=str, default='/exafs/400NVX2/cmacmahon/model_weights')
     parser.add_argument('--log_dir', type=str, default='/exafs/400NVX2/cmacmahon/logs')
     parser.add_argument('--batch_size', type=int, default=5)
     parser.add_argument('--n_samples', type=int, default=500)

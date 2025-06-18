@@ -2,9 +2,8 @@
 #SBATCH --output=/home/cmacmahon/slurm/maml_pipe-%j.std
 #SBATCH --error=/home/cmacmahon/slurm/maml_pipe-%j.err
 #SBATCH --job-name=maml_pipe_monitor
-#SBATCH --nodes=4
-#SBATCH --ntasks=4             # 1 task per node
-#SBATCH --cpus-per-task=1
+#SBATCH --nodes=14
+#SBATCH --ntasks=14             # 1 task per node
 #SBATCH --time=10:00:00
 
 # --- ENV SETUP ---
@@ -32,9 +31,9 @@ conda activate cosymaml
 
 # --- MONITORING ---
 echo "Starting monitoring..."
-python3 /home/cmacmahon/glljobstat.py -i 1 -f $SLURM_JOB_ID -fm -r > /home/cmacmahon/CosyMAML/logs/io/MAML_pipe_log_${SLURM_JOB_ID}_rate.log &
+python3 /home/cmacmahon/glljobstat.py -c $NUM_CHAINS -i 1 -f $SLURM_JOB_ID -fm -r > /home/cmacmahon/CosyMAML/logs/io/MAML_pipe_log_${SLURM_JOB_ID}_rate.log &
 PID1=$!
-python3 /home/cmacmahon/glljobstat.py -i 1 -f $SLURM_JOB_ID -fm -hi > /home/cmacmahon/CosyMAML/logs/io/MAML_pipe_log_${SLURM_JOB_ID}_hist.log &
+python3 /home/cmacmahon/glljobstat.py -c $NUM_CHAINS -i 1 -f $SLURM_JOB_ID -fm -hi > /home/cmacmahon/CosyMAML/logs/io/MAML_pipe_log_${SLURM_JOB_ID}_hist.log &
 PID2=$!
 
 sleep 5
@@ -44,6 +43,7 @@ echo "Launching $NUM_CHAINS chains (1 per node)"
 START_TIME=$(date +%s)
 
 srun --multi-prog "$CONF_ACTUAL"
+SRUN_EXIT_CODE=$?
 
 END_TIME=$(date +%s)
 MAKESPAN=$((END_TIME - START_TIME))

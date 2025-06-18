@@ -84,7 +84,7 @@ def main(args):
     weights_path = os.path.join(args.data_dir,'model_weights/5batch_500samples_20tasks_metalearner_weights.pt')
 
     # Load the weights into the model
-    metalearner.model.load_state_dict(torch.load(weights_path))
+    metalearner.model.load_state_dict(torch.load(weights_path, map_location=device))
 
     # Finetune the MAML model to get new weights
     task_weights, _ = metalearner.finetune(
