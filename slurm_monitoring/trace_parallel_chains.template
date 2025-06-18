@@ -1,0 +1,4 @@
+0 strace -e trace=read,write -o /home/dp364/dp364/dc-macm1/slurm_logs/strace_chain_0_JOBID.log python3 /home/dp364/dp364/dc-macm1/CosyMAML/run_MAML_emcee.py --device cuda --data_dir /home/dp364/dp364/dc-macm1/ --chain_id 0
+1 strace -e trace=read,write -o /home/dp364/dp364/dc-macm1/slurm_logs/strace_chain_1_JOBID.log python3 /home/dp364/dp364/dc-macm1/CosyMAML/run_MAML_emcee.py --device cuda --data_dir /home/dp364/dp364/dc-macm1/ --chain_id 1
+2 strace -e trace=read,write -o /home/dp364/dp364/dc-macm1/slurm_logs/strace_chain_2_JOBID.log python3 /home/dp364/dp364/dc-macm1/CosyMAML/run_MAML_emcee.py --device cuda --data_dir /home/dp364/dp364/dc-macm1/ --chain_id 2
+3 strace -e trace=read,write -o /home/dp364/dp364/dc-macm1/slurm_logs/strace_chain_3_JOBID.log python3 /home/dp364/dp364/dc-macm1/CosyMAML/run_MAML_emcee.py --device cuda --data_dir /home/dp364/dp364/dc-macm1/ --chain_id 3

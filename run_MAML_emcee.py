@@ -22,7 +22,7 @@ def main(args):
 
     # Check if the device is a GPU
     if device == 'cuda':
-        torch.cuda.set_device(args.chain_id)
+        torch.cuda.set_device(args.chain_id % 4) # Use modulo to cycle through 4 GPUs if available
 
     # Use chain ID to seed the random number generator
     # This ensures that each chain starts with a different random seed

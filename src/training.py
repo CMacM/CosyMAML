@@ -45,9 +45,9 @@ def support_query_split(x_train, y_train, spt_frac=None, n_spt=None, shuffle=Tru
 
     # Shuffle indices and split into support and query sets
     if shuffle:
-        permu = np.random.permutation(n_samples)
+        permu = torch.randperm(n_samples) 
     else:
-        permu = np.arange(n_samples)
+        permu = torch.arange(n_samples)
     
     x_spt = x_train[:, permu[:n_spt], :]
     y_spt = y_train[:, permu[:n_spt], :]
