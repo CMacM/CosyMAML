@@ -20,6 +20,21 @@ fi
 export SLURM_JOB_ID=$SLURM_JOB_ID
 export SLURM_JOBID=$SLURM_JOB_ID
 
+# Automatically detect number of chains = number of nodes
+NUM_LEARNERS=${NUM_LEARNERS:-$SLURM_JOB_NUM_NODES}
+echo "Running $NUM_LEARNERS chains across $SLURM_JOB_NUM_NODES node(s)"
+
+# --- CONFIG GENERATION ---
+CONF_ACTUAL="$HOME/CosyMAML/slurm_monitoring/parallel_chains.conf"
+> "$CONF_ACTUAL"
+for i in $(seq 0 $((NUM_CHAINS - 1))); do
+    echo "$i python3 $HOME/CosyMAML/train_MAML_model.py \
+    --device cpu \
+    --trainfile /exafs/400NVX2/cmacmahon/spectra_data/cl_ee_200tasks_5000samples_seed456.h5 \
+    --model_dir /exafs/400NVX2/cmacmahon/model_weights/ \
+    --learner_id=$i" >> "$CONF_ACTUAL"
+done
+
 #! Load conda and activate the environment for the application
 source /home/cmacmahon/software/miniconda3/bin/activate
 conda activate cosymaml
@@ -38,17 +53,21 @@ echo "Monitoring processes started"
 
 sleep 5
 
-# Run MAML training
-srun python3 $HOME/CosyMAML/train_MAML_model.py \
-    --device cpu \
-    --trainfile /exafs/400NVX2/cmacmahon/spectra_data/cl_ee_200tasks_5000samples_seed456.h5 \
-    --model_dir /exafs/400NVX2/cmacmahon/model_weights/ \
-    --log_dir $HOME/CosyMAML/logs/
+# --- LAUNCH CHAINS ---
+echo "Launching $NUM_CHAINS chains (1 per node)"
+START_TIME=$(date +%s)
 
+srun --multi-prog "$CONF_ACTUAL"
+SRUN_EXIT_CODE=$?
+
+END_TIME=$(date +%s)
+MAKESPAN=$((END_TIME - START_TIME))
+echo "Total makespan: $MAKESPAN seconds"
+
+# --- CLEANUP ---
 sleep 5
-
 echo "Killing monitoring processes..."
 kill $PID1 $PID2
- 
-echo "Ending batch script"
+
+echo "Ending batch script."
 exit 0
