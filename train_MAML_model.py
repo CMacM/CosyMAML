@@ -17,7 +17,15 @@ reload(models)
 
 import argparse
 
-def training_loop(metalearner, train_dataloader, X_val_train, y_val_train, X_val_test, y_val_test, force_stop):
+def training_loop(
+        metalearner,
+        train_dataloader,
+        X_val_train,
+        y_val_train,
+        X_val_test,
+        y_val_test,
+        force_stop
+    ):
 
     # Initialise training variables
     converged = False
@@ -111,6 +119,10 @@ def main(args):
     start_make = time()
 
     device = args.device
+
+    # Check if the device is a GPU
+    if device == 'cuda':
+        torch.cuda.set_device(args.learner_id % 4) # Use modulo to cycle through 4 GPUs if available
 
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
@@ -263,8 +275,8 @@ def main(args):
         pass
     else:
         weights_filename = os.path.join(
-            args.model_dir, '{}batch_{}samples_{}tasks_metalearner_weights.pt'.format(
-                args.batch_size, args.n_samples, args.n_tasks
+            args.model_dir, '{}batch_{}samples_{}tasks_{}seed_metalearner_weights.pt'.format(
+                args.batch_size, args.n_samples, args.n_tasks, args.seed
             )
         )
 
@@ -300,6 +312,7 @@ if __name__ == '__main__':
     parser.add_argument('--force_stop', type=int, default=100)
     parser.add_argument('--seed', type=int, default=14)
     parser.add_argument('--profile', action='store_true', help='Enable profiling of the training loop')
+    parser.add_argument('--learner_id', type=int, default=0, help='ID of the learner for distributed training')
 
     # Parse the command-line arguments and run the main function
     args = parser.parse_args()

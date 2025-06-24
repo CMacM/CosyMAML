@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --account=dp364
-#SBATCH --time=00:10:00
+#SBATCH --time=00:20:00
 #SBATCH --job-name=maml_gpu_monitor
-#SBATCH --qos=dev
+#SBATCH --qos=standard
 
 #SBATCH --partition=gpu-a100-40
-#SBATCH --nodes=2                      # Adjust based on GPUs per node
+#SBATCH --nodes=4                      # Adjust based on GPUs per node
 #SBATCH --tasks-per-node=32
 #SBATCH --cpus-per-task=1
 #SBATCH --gres=gpu:4
