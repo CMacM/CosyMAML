@@ -1,0 +1,72 @@
+---
+timestamp: 1749043710
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_jobs:
+- "3519:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749043712
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_jobs:
+- "3519:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749043714
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_jobs:
+- "3519:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749043715
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 23
+top_5_jobs:
+- "3519:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749043717
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "3519:1000054:x440-04":{ops: 140, op: 4, cl: 4, ga: 8, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+- "3519:1000054:x440-03":{ops: 140, op: 4, cl: 4, ga: 8, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+- "3519:1000054:x440-02":{ops: 140, op: 4, cl: 4, ga: 8, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+- "3519:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749043719
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "3519:1000054:x440-01":{ops: 146, op: 4, cl: 4, ga: 14, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+- "3519:1000054:x440-04":{ops: 140, op: 4, cl: 4, ga: 8, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+- "3519:1000054:x440-03":{ops: 140, op: 4, cl: 4, ga: 8, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+- "3519:1000054:x440-02":{ops: 140, op: 4, cl: 4, ga: 8, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+...
+---
+timestamp: 1749043721
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 26
+top_5_jobs:
+- "3519:1000054:x440-01":{ops: 146, op: 4, cl: 4, ga: 14, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+- "3519:1000054:x440-04":{ops: 140, op: 4, cl: 4, ga: 8, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+- "3519:1000054:x440-03":{ops: 140, op: 4, cl: 4, ga: 8, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+- "3519:1000054:x440-02":{ops: 140, op: 4, cl: 4, ga: 8, rd: 62, rb: {'4K': 36, '4M': 4, '16M': 22}}
+...

@@ -2,10 +2,10 @@ import numpy as np
 import os
 import pyccl as ccl
 
-from scipy.integrate import simps
+from scipy.integrate import simpson
 from scipy.interpolate import interp1d
 import scipy.stats.qmc as qmc
-from tjpcov.covariance_calculator import CovarianceCalculator
+#from tjpcov.covariance_calculator import CovarianceCalculator
 
 class SpectraWrapper():
     def __init__(self, func, stop=True):
@@ -94,7 +94,7 @@ def bin_dndz(n_bins, z, dndz_func, **kwargs):
     dndz = dndz_func(z, **kwargs)
 
     # Normalize the distribution
-    area = simps(dndz, z)  # Integrate dndz_s over z to get the area under the curve
+    area = simpson(dndz, z)  # Integrate dndz_s over z to get the area under the curve
     pdf = dndz / area  # Normalize to make it a PDF
 
     # Compute the cumulative distribution function (CDF)
@@ -160,10 +160,10 @@ def convolve_photoz(sigma, zs, dndz_spec, return_2d=False):
     integrand1 = p_zs_zph * dndz_spec[:,None]   
 
     # integrate over z_s to get dN
-    integral1 = simps(integrand1, zs, axis=0)
+    integral1 = simpson(integrand1, zs, axis=0)
     dN = integral1
     
-    dz_ph = simps(dN, z_ph)
+    dz_ph = simpson(dN, z_ph)
 
     if return_2d:
         return z_ph, dN/dz_ph, p_zs_zph

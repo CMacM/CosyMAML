@@ -45,9 +45,9 @@ def support_query_split(x_train, y_train, spt_frac=None, n_spt=None, shuffle=Tru
 
     # Shuffle indices and split into support and query sets
     if shuffle:
-        permu = np.random.permutation(n_samples)
+        permu = torch.randperm(n_samples) 
     else:
-        permu = np.arange(n_samples)
+        permu = torch.arange(n_samples)
     
     x_spt = x_train[:, permu[:n_spt], :]
     y_spt = y_train[:, permu[:n_spt], :]
@@ -97,8 +97,8 @@ class TorchStandardScaler():
         self.std = None
         
     def fit(self, X):
-        self.mean = X.mean(0, keepdim=True)
-        self.std = X.std(0, unbiased=False, keepdim=True)
+        self.mean = X.mean(0, keepdim=True).to(X.device)
+        self.std = X.std(0, unbiased=False, keepdim=True).to(X.device)
         return self
     
     def transform(self, X):
@@ -510,9 +510,14 @@ def load_train_test_val(filepath, n_train, n_val=None, n_test=None, seed=14, dev
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # test with random samples
-    with h5.File(filepath, 'r') as f:
-        X = f['hypercube'][:]
-        y = f['c_ells'][:]
+    if filepath.endswith('.h5'):
+        with h5.File(filepath, 'r') as f:
+            X = f['hypercube'][:]
+            y = f['c_ells'][:]
+    elif filepath.endswith('.npz'):
+        with np.load(filepath) as f:
+            X = f['hypercube'][:]
+            y = f['c_ells'][:]
 
     # split into test training and validation sets
     # Fix test size so different samplings don't test on different numbers of samples

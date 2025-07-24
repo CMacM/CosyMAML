@@ -1,0 +1,72 @@
+---
+timestamp: 1749045222
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_jobs:
+- "3520:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749045224
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_jobs:
+- "3520:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749045226
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_jobs:
+- "3520:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749045228
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 24
+top_5_jobs:
+- "3520:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749045230
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 27
+top_5_jobs:
+- "3520:1000054:x440-04":{ops: 80, op: 4, cl: 4, ga: 8, rd: 32, rb: {'4K': 4, '4M': 4, '16M': 22, '8K': 2}}
+- "3520:1000054:x440-02":{ops: 80, op: 4, cl: 4, ga: 8, rd: 32, rb: {'4K': 4, '4M': 4, '16M': 22, '8K': 2}}
+- "3520:1000054:x440-03":{ops: 80, op: 4, cl: 4, ga: 8, rd: 32, rb: {'4K': 4, '4M': 4, '16M': 22, '8K': 2}}
+- "3520:1000054:x440-01":{ops: 6, ga: 6}
+...
+---
+timestamp: 1749045232
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 27
+top_5_jobs:
+- "3520:1000054:x440-01":{ops: 86, op: 4, cl: 4, ga: 14, rd: 32, rb: {'4K': 4, '8K': 2, '4M': 4, '16M': 22}}
+- "3520:1000054:x440-04":{ops: 80, op: 4, cl: 4, ga: 8, rd: 32, rb: {'4K': 4, '8K': 2, '4M': 4, '16M': 22}}
+- "3520:1000054:x440-02":{ops: 80, op: 4, cl: 4, ga: 8, rd: 32, rb: {'4K': 4, '8K': 2, '4M': 4, '16M': 22}}
+- "3520:1000054:x440-03":{ops: 80, op: 4, cl: 4, ga: 8, rd: 32, rb: {'4K': 4, '8K': 2, '4M': 4, '16M': 22}}
+...
+---
+timestamp: 1749045233
+servers_queried: 8
+osts_queried: 24
+mdts_queried: 8
+total_jobs: 27
+top_5_jobs:
+- "3520:1000054:x440-01":{ops: 86, op: 4, cl: 4, ga: 14, rd: 32, rb: {'4K': 4, '8K': 2, '4M': 4, '16M': 22}}
+- "3520:1000054:x440-04":{ops: 80, op: 4, cl: 4, ga: 8, rd: 32, rb: {'4K': 4, '8K': 2, '4M': 4, '16M': 22}}
+- "3520:1000054:x440-02":{ops: 80, op: 4, cl: 4, ga: 8, rd: 32, rb: {'4K': 4, '8K': 2, '4M': 4, '16M': 22}}
+- "3520:1000054:x440-03":{ops: 80, op: 4, cl: 4, ga: 8, rd: 32, rb: {'4K': 4, '8K': 2, '4M': 4, '16M': 22}}
+...
