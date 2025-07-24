@@ -1,0 +1,14 @@
+name: cosymaml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch
+  - numpy
+  - h5py
+  - scikit-learn
+  - emcee
+  - sacc
+  - scipy
+  - matplotlib
+  - ipykernel

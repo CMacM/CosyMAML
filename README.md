@@ -1,5 +1,11 @@
 CosyMAML contains the code used for the development of the neural network based cosmological emulator presented in (paper), wherein we investigate the use of the MAML algorithm (link to MAML github) in cosmology.
 
+It is recomnended to set up the environment using conda
+```bash
+    conda env create -f environment.yml
+    conda activate cosymaml
+```
+
 The codebase is structured as follows:
 
 - src: A module containing the code used to define neural network architechtures (models.py), train and test said neural networks (training.py), generate training data (simulate.py) and run Markov-Chain Monet-Carlo inference (mcmc.py)
