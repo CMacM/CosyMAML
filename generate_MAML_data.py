@@ -133,7 +133,7 @@ def main(args):
 
         # Construct arglist for parallel computation of
         # the angular power spectra
-        ells = np.geomspace(10, args.ell_max, args.ell_bins)
+        ells = np.geomspace(2, args.ell_max, args.ell_bins)
         arglist = [
             (hypercube[i], dndz_bin_ph, z_ph, ells)
             for i in range(args.n_samples)

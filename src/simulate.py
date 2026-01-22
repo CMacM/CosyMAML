@@ -298,6 +298,31 @@ def compute_spectra_cluster(theta, dndz_ph_bins, z_ph, ells, bias=1.5):
     
     return c_ells.flatten()
 
+# Define NLA IA model
+def nla_ia(z, A_ia, eta, z0=0.62):
+    return A_ia * ((1 + z) / (1 + z0))**eta
+
+def compute_cl_ia(cosmo, z_ph, ells, dndz_bin_ph, A_ia_model):
+    n_bins = dndz_bin_ph.shape[0]
+    inds = list(zip(*np.tril_indices(n_bins)))
+
+    c_ells = np.empty((len(inds), len(ells)))
+    for i, arg in enumerate(inds):
+        j, k = arg
+        tracer1 = ccl.WeakLensingTracer(
+            cosmo,
+            dndz=(z_ph, dndz_bin_ph[j]),
+            ia_bias=(z_ph, A_ia_model)
+        )
+        tracer2 = ccl.WeakLensingTracer(
+            cosmo,
+            dndz=(z_ph, dndz_bin_ph[k]),
+            ia_bias=(z_ph, A_ia_model)
+        )
+        c_ells[i,:] = ccl.angular_cl(cosmo, tracer1, tracer2, ells)
+
+    return c_ells.flatten()
+
 def compute_covariance(cosmo, sacc_file, n_bins):
 
     # Set up the configuration for the covariance calculator

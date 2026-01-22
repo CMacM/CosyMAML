@@ -167,7 +167,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Compare MAML vs Pretrained Emulators')
-    parser.add_argument('--pretrain_file', type=str, default='spectra_data/cl_ee_3_dndz_nsamples=30000.h5', help='Path to pretraining data')
+    parser.add_argument('--pretrain_file', type=str, default='spectra_data/cl_ee_27_dndz_nsamples=30000.h5', help='Path to pretraining data')
     parser.add_argument('--finetune_file', type=str, default='spectra_data/cl_ee_mcmc_dndz_nsamples=30000.h5', help='Path to finetuning data')
     parser.add_argument('--n_train', type=int, default=10000, help='Number of samples for pretraining')
     parser.add_argument('--ft_min', type=int, default=10, help='Minimum number of samples for finetuning')

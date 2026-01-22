@@ -92,7 +92,7 @@ def main(args):
         filepath = args.multitask_file
         f = h5.File(filepath, 'r')
 
-        data_ind = 3
+        data_ind = 0
         print('Using data index {}'.format(data_ind))
         z = f['z'][data_ind]
         dndz = f['dndz'][data_ind]
