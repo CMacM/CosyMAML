@@ -51,12 +51,12 @@ def log_prior(theta, priors):
             return -np.inf
     return 0.0
 
-def log_probability(theta, priors, data_vector, inv_cov, dndz_ph_bins, z_ph, ells, C_ell_func):
+def log_probability(theta, priors, data_vector, inv_cov, dndz_bin_ph, z_ph, ells, A_ia_model, C_ell_func):
     lp = log_prior(theta, priors)
     if not np.isfinite(lp):
         return -np.inf
     
-    ll = log_likelihood(theta, data_vector, inv_cov, dndz_ph_bins, z_ph, ells, C_ell_func)
+    ll = log_likelihood(theta, data_vector, inv_cov, z_ph, ells, dndz_bin_ph, A_ia_model, C_ell_func)
     return lp + ll
 
 def main(args):
@@ -189,8 +189,8 @@ def main(args):
     converged = False # Convergence flag
 
     # Construct path for backend file
-    backend_file = ('cl_ee_IA_{}_{}walkers_{}tau'.format(
-        'cl_ee', nwalkers, args.tau_factor)
+    backend_file = ('cl_ee_IA_{}walkers_{}tau'.format(
+        nwalkers, args.tau_factor)
         +args.backend_file
     )
     backend_file = os.path.join(mcmc_dir, backend_file)
@@ -230,7 +230,7 @@ def main(args):
             nwalkers,
             ndim,
             log_probability,
-            args=(priors, data_vector, inv_cov, dndz_bin_ph, z_ph, ells, C_ell_func),
+            args=(priors, data_vector, inv_cov, dndz_bin_ph, z_ph, ells, A_ia_model, C_ell_func),
             pool=pool,
             backend=backend,
             blobs_dtype=btype,

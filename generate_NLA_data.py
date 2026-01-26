@@ -97,7 +97,7 @@ def main(args):
         print("Computing spectra for task {} of {}".format(i+1, n_tasks))
 
         # Sample cosmologies
-        hypercube = sim.cosmo_hypercube(n_samples=n_shots)
+        hypercube = sim.cosmo_hypercube(n_samples=n_shots, use_ia=False)
         # remove dndz_shifts from hypercube
         hypercube = hypercube[:,:5]
 

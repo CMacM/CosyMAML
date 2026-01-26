@@ -171,32 +171,37 @@ def convolve_photoz(sigma, zs, dndz_spec, return_2d=False):
     return z_ph, dN/dz_ph
 
 def cosmo_hypercube(
-        Omega_c=np.array([0.165, 0.45]),
-        Omega_b=np.array([0.025, 0.075]),
-        h=np.array([0.35, 1.15]),
-        sigma8=np.array([0.6, 1.05]),
-        n_s=np.array([0.75, 1.15]),
-        delta_z=np.array([-0.0045, 0.0045]),
-        n_samples=1000,
-        dim=10
-    ):
+    Omega_c=np.array([0.165, 0.45]),
+    Omega_b=np.array([0.025, 0.075]),
+    h=np.array([0.35, 1.15]),
+    sigma8=np.array([0.6, 1.05]),
+    n_s=np.array([0.75, 1.15]),
+    n_bins=5,
+    delta_z=np.array([-0.0045, 0.0045]),
+    n_samples=1000,
+    use_ia=False,
+    a_ia=np.array([0.0, 0.79]),
+    eta=np.array([0.61, 4.92]),
+):
+    
+    base_dim = 7 if use_ia else 5
+    dim = base_dim + n_bins
 
-    hyperframe = qmc.LatinHypercube(d=dim)
-    hyperunits = hyperframe.random(n_samples)
+    sampler = qmc.LatinHypercube(d=dim)
+    u = sampler.random(n_samples)
 
-    # Rescale the hypercube for provided param ranges
-    l_bounds = [
-        Omega_c[0], Omega_b[0], h[0], sigma8[0], n_s[0]
-    ]
-    u_bounds = [
-        Omega_c[1], Omega_b[1], h[1], sigma8[1], n_s[1]
-    ]
+    l_bounds = [Omega_c[0], Omega_b[0], h[0], sigma8[0], n_s[0]]
+    u_bounds = [Omega_c[1], Omega_b[1], h[1], sigma8[1], n_s[1]]
 
-    for _ in range(dim-5):
-        l_bounds.append(delta_z[0])
-        u_bounds.append(delta_z[1])
+    if use_ia:
+        l_bounds += [a_ia[0], eta[0]]
+        u_bounds += [a_ia[1], eta[1]]
 
-    return qmc.scale(hyperunits, np.array(l_bounds), np.array(u_bounds))
+    # one delta_z per tomographic bin
+    l_bounds += [delta_z[0]] * n_bins
+    u_bounds += [delta_z[1]] * n_bins
+
+    return qmc.scale(u, np.array(l_bounds), np.array(u_bounds))
 
 def compute_spectra_cosmicshear(theta, dndz_ph_bins, z_ph, ells):
     '''

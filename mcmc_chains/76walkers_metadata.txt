@@ -1,4 +1,4 @@
-Sampling completed in 16000 iterations
-Total time taken: 91914.07390117645 seconds
+Sampling completed in 4401 iterations
+Total time taken: 20124.461183071136 seconds
 Number of threads used: 48
-Total CPU hours: 1225.5209853490194
+Total CPU hours: 268.32614910761515
