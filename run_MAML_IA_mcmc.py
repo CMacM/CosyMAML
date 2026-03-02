@@ -24,16 +24,18 @@ torch.cuda.manual_seed(masterseed)
 
 def main(args):
 
-    filepath = '/home/b7009348/CosyMAML/cl_ee_IA_10tasks_500samples_seed14.h5'
+    filepath = '/home/b7009348/CosyMAML/cl_ee_IA_MCMC_task_samples.h5'
     with h5.File(filepath, 'r') as f:
 
-        X_cosmo_test = f['cosmo_params'][-1]
-        y_cl_test = f['c_ells'][-1]
+        X_cosmo_train = f['cosmo_params'][:]
+        y_cl_train = f['c_ells'][:]
 
-        A_ia = f['A_ia_samples'][-1]
-        eta = f['eta_samples'][-1]
+        A_ia = f['A_ia_samples'][:]
+        eta = f['eta_samples'][:]
 
     print('Using A_IA:{}, eta:{}'.format(np.mean(A_ia), np.mean(eta)))
+    print('Train cosmologies shape:', X_cosmo_train.shape)
+    print('Train C_ell shape:', y_cl_train.shape)
 
     # set device for all tensors
     device = args.device
@@ -41,7 +43,11 @@ def main(args):
     args.n_finetune = 100
 
     # Split test data into fine-tuning and evaluation sets
-    X_finetune, _, y_finetune, _ = train_test_split(X_cosmo_test, y_cl_test, train_size=args.n_finetune, random_state=14)
+    if args.n_finetune < X_cosmo_train.shape[0]:
+        X_finetune, _, y_finetune, _ = train_test_split(X_cosmo_train, y_cl_train, train_size=args.n_finetune, random_state=14)
+    else:
+        X_finetune = X_cosmo_train
+        y_finetune = y_cl_train
 
     # convert to torch tensors
     X_finetune = torch.tensor(X_finetune, dtype=torch.float32).to(device)
@@ -189,12 +195,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--mcmc_dir', type=str, default='mcmc_chains', help='Directory to save MCMC output')
     parser.add_argument('--n_finetune', type=int, default=100)
-    parser.add_argument('--n_val', type=int, default=100)
-    parser.add_argument('--n_epochs', type=int, default=64)
+    parser.add_argument('--n_epochs', type=int, default=16)
     parser.add_argument('--n_walkers', type=int, default=76)
     parser.add_argument('--n_check', type=int, default=1000)
     parser.add_argument('--max_iter', type=int, default=100000)
     parser.add_argument('--device', type=str, default='cuda')
-    parser.add_argument('--tau_factor', type=float, default=50)
+    parser.add_argument('--tau_factor', type=float, default=100)
     args = parser.parse_args()
     main(args)

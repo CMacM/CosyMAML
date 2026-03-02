@@ -80,8 +80,8 @@ def main(args):
     n_tasks = args.n_tasks
 
     # Sample z0 and sigma_z values for tasks
-    z0_range = np.linspace(0.42, 0.82, n_tasks)
-    sigma_z_range = np.linspace(0.02, 0.07, n_tasks)
+    z0_range = np.random.uniform(0.42, 0.82, n_tasks)
+    sigma_z_range = np.random.uniform(0.02, 0.07, n_tasks)
 
     # create list to hold dndz bins for each task
     dndz_bin_ph = []

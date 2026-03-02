@@ -63,7 +63,7 @@ def main(args):
     print("Redshift bins set up")
 
     # Define multipoles
-    ells = np.geomspace(2, 2000, 50)
+    ells = np.geomspace(2, 5000, 50)
 
     # Seed
     np.random.seed(14)

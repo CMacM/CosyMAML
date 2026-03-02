@@ -100,7 +100,7 @@ def main(args):
     )
 
     # Construct ell vector
-    ells = np.geomspace(2, 2000, 50)
+    ells = np.geomspace(2, 5000, 50)
 
     # Load fiducial spectra and cov or generate if needed
     sacc_path = os.path.join(mcmc_dir, 'cl_ee_IA_fiducial_sacc.fits')
@@ -189,7 +189,7 @@ def main(args):
     converged = False # Convergence flag
 
     # Construct path for backend file
-    backend_file = ('cl_ee_IA_{}walkers_{}tau'.format(
+    backend_file = ('cl_ee_IA_{}walkers_{}tau_'.format(
         nwalkers, args.tau_factor)
         +args.backend_file
     )
@@ -293,9 +293,9 @@ if __name__ == '__main__':
     parser.add_argument('--n_walkers', type=int, default=76, help='Number of walkers')
     parser.add_argument('--chain_len', type=int, default=1000, help='Length of chain to run between convergence checks')
     parser.add_argument('--max_iter', type=int, default=100000, help='Maximum number of iterations')
-    parser.add_argument('--tau_factor', type=int, default=50, help='Factor to multiply by the autocorrelation time to determine convergence')
+    parser.add_argument('--tau_factor', type=int, default=100, help='Factor to multiply by the autocorrelation time to determine convergence')
     parser.add_argument('--seed', type=int, default=14, help='Random seed')
-    parser.add_argument('--n_threads', type=int, default=cpu_count(), help='Number of threads to use')
+    parser.add_argument('--n_threads', type=int, default=cpu_count()//2, help='Number of threads to use')
     parser.add_argument('--profile', action='store_true', help='Run the profiler')
     parser.add_argument('--clobber_chain', action='store_true', help='Overwrite existing MCMC file')
     parser.add_argument('--clobber_sacc', action='store_true', help='Overwrite existing Sacc file')
